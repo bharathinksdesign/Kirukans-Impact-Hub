@@ -1,9 +1,10 @@
-# [Project name]
+# Kirukans Charitable Trust
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A public website for the Trichy creative community that turns art into action through murals, workshops, and community initiatives.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/kirukans run dev` — run the public website through its managed workflow
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
@@ -30,7 +31,11 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Kirukans' motto is “Madness in Doing Goodness”; its approach is Create, Connect, Contribute.
+
+The user supplied a nine-page pitch deck, a Figma prototype, a Figma media-stack file, and the Kirukans Trust YouTube channel. All nine PDF pages were reviewed as text and rendered images. Figma did not expose the full designs to public retrieval; do not claim that those files have been completely reviewed or reproduced.
+
+Use the user's real project photos and deck-supported stories and impact figures. Do not fabricate beneficiary counts, testimonials, staff names, payment details, or social accounts. The first website is informational, with direct phone contact and a link to the supplied YouTube channel; no donation payment processing or simulated form submissions.
 
 ## User preferences
 

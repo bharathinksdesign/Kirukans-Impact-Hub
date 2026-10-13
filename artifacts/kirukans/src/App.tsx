@@ -1,0 +1,48 @@
+import { useState } from 'react';
+import { ErrorBoundary } from '@/components/error-boundary';
+import NotFound from '@/pages/not-found';
+import { Route, Switch, Router as WouterRouter } from 'wouter';
+import { Header } from '@/components/header';
+import { Hero } from '@/components/hero';
+import { About, Approach, Stories } from '@/components/story-sections';
+import { Gallery, Impact, Join, Footer } from '@/components/closing-sections';
+import { ProjectDialog, Lightbox } from '@/components/dialogs';
+import type { Project } from '@/lib/site-data';
+
+function Home() {
+  const [project, setProject] = useState<Project | null>(null);
+  const [photo, setPhoto] = useState<number | null>(null);
+  return (
+    <div className="grain">
+      <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:z-[70] focus:bg-sun focus:text-plum focus:p-3">Skip to content</a>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Approach />
+        <Stories onOpen={setProject} />
+        <Gallery onOpen={setPhoto} />
+        <Impact />
+        <Join />
+      </main>
+      <Footer />
+      <ProjectDialog project={project} onClose={() => setProject(null)} />
+      <Lightbox index={photo} setIndex={setPhoto} />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <ErrorBoundary>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </ErrorBoundary>
+    </WouterRouter>
+  );
+}
+
+export default App;

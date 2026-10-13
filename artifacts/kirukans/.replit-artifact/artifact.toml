@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Kirukans Charitable Trust"
+description = "The official website for Kirukans Charitable Trust, a creative community in Trichy turning art into action through murals, workshops, volunteering, and community initiatives."
+version = "1.0.0"
+id = "artifacts/kirukans"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25987
+
+[services.development]
+run = "pnpm --filter @workspace/kirukans run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kirukans", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kirukans/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25987"
+BASE_PATH = "/"
