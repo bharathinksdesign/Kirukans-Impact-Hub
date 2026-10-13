@@ -1,4 +1,3 @@
-import { Phone, Youtube } from 'lucide-react';
 import { FaFacebook, FaYoutube, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { Reveal } from '@/components/reveal';
 import { gallery, img, PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
@@ -67,34 +66,6 @@ export function Impact() {
   );
 }
 
-export function Join() {
-  return (
-    <section id="join" className="bg-sun text-plum py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-5 text-center">
-        <Reveal>
-          <p className="font-hand text-4xl">Bring a brush. Bring a friend.</p>
-          <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-none">Come be a little mad with us.</h2>
-          <p className="mt-6 text-lg max-w-2xl mx-auto">
-            Volunteering, supporting a wall, or just curious? Pick up the phone and talk to a real person on the team.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full bg-plum text-sun font-bold px-7 py-4 text-lg hover:bg-teal hover:text-plum transition-colors" data-testid="link-join-call">
-              <Phone className="size-5" aria-hidden /> Call {PHONE_TEXT}
-            </a>
-            <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full border-4 border-plum font-bold px-7 py-3.5 text-lg hover:bg-plum hover:text-sun transition-colors" data-testid="link-support-call">
-              Support our work by phone
-            </a>
-            <a href={YOUTUBE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-4 border-plum font-bold px-7 py-3.5 text-lg hover:bg-plum hover:text-sun transition-colors" data-testid="link-youtube">
-              <Youtube className="size-5" aria-hidden /> Watch on YouTube
-            </a>
-          </div>
-          <p className="mt-6 text-sm">Explore our channel to view mural projects and community-driven activities.</p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 export function Footer() {
   return (
     <footer id="footer" className="site-footer">
@@ -121,6 +92,7 @@ export function Footer() {
               <li><a href={homeHash("#stories")}>Impact stories</a></li>
               <li><a href={`${import.meta.env.BASE_URL}gallery`} data-testid="link-explore-gallery">Gallery</a></li>
               <li><a href={homeHash("#join")}>Get involved</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}admin/inbox`} data-testid="link-team-inbox">Team inbox</a></li>
             </ul>
           </nav>
           <div>

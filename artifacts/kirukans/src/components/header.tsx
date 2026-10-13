@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
-import { img, PHONE_HREF } from '@/lib/site-data';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { img } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
 
 const links = [
-  ['About', '#about'],
-  ['Approach', '#approach'],
-  ['Stories', '#stories'],
-  ['Gallery', '/gallery'],
-  ['Impact', '#impact'],
-  ['Join', '#join'],
+  ['Our story', '#about'],
+  ['What we do', '#approach'],
+  ['Impact stories', '#stories'],
+  ['Get involved', '#join'],
 ];
 
 const navHref = (path: string) => path.startsWith('#')
@@ -19,23 +17,23 @@ const navHref = (path: string) => path.startsWith('#')
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 bg-plum text-cream border-b-4 border-sun">
-      <div className="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-40 bg-plum text-cream border-0 shadow-[0_4px_16px_-6px_rgba(0,0,0,0.28)]">
+      <div className="mx-auto max-w-7xl px-5 h-20 lg:h-24 flex items-center justify-between">
         <a href={homeHash("#top")} className="shrink-0" aria-label="Kirukans home" data-testid="link-home">
-          <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-10 w-auto" />
+          <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />
         </a>
-        <nav aria-label="Primary" className="hidden md:flex items-center gap-7 text-sm font-semibold">
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-7 text-base font-semibold">
           {links.map(([l, h]) => (
-            <a key={h} href={navHref(h)} className="hover:text-sun transition-colors" data-testid={`link-nav-${l.toLowerCase()}`}>
+            <a key={h} href={navHref(h)} className="hover:text-sun transition-colors" data-testid={`link-nav-${l.toLowerCase().replaceAll(' ', '-')}`}>
               {l}
             </a>
           ))}
-          <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full bg-sun text-plum px-4 py-2 hover:bg-teal transition-colors" data-testid="link-nav-call">
-            <Phone className="size-4" aria-hidden /> Call us
+          <a href={homeHash('#support')} className="inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold hover:bg-teal transition-colors" data-testid="link-nav-support">
+            Support us <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>
         <button
-          className="md:hidden p-2"
+          className="lg:hidden p-2"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -46,14 +44,14 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="md:hidden px-5 pb-6 pt-2 flex flex-col gap-1 text-2xl font-extrabold">
+        <nav id="mobile-nav" aria-label="Mobile" className="lg:hidden px-5 pb-6 pt-2 flex flex-col gap-1 text-2xl font-extrabold">
           {links.map(([l, h]) => (
             <a key={h} href={navHref(h)} onClick={() => setOpen(false)} className="py-2 hover:text-sun">
               {l}
             </a>
           ))}
-          <a href={PHONE_HREF} className="mt-3 rounded-full bg-sun text-plum px-5 py-3 text-lg text-center">
-            Call +91 89390 18125
+          <a href={homeHash('#support')} onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-sun text-plum px-5 py-3 text-lg text-center" data-testid="link-mobile-support">
+            Support us <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>
       )}

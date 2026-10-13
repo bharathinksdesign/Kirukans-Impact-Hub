@@ -5,11 +5,15 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { About, Approach, Stories } from '@/components/story-sections';
-import { Impact, Join, Footer } from '@/components/closing-sections';
+import { Impact, Footer } from '@/components/closing-sections';
+import { Join } from '@/components/join-section';
 import { ProjectDialog } from '@/components/dialogs';
 import StoriesPage from '@/pages/stories';
 import GalleryPage from '@/pages/gallery';
 import type { Project } from '@/lib/site-data';
+import { AppProviders } from '@/components/app-providers';
+import InboxPage from '@/pages/inbox';
+import { SignInPage, SignUpPage } from '@/pages/auth';
 
 function Home() {
   const [project, setProject] = useState<Project | null>(null);
@@ -44,12 +48,17 @@ function App() {
   return (
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <ErrorBoundary>
+        <AppProviders>
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/stories" component={StoriesPage} />
           <Route path="/gallery" component={GalleryPage} />
+          <Route path="/admin/inbox" component={InboxPage} />
+          <Route path="/sign-in/*?" component={SignInPage} />
+          <Route path="/sign-up/*?" component={SignUpPage} />
           <Route component={NotFound} />
         </Switch>
+        </AppProviders>
       </ErrorBoundary>
     </WouterRouter>
   );
