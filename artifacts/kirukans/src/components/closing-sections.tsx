@@ -9,7 +9,7 @@ export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
     <section id="gallery" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <Reveal>
         <p className="font-hand text-3xl text-tangerine">Paint on our hands</p>
-        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">The gallery</h2>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">The gallery</h1>
         <p className="mt-3 text-muted-foreground">Tap any photo to look closer.</p>
       </Reveal>
       <div className="mt-10 columns-2 md:columns-3 gap-4">
@@ -119,7 +119,7 @@ export function Footer() {
               <li><a href={homeHash("#about")}>Our story</a></li>
               <li><a href={homeHash("#approach")}>What we do</a></li>
               <li><a href={homeHash("#stories")}>Impact stories</a></li>
-              <li><a href={homeHash("#gallery")}>Community chronicles</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}gallery`} data-testid="link-explore-gallery">Gallery</a></li>
               <li><a href={homeHash("#join")}>Get involved</a></li>
             </ul>
           </nav>

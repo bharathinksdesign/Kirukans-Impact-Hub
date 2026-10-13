@@ -5,14 +5,14 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { About, Approach, Stories } from '@/components/story-sections';
-import { Gallery, Impact, Join, Footer } from '@/components/closing-sections';
-import { ProjectDialog, Lightbox } from '@/components/dialogs';
+import { Impact, Join, Footer } from '@/components/closing-sections';
+import { ProjectDialog } from '@/components/dialogs';
 import StoriesPage from '@/pages/stories';
+import GalleryPage from '@/pages/gallery';
 import type { Project } from '@/lib/site-data';
 
 function Home() {
   const [project, setProject] = useState<Project | null>(null);
-  const [photo, setPhoto] = useState<number | null>(null);
   useEffect(() => {
     const id = window.location.hash.slice(1);
     const t = window.setTimeout(() => {
@@ -31,13 +31,11 @@ function Home() {
         <About />
         <Approach />
         <Stories onOpen={setProject} />
-        <Gallery onOpen={setPhoto} />
         <Impact />
         <Join />
       </main>
       <Footer />
       <ProjectDialog project={project} onClose={() => setProject(null)} />
-      <Lightbox index={photo} setIndex={setPhoto} />
     </div>
   );
 }
@@ -49,6 +47,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/stories" component={StoriesPage} />
+          <Route path="/gallery" component={GalleryPage} />
           <Route component={NotFound} />
         </Switch>
       </ErrorBoundary>

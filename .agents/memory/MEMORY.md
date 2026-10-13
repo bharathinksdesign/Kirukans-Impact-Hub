@@ -1,1 +1,2 @@
 - [Hero reference scope](hero-reference-scope.md) — preserve hero copy and CTAs when applying the user's photo reference; the image belongs on the right.
+- [Dark brand color](dark-brand-color.md) — the user selected the hero's dark color as the shared dark brand color.

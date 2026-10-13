@@ -46,29 +46,29 @@
 }
 
 :root {
-  --plum: 266 52% 15%;
+  --plum: 245.2173913 48.9361702% 18.43137255%;
   --teal: 174 72% 42%;
   --sun: 44 100% 58%;
   --tangerine: 20 92% 54%;
   --cream: 42 78% 95%;
 
   --background: 42 78% 95%;
-  --foreground: 266 52% 15%;
+  --foreground: var(--plum);
   --border: 266 25% 82%;
   --card: 42 70% 98%;
-  --card-foreground: 266 52% 15%;
+  --card-foreground: var(--plum);
   --card-border: 266 25% 82%;
   --popover: 42 70% 98%;
-  --popover-foreground: 266 52% 15%;
+  --popover-foreground: var(--plum);
   --popover-border: 266 25% 82%;
-  --primary: 266 52% 15%;
+  --primary: var(--plum);
   --primary-foreground: 42 78% 95%;
   --secondary: 44 100% 58%;
-  --secondary-foreground: 266 52% 15%;
+  --secondary-foreground: var(--plum);
   --muted: 42 40% 90%;
   --muted-foreground: 266 20% 35%;
   --accent: 174 72% 42%;
-  --accent-foreground: 266 52% 12%;
+  --accent-foreground: var(--plum);
   --destructive: 0 70% 45%;
   --destructive-foreground: 0 0% 98%;
   --input: 266 25% 70%;
@@ -132,7 +132,7 @@
   transform: none;
 }
 
-.photo-hero { background: #1c1846; padding: 72px 0; }
+.photo-hero { background: hsl(var(--plum)); padding: 72px 0; }
 .photo-hero-inner {
   max-width: 1440px;
   margin: 0 auto;
@@ -162,7 +162,7 @@
   left: -3.3%;
   bottom: 12.5%;
   background: #ffca16;
-  color: #1c1846;
+  color: hsl(var(--plum));
   padding: 16px 22px;
   font-size: clamp(24px, 2.5vw, 36px);
   font-weight: 700;
@@ -182,7 +182,7 @@
 }
 
 .site-footer {
-  background: #1c1846;
+  background: hsl(var(--plum));
   color: #fff;
   border: 1px solid #625d83;
   border-radius: 0 0 18px 18px;

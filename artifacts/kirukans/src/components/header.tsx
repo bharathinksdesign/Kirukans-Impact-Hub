@@ -7,10 +7,14 @@ const links = [
   ['About', '#about'],
   ['Approach', '#approach'],
   ['Stories', '#stories'],
-  ['Gallery', '#gallery'],
+  ['Gallery', '/gallery'],
   ['Impact', '#impact'],
   ['Join', '#join'],
 ];
+
+const navHref = (path: string) => path.startsWith('#')
+  ? homeHash(path)
+  : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -22,7 +26,7 @@ export function Header() {
         </a>
         <nav aria-label="Primary" className="hidden md:flex items-center gap-7 text-sm font-semibold">
           {links.map(([l, h]) => (
-            <a key={h} href={homeHash(h)} className="hover:text-sun transition-colors" data-testid={`link-nav-${l.toLowerCase()}`}>
+            <a key={h} href={navHref(h)} className="hover:text-sun transition-colors" data-testid={`link-nav-${l.toLowerCase()}`}>
               {l}
             </a>
           ))}
@@ -44,7 +48,7 @@ export function Header() {
       {open && (
         <nav id="mobile-nav" aria-label="Mobile" className="md:hidden px-5 pb-6 pt-2 flex flex-col gap-1 text-2xl font-extrabold">
           {links.map(([l, h]) => (
-            <a key={h} href={homeHash(h)} onClick={() => setOpen(false)} className="py-2 hover:text-sun">
+            <a key={h} href={navHref(h)} onClick={() => setOpen(false)} className="py-2 hover:text-sun">
               {l}
             </a>
           ))}
