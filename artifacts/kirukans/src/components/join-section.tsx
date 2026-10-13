@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { ArrowUpRight, HeartHandshake, Loader2, Phone, Youtube } from 'lucide-react';
+import { ArrowUpRight, Loader2 } from 'lucide-react';
 import { useCreateVolunteerEnquiry } from '@workspace/api-client-react';
 import { Reveal } from '@/components/reveal';
-import { PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
+import DonationCard from '@/components/donation-card';
 
 function errMessage(e: unknown): string {
   const err = e as { status?: number; data?: { error?: string } | null; message?: string };
@@ -125,22 +125,7 @@ export function Join() {
 
           <Reveal delay={100}>
             <div id="support" className="h-full rounded-3xl bg-plum text-cream p-6 md:p-9 flex flex-col">
-              <HeartHandshake className="size-9 text-sun" aria-hidden />
-              <h3 className="mt-6 text-3xl font-extrabold">Help kindness go further.</h3>
-              <p className="mt-4 text-cream/80">
-                Support our murals, creative workshops and community initiatives. Call the trust to discuss how you can contribute.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-6 py-3 hover:bg-teal transition-colors" data-testid="link-support-call">
-                  Support by phone <ArrowUpRight className="size-4" aria-hidden />
-                </a>
-                <a href={YOUTUBE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-sun text-sun font-bold px-6 py-3 hover:bg-sun hover:text-plum transition-colors" data-testid="link-youtube">
-                  <Youtube className="size-4" aria-hidden /> Watch on YouTube
-                </a>
-              </div>
-              <a href={PHONE_HREF} className="mt-auto pt-8 inline-flex items-center gap-2 text-sm text-cream/80 hover:text-sun" data-testid="link-join-call">
-                <Phone className="size-4" aria-hidden /> Trust contact · {PHONE_TEXT}
-              </a>
+              <DonationCard />
             </div>
           </Reveal>
         </div>

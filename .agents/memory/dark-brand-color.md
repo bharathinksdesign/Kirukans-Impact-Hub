@@ -13,4 +13,10 @@ Do not add a yellow divider below the header. Keep the header logo prominent.
 
 **Why:** The user explicitly repeated the request to remove the header's yellow line and asked for a larger logo.
 
-**How to apply:** Preserve the uninterrupted dark header-to-hero background when making future header changes.
+**How to apply:** Keep the header free of a yellow divider and preserve the prominent logo and mild shadow.
+
+Use teal with dark text for the header, distinct from the dark hero.
+
+**Why:** The user chose “Teal with dark text” when asked which contrasting header color to use.
+
+**How to apply:** Keep the hero’s approved dark background unchanged; the header color is intentionally different.

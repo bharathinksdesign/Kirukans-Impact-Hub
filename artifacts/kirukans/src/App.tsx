@@ -14,6 +14,7 @@ import type { Project } from '@/lib/site-data';
 import { AppProviders } from '@/components/app-providers';
 import InboxPage from '@/pages/inbox';
 import { SignInPage, SignUpPage } from '@/pages/auth';
+import DonationResultPage from '@/pages/donation-result';
 
 function Home() {
   const [project, setProject] = useState<Project | null>(null);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/stories" component={StoriesPage} />
           <Route path="/gallery" component={GalleryPage} />
+          <Route path="/donate/result" component={DonationResultPage} />
           <Route path="/admin/inbox" component={InboxPage} />
           <Route path="/sign-in/*?" component={SignInPage} />
           <Route path="/sign-up/*?" component={SignUpPage} />

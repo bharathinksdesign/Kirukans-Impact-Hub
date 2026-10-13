@@ -7,6 +7,12 @@
  */
 
 export * from './adminAccess';
+export * from './donationCheckout';
+export * from './donationCheckoutInput';
+export * from './donationConfirmation';
+export * from './donationConfirmationStatus';
+export * from './donationOptions';
+export * from './donationPrice';
 export * from './enquiryInbox';
 export * from './enquiryReadInput';
 export * from './enquiryReceipt';

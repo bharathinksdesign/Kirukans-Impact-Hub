@@ -28,6 +28,8 @@ async function buildAll() {
     // - uses native modules and loads them dynamically (e.g. sharp)
     // - use path traversal to read files (e.g. @google-cloud/secret-manager loads sibling .proto files)
     external: [
+      // The sync engine loads SQL migrations beside its own package at runtime.
+      "stripe-replit-sync",
       "*.node",
       "sharp",
       "better-sqlite3",
