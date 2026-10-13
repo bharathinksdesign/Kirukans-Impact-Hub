@@ -4,13 +4,14 @@ import { ArrowUpRight, Loader2 } from 'lucide-react';
 import { useCreateVolunteerEnquiry } from '@workspace/api-client-react';
 import { Reveal } from '@/components/reveal';
 import DonationCard from '@/components/donation-card';
+import CommunityInvite from '@/components/community-invite';
 
 function errMessage(e: unknown): string {
   const err = e as { status?: number; data?: { error?: string } | null; message?: string };
   if (err?.data && typeof err.data.error === 'string') return err.data.error;
   if (err?.status === 429) return 'Too many tries from this connection. Please wait a little and try again.';
   if (err?.status && err.status >= 500) return 'Our server had a hiccup. Nothing was saved, please try again shortly.';
-  if (err?.status === 400) return 'Please check your name and email and try again.';
+  if (err?.status === 400) return 'Please check your name and contact details and try again.';
   return err?.message || 'We could not save your details. Please check your connection and try again.';
 }
 
@@ -20,6 +21,7 @@ const field =
 export function Join() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -32,17 +34,23 @@ export function Join() {
     if (pending) return;
     const n = name.trim();
     const m = email.trim();
+    let p = phone.trim().replace(/[\s()-]/g, '');
+    if (/^[6-9]\d{9}$/.test(p)) p = `+91${p}`;
+    else if (/^91[6-9]\d{9}$/.test(p)) p = `+${p}`;
     if (n.length < 2 || n.length > 120) return setError('Please enter your name (2 to 120 characters).');
-    if (!/^\S+@\S+\.\S+$/.test(m) || m.length > 254) return setError('Please enter a valid email address.');
+    if (!m && !p) return setError('Please enter either your email or your mobile / WhatsApp number.');
+    if (m && (!/^\S+@\S+\.\S+$/.test(m) || m.length > 254)) return setError('Please enter a valid email address, or leave it blank and provide your number.');
+    if (p && !/^\+[1-9][0-9]{6,14}$/.test(p)) return setError('Please enter a valid mobile number. Use 10 digits for India or include your country code.');
     if (!consent) return setError('Please tick the box so we know we may contact you.');
     setError(null);
     create.mutate(
-      { data: { name: n, email: m, consent: true, website } },
+      { data: { name: n, ...(m ? { email: m } : {}), ...(p ? { phone: p } : {}), consent: true, website } },
       {
         onSuccess: (r) => {
           setSaved(r.message);
           setName('');
           setEmail('');
+          setPhone('');
           setConsent(false);
           setWebsite('');
         },
@@ -93,21 +101,26 @@ export function Join() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block text-sm font-semibold">
                       Name
-                      <input className={field} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" maxLength={120} disabled={pending} data-testid="input-join-name" />
+                      <input className={field} value={name} onChange={(e) => { setName(e.target.value); setError(null); }} placeholder="Your name" autoComplete="name" maxLength={120} disabled={pending} data-testid="input-join-name" />
                     </label>
                     <label className="block text-sm font-semibold">
-                      Email
-                      <input className={field} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" autoComplete="email" maxLength={254} disabled={pending} data-testid="input-join-email" />
+                      Email (optional)
+                      <input className={field} type="email" value={email} onChange={(e) => { setEmail(e.target.value); setError(null); }} placeholder="Your email address" autoComplete="email" maxLength={254} disabled={pending} data-testid="input-join-email" />
                     </label>
                   </div>
+                  <label className="block text-sm font-semibold">
+                    Mobile / WhatsApp number (optional)
+                    <input className={field} type="tel" value={phone} onChange={(e) => { setPhone(e.target.value); setError(null); }} placeholder="+91 98765 43210" autoComplete="tel" maxLength={30} disabled={pending} aria-describedby="contact-help" data-testid="input-join-phone" />
+                  </label>
+                  <p id="contact-help" className="text-sm text-plum/75">Provide either an email or a mobile number—or both. Include a country code for numbers outside India.</p>
                   <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
                     <label>Website
                       <input tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} maxLength={200} />
                     </label>
                   </div>
                   <label className="flex items-start gap-3 text-sm">
-                    <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} disabled={pending} className="mt-0.5 size-5 accent-plum shrink-0" data-testid="checkbox-join-consent" />
-                    <span>I agree that Kirukans may store my name and email and contact me about volunteering.</span>
+                    <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setError(null); }} disabled={pending} className="mt-0.5 size-5 accent-plum shrink-0" data-testid="checkbox-join-consent" />
+                    <span>I agree that Kirukans may store my name and contact details and contact me about volunteering by email, phone or WhatsApp.</span>
                   </label>
                   {error && (
                     <p role="alert" className="rounded-xl bg-destructive/10 border-2 border-destructive px-4 py-2 text-sm font-semibold text-destructive" data-testid="text-join-error">{error}</p>
@@ -116,10 +129,11 @@ export function Join() {
                     {pending ? <><Loader2 className="size-5 animate-spin" aria-hidden /> Saving...</> : <>Count me in <ArrowUpRight className="size-5" aria-hidden /></>}
                   </button>
                   <p className="text-xs text-plum/70">
-                    Privacy: we keep only your name and email, in a private inbox read by the trust team, and use them only to reply about volunteering.
+                  Privacy: your name, email and/or number stay in a private inbox read by the trust team, and are used only to reply about volunteering.
                   </p>
                 </form>
               )}
+              <CommunityInvite />
             </div>
           </Reveal>
 

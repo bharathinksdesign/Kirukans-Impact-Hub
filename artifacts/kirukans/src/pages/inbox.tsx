@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth, useClerk, useUser } from '@clerk/react';
 import { useQueryClient } from '@tanstack/react-query';
-import { ArrowLeft, Loader2, Mail, RefreshCw } from 'lucide-react';
+import { ArrowLeft, Loader2, Mail, RefreshCw, Phone, MessageCircle } from 'lucide-react';
 import {
   getGetAdminAccessQueryKey,
   getGetVolunteerInboxQueryKey,
@@ -132,12 +132,21 @@ export default function InboxPage() {
                 <li key={it.id} className={`rounded-2xl border-4 border-plum p-4 flex flex-wrap items-center gap-3 ${unread ? 'bg-sun/60' : 'bg-cream'}`} data-testid={`row-enquiry-${it.id}`}>
                   <div className="min-w-0 flex-1 basis-56">
                     <p className="font-extrabold truncate">{unread && <span className="mr-2 text-xs rounded-full bg-plum text-sun px-2 py-0.5 align-middle">NEW</span>}{it.name}</p>
-                    <p className="truncate text-sm">{it.email}</p>
+                    {it.email && <p className="truncate text-sm" data-testid={`text-enquiry-email-${it.id}`}>{it.email}</p>}
+                    {it.phone && <p className="text-sm" data-testid={`text-enquiry-phone-${it.id}`}>{it.phone}</p>}
                     <p className="text-xs text-plum/70">{new Date(it.createdAt).toLocaleString()}</p>
                   </div>
-                  <a href={`mailto:${it.email}?subject=${encodeURIComponent('Volunteering with Kirukans')}`} className={btn} data-testid={`link-reply-${it.id}`}>
+                  {it.email && <a href={`mailto:${it.email}?subject=${encodeURIComponent('Volunteering with Kirukans')}`} className={btn} data-testid={`link-reply-${it.id}`}>
                     <Mail className="size-4" aria-hidden /> Reply
-                  </a>
+                  </a>}
+                  {it.phone && <>
+                    <a href={`https://wa.me/${it.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className={btn} data-testid={`link-whatsapp-${it.id}`}>
+                      <MessageCircle className="size-4" aria-hidden /> WhatsApp
+                    </a>
+                    <a href={`tel:${it.phone}`} className={btn} data-testid={`link-call-${it.id}`}>
+                      <Phone className="size-4" aria-hidden /> Call
+                    </a>
+                  </>}
                   <button
                     disabled={busy}
                     onClick={() => toggle.mutate({ id: it.id, data: { read: unread } })}

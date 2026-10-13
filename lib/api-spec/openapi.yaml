@@ -185,10 +185,12 @@ components:
         - status
     VolunteerEnquiryInput:
       type: object
-      required: [name, email, consent]
+      description: Provide at least one valid email or mobile number.
+      required: [name, consent]
       properties:
         name: { type: string, minLength: 2, maxLength: 120 }
         email: { type: string, format: email, maxLength: 254 }
+        phone: { type: string, pattern: '^\+[1-9][0-9]{6,14}$', maxLength: 16 }
         consent: { type: boolean }
         website: { type: string, maxLength: 200 }
     EnquiryReceipt:
@@ -198,11 +200,12 @@ components:
         message: { type: string }
     VolunteerEnquiry:
       type: object
-      required: [id, name, email, createdAt, readAt]
+      required: [id, name, email, phone, createdAt, readAt]
       properties:
         id: { type: integer }
         name: { type: string }
-        email: { type: string, format: email }
+        email: { type: [string, "null"], format: email }
+        phone: { type: [string, "null"] }
         createdAt: { type: string, format: date-time }
         readAt: { type: [string, "null"], format: date-time }
     EnquiryReadInput:

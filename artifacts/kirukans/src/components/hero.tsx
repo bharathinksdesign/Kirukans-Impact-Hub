@@ -1,7 +1,7 @@
-import { ArrowDown, Phone } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion, useSpring } from 'framer-motion';
 import type { PointerEvent } from 'react';
-import { img, PHONE_HREF } from '@/lib/site-data';
+import { img } from '@/lib/site-data';
 
 export function Hero() {
   const reducedMotion = useReducedMotion();
@@ -37,8 +37,8 @@ export function Hero() {
             <a href="#stories" className="inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-6 py-3 hover:bg-cream transition-colors" data-testid="link-hero-stories">
               See our stories <ArrowDown className="size-4" aria-hidden />
             </a>
-            <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full border-2 border-teal text-teal font-bold px-6 py-3 hover:bg-teal hover:text-plum transition-colors" data-testid="link-hero-volunteer">
-              <Phone className="size-4" aria-hidden /> Volunteer with us
+            <a href="#support" className="inline-flex items-center gap-2 rounded-full border-2 border-teal text-teal font-bold px-6 py-3 hover:bg-teal hover:text-plum transition-colors" data-testid="link-hero-support">
+              Support us <ArrowUpRight className="size-4" aria-hidden />
             </a>
           </div>
         </div>

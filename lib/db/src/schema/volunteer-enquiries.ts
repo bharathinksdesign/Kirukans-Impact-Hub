@@ -5,7 +5,8 @@ import { z } from 'zod/v4';
 export const volunteerEnquiriesTable = pgTable('volunteer_enquiries', {
   id: serial('id').primaryKey(),
   name: text('name').notNull(),
-  email: text('email').notNull().unique(),
+  email: text('email'),
+  phone: text('phone'),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   readAt: timestamp('read_at', { withTimezone: true }),
 });

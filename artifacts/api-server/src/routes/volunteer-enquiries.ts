@@ -11,6 +11,14 @@ import { getClerkProxyHost } from '../middlewares/clerkProxyMiddleware';
 
 const router: IRouter = Router();
 
+function normalizePhone(input: string): string | undefined {
+  const compact = input.trim().replace(/[\s()-]/g, '');
+  if (!compact) return undefined;
+  if (/^[6-9]\d{9}$/.test(compact)) return `+91${compact}`;
+  if (/^91[6-9]\d{9}$/.test(compact)) return `+${compact}`;
+  return compact;
+}
+
 const sameOrigin: RequestHandler = (req, res, next) => {
   const origin = req.get('origin');
   let allowed = req.get('sec-fetch-site') !== 'cross-site';
@@ -36,19 +44,21 @@ router.post('/volunteer-enquiries', sameOrigin, publicLimit, async (req, res) =>
   const parsed = CreateVolunteerEnquiryBody.safeParse({
     ...body,
     name: typeof body?.name === 'string' ? body.name.trim() : body?.name,
-    email: typeof body?.email === 'string' ? body.email.trim().toLowerCase() : body?.email,
+    email: typeof body?.email === 'string' ? body.email.trim().toLowerCase() || undefined : body?.email,
+    phone: typeof body?.phone === 'string' ? normalizePhone(body.phone) : body?.phone,
   });
-  if (!parsed.success || parsed.data.consent !== true) {
-    res.status(400).json({ error: 'Please enter a valid name and email, and agree to be contacted about volunteering.' });
+  if (!parsed.success || parsed.data.consent !== true || (!parsed.data.email && !parsed.data.phone)) {
+    res.status(400).json({ error: 'Please enter your name and a valid email or mobile number, and agree to be contacted about volunteering.' });
     return;
   }
   const receipt = { message: 'Your interest has been saved. Thank you for being part of the goodness!' };
   if (parsed.data.website) { res.status(201).json(receipt); return; }
   try {
-    // Duplicates are handled without exposing whether an email is already registered.
+    // Enquiries are submissions, not accounts. Never overwrite an earlier
+    // person's details based on an unverified public email or phone number.
     await db.insert(volunteerEnquiriesTable).values({
-      name: parsed.data.name, email: parsed.data.email,
-    }).onConflictDoNothing({ target: volunteerEnquiriesTable.email });
+      name: parsed.data.name, email: parsed.data.email ?? null, phone: parsed.data.phone ?? null,
+    });
     res.status(201).json(receipt);
   } catch {
     req.log.error('Could not save volunteer enquiry');

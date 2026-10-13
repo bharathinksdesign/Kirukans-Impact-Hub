@@ -9,7 +9,10 @@
 export interface VolunteerEnquiry {
   id: number;
   name: string;
-  email: string;
+  /** @nullable */
+  email: string | null;
+  /** @nullable */
+  phone: string | null;
   createdAt: Date;
   /** @nullable */
   readAt: Date | null;

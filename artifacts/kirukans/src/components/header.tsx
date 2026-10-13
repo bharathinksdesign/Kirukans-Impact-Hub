@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { img } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
@@ -16,8 +16,47 @@ const navHref = (path: string) => path.startsWith('#')
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const scrollPosition = () => Math.max(0, Math.min(
+      window.scrollY,
+      Math.max(0, document.documentElement.scrollHeight - window.innerHeight),
+    ));
+    let lastY = scrollPosition();
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const y = scrollPosition();
+      if (open || y <= 96) {
+        setHidden(false);
+        lastY = y;
+        return;
+      }
+      // Ignore tiny scroll changes to prevent the header flickering.
+      if (Math.abs(y - lastY) >= 8) {
+        setHidden(y > lastY);
+        lastY = y;
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.cancelAnimationFrame(frame);
+    };
+  }, [open]);
+
   return (
-    <header className="sticky top-0 z-40 bg-teal text-plum border-0 shadow-[0_4px_16px_-6px_rgba(0,0,0,0.28)]">
+    <header
+      className={`sticky top-0 z-40 bg-teal text-plum border-0 shadow-[0_4px_16px_-6px_rgba(0,0,0,0.28)] transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
+      onFocusCapture={() => setHidden(false)}
+      data-scroll-hidden={hidden && !open}
+    >
       <div className="mx-auto max-w-7xl px-5 h-20 lg:h-24 flex items-center justify-between">
         <a href={homeHash("#top")} className="shrink-0" aria-label="Kirukans home" data-testid="link-home">
           <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />

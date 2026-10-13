@@ -68,16 +68,21 @@ export const createVolunteerEnquiryBodyNameMax = 120;
 
 export const createVolunteerEnquiryBodyEmailMax = 254;
 
+export const createVolunteerEnquiryBodyPhoneMax = 16;
+
+
+export const createVolunteerEnquiryBodyPhoneRegExp = new RegExp('^\\+[1-9][0-9]{6,14}$');
 export const createVolunteerEnquiryBodyWebsiteMax = 200;
 
 
 
 export const CreateVolunteerEnquiryBody = zod.object({
   "name": zod.string().min(createVolunteerEnquiryBodyNameMin).max(createVolunteerEnquiryBodyNameMax),
-  "email": zod.string().email().max(createVolunteerEnquiryBodyEmailMax),
+  "email": zod.string().email().max(createVolunteerEnquiryBodyEmailMax).optional(),
+  "phone": zod.string().max(createVolunteerEnquiryBodyPhoneMax).regex(createVolunteerEnquiryBodyPhoneRegExp).optional(),
   "consent": zod.boolean(),
   "website": zod.string().max(createVolunteerEnquiryBodyWebsiteMax).optional()
-})
+}).describe('Provide at least one valid email or mobile number.')
 
 export const CreateVolunteerEnquiryResponse = zod.object({
   "message": zod.string()
@@ -107,7 +112,8 @@ export const GetVolunteerInboxResponse = zod.object({
   "items": zod.array(zod.object({
   "id": zod.number().int(),
   "name": zod.string(),
-  "email": zod.string().email(),
+  "email": zod.string().email().nullable(),
+  "phone": zod.string().nullable(),
   "createdAt": zod.coerce.date(),
   "readAt": zod.coerce.date().nullable()
 })),
@@ -135,7 +141,8 @@ export const UpdateEnquiryReadBody = zod.object({
 export const UpdateEnquiryReadResponse = zod.object({
   "id": zod.number().int(),
   "name": zod.string(),
-  "email": zod.string().email(),
+  "email": zod.string().email().nullable(),
+  "phone": zod.string().nullable(),
   "createdAt": zod.coerce.date(),
   "readAt": zod.coerce.date().nullable()
 })

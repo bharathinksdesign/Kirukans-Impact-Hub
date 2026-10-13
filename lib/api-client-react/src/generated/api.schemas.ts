@@ -50,6 +50,9 @@ export interface HealthStatus {
   status: string;
 }
 
+/**
+ * Provide at least one valid email or mobile number.
+ */
 export interface VolunteerEnquiryInput {
   /**
      * @minLength 2
@@ -57,7 +60,12 @@ export interface VolunteerEnquiryInput {
      */
   name: string;
   /** @maxLength 254 */
-  email: string;
+  email?: string;
+  /**
+     * @maxLength 16
+     * @pattern ^\+[1-9][0-9]{6,14}$
+     */
+  phone?: string;
   consent: boolean;
   /** @maxLength 200 */
   website?: string;
@@ -70,7 +78,10 @@ export interface EnquiryReceipt {
 export interface VolunteerEnquiry {
   id: number;
   name: string;
-  email: string;
+  /** @nullable */
+  email: string | null;
+  /** @nullable */
+  phone: string | null;
   createdAt: string;
   /** @nullable */
   readAt: string | null;

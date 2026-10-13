@@ -14,3 +14,9 @@ Administrator authorization uses the explicitly configured verified email rather
 **Why:** Development and production authentication have separate user stores. A verified-email restriction can identify the authorized administrator in both without granting access to arbitrary registrants.
 
 **How to apply:** Fail closed until administrator access is configured. Any future multi-administrator access must be explicitly granted, not derived from signup order.
+
+The WhatsApp community invite belongs beneath the volunteer form, rather than in a separate section.
+
+**Why:** The user selected “Beneath the volunteer form” after requesting mobile / WhatsApp contact collection.
+
+**How to apply:** Keep community membership as a separate, optional invite action. Volunteer contact details still go to the private website inbox; collecting a number is not community-joining consent.

@@ -6,6 +6,9 @@
  * OpenAPI spec version: 0.1.0
  */
 
+/**
+ * Provide at least one valid email or mobile number.
+ */
 export interface VolunteerEnquiryInput {
   /**
      * @minLength 2
@@ -13,7 +16,12 @@ export interface VolunteerEnquiryInput {
      */
   name: string;
   /** @maxLength 254 */
-  email: string;
+  email?: string;
+  /**
+     * @maxLength 16
+     * @pattern ^\+[1-9][0-9]{6,14}$
+     */
+  phone?: string;
   consent: boolean;
   /** @maxLength 200 */
   website?: string;
