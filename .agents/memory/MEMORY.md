@@ -1,0 +1,1 @@
+- [Hero reference scope](hero-reference-scope.md) — preserve hero copy and CTAs when applying the user's photo reference; the image belongs on the right.

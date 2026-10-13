@@ -2,6 +2,7 @@ import { Phone, Youtube } from 'lucide-react';
 import { FaFacebook, FaYoutube, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { Reveal } from '@/components/reveal';
 import { gallery, img, PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
+import { homeHash } from '@/lib/stories';
 
 export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
   return (
@@ -100,7 +101,7 @@ export function Footer() {
       <div className="footer-inner">
         <div className="footer-columns">
           <div className="footer-brand">
-            <a href="#top" aria-label="Kirukans home">
+            <a href={homeHash("#top")} aria-label="Kirukans home">
               <img src={img('kirukans-logo.png')} alt="Kirukans" className="footer-logo" />
             </a>
             <p className="footer-trust-name">KIRUKANS CHARITABLE TRUST</p>
@@ -115,11 +116,11 @@ export function Footer() {
           <nav aria-label="Footer navigation">
             <h2 className="footer-heading">Explore</h2>
             <ul className="footer-links">
-              <li><a href="#about">Our story</a></li>
-              <li><a href="#approach">What we do</a></li>
-              <li><a href="#stories">Impact stories</a></li>
-              <li><a href="#gallery">Community chronicles</a></li>
-              <li><a href="#join">Get involved</a></li>
+              <li><a href={homeHash("#about")}>Our story</a></li>
+              <li><a href={homeHash("#approach")}>What we do</a></li>
+              <li><a href={homeHash("#stories")}>Impact stories</a></li>
+              <li><a href={homeHash("#gallery")}>Community chronicles</a></li>
+              <li><a href={homeHash("#join")}>Get involved</a></li>
             </ul>
           </nav>
           <div>
