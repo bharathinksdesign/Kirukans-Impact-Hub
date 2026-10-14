@@ -26,7 +26,7 @@ export function Hero() {
     <section id="top" className="photo-hero" aria-label="Kirukans community">
       <div className="photo-hero-inner">
         <div className="hero-copy text-plum">
-          <p className="font-hand text-3xl text-ocean">Trichy's volunteer art crew</p>
+          <p className="font-hand text-3xl text-pink">Trichy's volunteer art crew</p>
           <h1 className="mt-2 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[0.98] tracking-tight">
             Madness in Doing{' '}
             <span className="hero-title-emphasis">

@@ -12,7 +12,7 @@ export function TeamSection() {
           <div className="max-w-2xl">
             <p className="font-hand text-3xl text-tangerine">Team Kirukans</p>
             <h2 className="text-4xl md:text-6xl font-extrabold leading-none tracking-tight">The hands behind the walls</h2>
-            <p className="mt-5 text-lg text-muted-foreground">Volunteers who give their weekends to colour. These are demo profiles with illustrative placeholder portraits, not real trust members.</p>
+            <p className="mt-5 text-lg text-muted-foreground">Meet the people behind Kirukans and our work in the community.</p>
           </div>
           <Link href="/team" className="cta-feedback inline-flex w-fit items-center gap-2 rounded-full bg-plum px-6 py-3 font-bold text-sun" data-testid="link-meet-team">
             Meet the whole team <ArrowRight className="size-4" aria-hidden />
