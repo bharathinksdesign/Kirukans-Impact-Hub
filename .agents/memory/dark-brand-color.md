@@ -15,8 +15,8 @@ Do not add a yellow divider below the header. Keep the header logo prominent.
 
 **How to apply:** Keep the header free of a yellow divider and preserve the prominent logo and mild shadow.
 
-Use black with light text for the header, distinct from the dark hero.
+Use the hero’s dark navy-purple with light text for the header.
 
-**Why:** The user subsequently asked to turn the top bar black, replacing their earlier teal choice.
+**Why:** The user clarified that the top bar should use “the dark color of the hero section only,” replacing the earlier black and teal choices.
 
-**How to apply:** Keep the hero’s approved dark background unchanged; the header color is intentionally different.
+**How to apply:** Use the same shared color for the header and hero; do not introduce a separate black or teal header background.
