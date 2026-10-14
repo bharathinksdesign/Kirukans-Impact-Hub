@@ -69,6 +69,12 @@ Use the supplied teal for a slim social/contact strip above the light navigation
 
 **How to apply:** Keep the strip separate from the light navigation surface and use readable dark icons/text. Do not invent unverified social profile destinations.
 
+Keep the mobile contact strip on one line, showing phone and email icons instead of their full text.
+
+**Why:** The user explicitly asked to hide the full number and email in mobile view and show only icons on one line.
+
+**How to apply:** Keep social, phone and email icons together on mobile; retain clickable contact links and accessible names. Desktop still shows the full contact text.
+
 Use crisp, solid yellow offset shadows only on hover across the website, not soft blurred or persistent resting shadows.
 
 **Why:** The user supplied the Create card as the reference, then clarified “the shadows should only come while we hover not all the time.”

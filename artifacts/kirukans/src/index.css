@@ -114,7 +114,7 @@
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 10rem;
+    scroll-padding-top: 8rem;
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;

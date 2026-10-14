@@ -20,8 +20,8 @@ const phone = '+91 6382601992';
 export function ContactStrip() {
   return (
     <div className="bg-teal text-plum" data-testid="contact-strip">
-      <div className="mx-auto max-w-7xl px-5 py-1 flex flex-col items-center gap-1 sm:flex-row sm:justify-between">
-        <ul className="flex items-center gap-1" aria-label="Social media">
+      <div className="mx-auto max-w-7xl px-3 sm:px-5 py-1 flex flex-nowrap items-center justify-center gap-2 sm:justify-between">
+        <ul className="flex shrink-0 items-center gap-1" aria-label="Social media">
           {socials.map(({ name, icon: Icon, href }) => (
             <li key={name}>
               {href ? (
@@ -36,13 +36,13 @@ export function ContactStrip() {
             </li>
           ))}
         </ul>
-        <div className="flex flex-wrap items-center justify-center gap-x-4 sm:justify-end text-xs font-medium">
-          <a href="tel:+916382601992" className="inline-flex min-h-7 items-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-phone">
-            <Phone className="size-3.5 shrink-0" aria-hidden="true" /> {phone}
+        <div className="flex shrink-0 flex-nowrap items-center gap-1 sm:gap-x-4 text-xs font-medium">
+          <a href="tel:+916382601992" aria-label={`Call Kirukans at ${phone}`} className="inline-flex size-7 sm:w-auto items-center justify-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-phone">
+            <Phone className="size-3.5 shrink-0" aria-hidden="true" /> <span className="hidden sm:inline">{phone}</span>
           </a>
           <span className="hidden sm:block h-3 w-px bg-plum/30" aria-hidden="true" />
-          <a href={`mailto:${email}`} className="inline-flex min-h-7 items-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-email">
-            <Mail className="size-3.5 shrink-0" aria-hidden="true" /> {email}
+          <a href={`mailto:${email}`} aria-label={`Email Kirukans at ${email}`} className="inline-flex size-7 sm:w-auto items-center justify-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-email">
+            <Mail className="size-3.5 shrink-0" aria-hidden="true" /> <span className="hidden sm:inline">{email}</span>
           </a>
         </div>
       </div>

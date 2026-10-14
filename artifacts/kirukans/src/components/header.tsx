@@ -5,11 +5,11 @@ import { homeHash } from '@/lib/stories';
 import { ContactStrip } from '@/components/contact-strip';
 
 const links = [
-  ['Our story', '#about'],
-  ['What we do', '#approach'],
+  ['About us', '#about'],
+  ['Our work', '#approach'],
   ['Impact stories', '/stories'],
-  ['Team Kirukans', '/team'],
-  ['Get involved', '#join'],
+  ['Our team', '/team'],
+  ['Volunteer', '#join'],
 ];
 
 const navHref = (path: string) => path.startsWith('#')
@@ -73,7 +73,7 @@ export function Header() {
             </a>
           ))}
           <a href={homeHash('#support')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-nav-support">
-            Support us <ArrowUpRight className="size-5" aria-hidden />
+            Donate <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>
         <button
@@ -95,7 +95,7 @@ export function Header() {
             </a>
           ))}
           <a href={homeHash('#support')} onClick={() => setOpen(false)} className="cta-feedback mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-sun text-plum px-5 py-3 text-lg text-center" data-testid="link-mobile-support">
-            Support us <ArrowUpRight className="size-5" aria-hidden />
+            Donate <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>
       )}

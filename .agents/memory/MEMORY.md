@@ -6,3 +6,4 @@
 - [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
 - [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.
+- [Navigation language](navigation-language.md) — direct menu wording; distinguish volunteering from donating and stories from impact totals.
