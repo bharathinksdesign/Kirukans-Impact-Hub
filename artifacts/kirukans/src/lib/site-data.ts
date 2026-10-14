@@ -82,8 +82,8 @@ export const projects: Project[] = [
       'Two nights and three days of work, shoulder to shoulder with Kirukans volunteers and local villagers.',
     ],
     photos: [
-      { src: 'nangavaram-mural.webp', alt: 'Space and science mural at the Nangavaram computer lab' },
       { src: 'nangavaram-community.webp', alt: 'Kirukans volunteers and local community at the painted Nangavaram lab' },
+      { src: 'nangavaram-mural.webp', alt: 'Space and science mural at the Nangavaram computer lab' },
     ],
     tone: 'bg-plum text-sun',
   },
