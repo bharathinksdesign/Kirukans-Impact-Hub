@@ -25,7 +25,7 @@ Do not add a yellow divider below the header. Keep the header logo prominent.
 
 **Why:** The user explicitly repeated the request to remove the header's yellow line and asked for a larger logo.
 
-**How to apply:** Keep the header free of a yellow divider and preserve the prominent logo and mild shadow.
+**How to apply:** Keep the header free of a separate yellow divider and preserve the prominent logo. Its shadow follows the later site-wide crisp yellow offset style.
 
 Use the palette's light neutral for the header with dark navy text.
 
@@ -68,3 +68,9 @@ Use the supplied teal for a slim social/contact strip above the light navigation
 **Why:** The user requested a cyan-coloured strip above the top bar with social icons, phone and Gmail, following their reference.
 
 **How to apply:** Keep the strip separate from the light navigation surface and use readable dark icons/text. Do not invent unverified social profile destinations.
+
+Use crisp, solid yellow offset shadows only on hover across the website, not soft blurred or persistent resting shadows.
+
+**Why:** The user supplied the Create card as the reference, then clarified “the shadows should only come while we hover not all the time.”
+
+**How to apply:** Use approved yellow, a bottom-right offset and zero blur only while hovered by a hover-capable pointer; cards use navy outlines. Resting and selected states have no visible elevation. Scale the offset down for small controls; preserve keyboard focus rings and reduced-motion behaviour.

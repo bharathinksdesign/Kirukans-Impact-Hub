@@ -26,7 +26,7 @@ export function TeamPortrait({ m }: { m: TeamMember }) {
 
 export function TeamCard({ m }: { m: TeamMember }) {
   return (
-    <article data-testid={`card-team-${m.id}`} className="group h-full overflow-hidden rounded-[1.75rem] bg-card text-plum ring-1 ring-plum/10 shadow-[0_18px_40px_-24px_rgba(26,21,71,0.55)] motion-safe:transition-[transform,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 flex flex-col">
+    <article data-testid={`card-team-${m.id}`} className="group h-full overflow-hidden rounded-[1.75rem] bg-card text-plum border-2 border-plum shadow-brand motion-safe:transition-[transform,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:shadow-brand-hover flex flex-col">
       <div className="relative aspect-[4/4.2] overflow-hidden">
         <div className="absolute inset-0 motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105"><TeamPortrait m={m} /></div>
         <span className="absolute left-4 top-4 rounded-full bg-cream/95 px-3 py-1 text-xs font-bold text-plum">Sample profile</span>

@@ -49,6 +49,18 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  /* Elevation is invisible at rest and yellow only on actual pointer hover.
+     Keep ring shadows independent so keyboard focus stays visible. */
+  --shadow-2xs: 1px 1px 0 var(--brand-elevation-color);
+  --shadow-xs: 2px 2px 0 var(--brand-elevation-color);
+  --shadow-sm: 3px 3px 0 var(--brand-elevation-color);
+  --shadow: 4px 4px 0 var(--brand-elevation-color);
+  --shadow-md: 5px 5px 0 var(--brand-elevation-color);
+  --shadow-lg: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-xl: 8px 8px 0 var(--brand-elevation-color);
+  --shadow-2xl: 10px 10px 0 var(--brand-elevation-color);
+  --shadow-brand: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-brand-hover: 8px 8px 0 var(--brand-elevation-color);
 }
 
 :root {
@@ -122,6 +134,24 @@
 /* Palette pink marks errors; navy keeps their smaller text readable. */
 .text-destructive { color: hsl(var(--plum)); }
 
+/* Reset on each element, not just :root: hovering a container must not
+   turn on shadows on its non-hovered descendants. Touch has no sticky hover. */
+:where(*) {
+  --brand-elevation-color: transparent;
+  /* Custom CSS consumers also need locally resolved tokens (theme variables
+     inherited from :root would retain the root's transparent resting colour). */
+  --shadow-sm: 3px 3px 0 var(--brand-elevation-color);
+  --shadow-brand: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-brand-hover: 8px 8px 0 var(--brand-elevation-color);
+}
+@media (hover: hover) and (pointer: fine) {
+  :where(:hover) { --brand-elevation-color: hsl(var(--sun)); }
+}
+
+/* Clerk owns its internal CSS; keep its outer elevation in the same language. */
+.cl-cardBox { box-shadow: var(--shadow-brand) !important; }
+.cl-card { box-shadow: none !important; }
+
 .grain::before {
   content: '';
   position: fixed;
@@ -173,7 +203,7 @@
 .cta-feedback svg:not(.animate-spin) { transition: translate 180ms ease; }
 @media (hover: hover) and (pointer: fine) {
   .cta-feedback:not(:disabled):not([aria-disabled="true"]):hover {
-    box-shadow: 0 4px 0 hsl(var(--plum) / 0.22);
+    box-shadow: var(--shadow-sm);
   }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {

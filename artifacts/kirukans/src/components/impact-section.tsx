@@ -62,7 +62,7 @@ function ImpactCard({ stat, expanded, onToggle }: {
       aria-expanded={expanded}
       aria-controls={expanded ? `impact-detail-${stat.id}` : undefined}
       onClick={onToggle}
-      className={`group flex h-full w-full cursor-pointer flex-col rounded-3xl bg-cream border-4 p-5 md:p-6 text-left motion-safe:transition-[transform,box-shadow,border-color] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:active:scale-[0.98] hover:shadow-[6px_6px_0_hsl(var(--sun))] ${expanded ? 'border-ocean shadow-[6px_6px_0_hsl(var(--sun))]' : 'border-plum'}`}
+      className={`group flex h-full w-full cursor-pointer flex-col rounded-3xl bg-cream border-4 p-5 md:p-6 text-left shadow-brand motion-safe:transition-[transform,box-shadow,border-color] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:active:scale-[0.98] hover:shadow-brand-hover ${expanded ? 'border-ocean shadow-brand-hover' : 'border-plum'}`}
       data-testid={`button-impact-${stat.id}`}
     >
       <span className="text-6xl md:text-7xl font-extrabold text-pink tabular-nums" aria-hidden="true">{reducedMotion ? stat.value : count}+</span>

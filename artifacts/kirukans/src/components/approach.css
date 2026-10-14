@@ -1,7 +1,7 @@
-.approach-card { transition: box-shadow .3s ease, transform .3s ease; }
+.approach-card { box-shadow: var(--shadow-brand); transition: box-shadow .3s ease, transform .3s ease; }
 .approach-art img { transition: transform .5s cubic-bezier(.2,.8,.2,1); transform-origin: 50% 90%; }
 .approach-arrow { transition: transform .25s ease; }
-.approach-card:hover, .approach-card:focus-within { box-shadow: 6px 6px 0 hsl(var(--sun)); transform: translateY(-4px); }
+.approach-card:hover, .approach-card:focus-within { box-shadow: var(--shadow-brand-hover); transform: translateY(-4px); }
 .approach-card:hover .approach-art img, .approach-card:focus-within .approach-art img { transform: scale(1.04) rotate(-1deg); }
 .approach-card:hover .approach-arrow, .approach-card:focus-within .approach-arrow { transform: translateX(4px); }
 @media (prefers-reduced-motion: reduce) {
