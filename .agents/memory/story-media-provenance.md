@@ -20,3 +20,9 @@ Project write-ups belong on separate story pages, not story-text pop-ups.
 **Why:** The user asked to replace the “Read the story” popup with a separate page containing more content, media and YouTube video.
 
 **How to apply:** Keep reading navigation page-based. Image enlargement can remain a photo-only viewer; it must not replace the story page.
+
+Video thumbnails should show only the play control, with no added title text over the image.
+
+**Why:** The user asked for just the play button on all video thumbnails.
+
+**How to apply:** Keep video names in accessible control labels and iframe titles, and retain captions outside the thumbnail. Text baked into the original YouTube artwork is separate from website-added overlays.

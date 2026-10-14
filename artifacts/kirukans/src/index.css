@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -38,6 +38,7 @@
   --color-tangerine: hsl(var(--tangerine));
   --color-cream: hsl(var(--cream));
   --font-sans: var(--app-font-sans);
+  --font-display: var(--app-font-display);
   --font-hand: 'Caveat', cursive;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -75,6 +76,7 @@
   --ring: 174 72% 36%;
 
   --app-font-sans: 'Bricolage Grotesque', system-ui, sans-serif;
+  --app-font-display: 'Montserrat', system-ui, sans-serif;
   --radius: 1rem;
   --primary-border: hsl(var(--primary));
   --secondary-border: hsl(var(--secondary));
@@ -93,6 +95,11 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6,
+  nav, button, [role="button"],
+  .font-bold, .font-extrabold, .font-semibold, .font-black {
+    font-family: var(--app-font-display);
   }
   :focus-visible {
     outline: 3px solid hsl(var(--teal));
@@ -182,7 +189,7 @@
 }
 
 .site-footer {
-  background: hsl(var(--plum));
+  background: #000;
   color: #fff;
   border: 1px solid #625d83;
   border-radius: 0 0 18px 18px;
@@ -191,7 +198,7 @@
 .footer-inner { max-width: 1440px; margin: 0 auto; padding: 54px 5.2% 27px; }
 .footer-columns { display: grid; grid-template-columns: 1.15fr .6fr 1fr 1.1fr; gap: 38px; }
 .footer-logo { width: 142px; height: auto; }
-.footer-trust-name { margin-top: 22px; font-size: 15px; font-weight: 800; }
+.footer-trust-name { margin-top: 22px; font-size: 15px; font-weight: 800; font-family: var(--app-font-display); }
 .footer-motto { color: #ffca36; font-size: 24px; font-weight: 700; margin-top: 16px; white-space: nowrap; }
 .footer-socials { display: flex; align-items: center; gap: 24px; margin-top: 22px; }
 .footer-socials svg { width: 17px; height: 17px; }

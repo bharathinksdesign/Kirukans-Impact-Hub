@@ -1,8 +1,9 @@
-import { Palette, HeartHandshake, HandHeart, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
 import { StoryCard } from '@/components/story-card';
 import { allStories, HOME_STORY_COUNT } from '@/lib/stories';
 import { Reveal } from '@/components/reveal';
+import { Approach } from '@/components/approach';
 import { img } from '@/lib/site-data';
 
 export function About() {
@@ -23,35 +24,6 @@ export function About() {
           collaboration, and compassion.
         </p>
       </Reveal>
-    </section>
-  );
-}
-
-const pillars = [
-  { icon: Palette, t: 'Create', d: 'Making space for imagination: art, craft, creativity and hands-on experiences that encourage self-expression.', c: 'bg-sun' },
-  { icon: HeartHandshake, t: 'Connect', d: 'Bringing people closer through community gatherings, collaborations and inclusive experiences that build meaningful connections.', c: 'bg-teal' },
-  { icon: HandHeart, t: 'Contribute', d: 'Outreach, volunteering and initiatives that channel community energy toward meaningful causes.', c: 'bg-tangerine' },
-];
-
-export function Approach() {
-  return (
-    <section id="approach" className="bg-cream py-20 md:py-28 border-y-4 border-plum">
-      <div className="mx-auto max-w-7xl px-5">
-        <Reveal>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-2xl">Three words we paint by.</h2>
-        </Reveal>
-        <div className="mt-12 grid md:grid-cols-12 gap-6">
-          {pillars.map((p, i) => (
-            <Reveal key={p.t} delay={i * 100} className={i === 0 ? 'md:col-span-5' : i === 1 ? 'md:col-span-4 md:mt-12' : 'md:col-span-3'}>
-              <div className={`${p.c} text-plum h-full rounded-3xl p-7 border-4 border-plum`}>
-                <p.icon className="size-9" aria-hidden />
-                <h3 className="mt-5 text-3xl font-extrabold">{p.t}</h3>
-                <p className="mt-3 font-medium">{p.d}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -81,3 +53,5 @@ export function Stories() {
     </section>
   );
 }
+
+export { Approach };

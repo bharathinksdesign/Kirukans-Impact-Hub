@@ -85,7 +85,6 @@ export function StoryVideo({ video }: { video: StoryVideoData }) {
           <button onClick={() => setPlay(true)} className="relative size-full flex flex-col items-center justify-center gap-4 p-6 text-center text-cream group" aria-label={`Play video: ${video.title}`} data-testid="button-play-video">
             <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-45" />
             <span className="relative grid place-items-center size-20 rounded-full bg-sun text-plum group-hover:scale-105 transition-transform motion-reduce:transition-none"><Play className="size-9 ml-1" fill="currentColor" aria-hidden /></span>
-            <span className="relative text-xl md:text-3xl font-extrabold max-w-2xl">{video.title}</span>
           </button>
         )}
       </div>

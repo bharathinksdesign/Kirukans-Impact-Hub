@@ -3,3 +3,5 @@
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
 - [Story media provenance](story-media-provenance.md) — verify official channel ownership and project relevance; clearly label related films.
+- [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
+- [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
