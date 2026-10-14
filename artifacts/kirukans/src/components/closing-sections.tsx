@@ -53,12 +53,12 @@ export function Footer() {
           <nav aria-label="Footer navigation">
             <h2 className="footer-heading">Explore</h2>
             <ul className="footer-links">
-              <li><a href={homeHash("#about")}>About us</a></li>
-              <li><a href={homeHash("#approach")}>Our work</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}about`}>About us</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}our-work`}>Our work</a></li>
               <li><a href={homeHash("#stories")}>Impact stories</a></li>
               <li><a href={`${import.meta.env.BASE_URL}gallery`} data-testid="link-explore-gallery">Gallery</a></li>
               <li><a href={`${import.meta.env.BASE_URL}team`} data-testid="link-explore-team">Our team</a></li>
-              <li><a href={homeHash("#join")}>Volunteer</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}volunteer`}>Volunteer</a></li>
               <li><a href={`${import.meta.env.BASE_URL}admin/inbox`} data-testid="link-team-inbox">Team inbox</a></li>
             </ul>
           </nav>

@@ -25,7 +25,7 @@ Do not add a yellow divider below the header. Keep the header logo prominent.
 
 **Why:** The user explicitly repeated the request to remove the header's yellow line and asked for a larger logo.
 
-**How to apply:** Keep the header free of a separate yellow divider and preserve the prominent logo. Its shadow follows the later site-wide crisp yellow offset style.
+**How to apply:** Keep the header free of a yellow divider or elevation shadow and preserve the prominent logo. The user later explicitly removed the yellow shadow from the top bar alone; keep the subtle neutral border and leave button/card hover shadows unchanged.
 
 Use the palette's light neutral for the header with dark navy text.
 
