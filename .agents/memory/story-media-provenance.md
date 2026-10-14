@@ -26,3 +26,21 @@ Video thumbnails should show only the play control, with no added title text ove
 **Why:** The user asked for just the play button on all video thumbnails.
 
 **How to apply:** Keep video names in accessible control labels and iframe titles, and retain captions outside the thumbnail. Text baked into the original YouTube artwork is separate from website-added overlays.
+
+Show the month and year on stories, not a story number.
+
+**Why:** The user said “dont show story number just the month and year is super enough.”
+
+**How to apply:** Preserve the date display without numbered story labels, including card fallback states.
+
+Use project photographs and light-neutral backgrounds with dark text for “More stories” cards, not fully coloured panels.
+
+**Why:** The user asked to add pictures and said the bright card colours were reducing readability.
+
+**How to apply:** Keep related-story titles, dates and reading links on a restrained, readable surface; use each project's real photo above the text.
+
+The header's “Impact stories” menu item should open the full “The whole collection” archive, not scroll to the homepage stories section.
+
+**Why:** The user explicitly asked for this menu destination.
+
+**How to apply:** Keep the desktop and mobile menu destinations consistent; homepage teaser CTAs can still link to the homepage section.

@@ -90,7 +90,7 @@ export function Join() {
                   <button
                     type="button"
                     onClick={() => { setSaved(null); create.reset(); }}
-                    className="mt-4 rounded-full border-4 border-plum px-5 py-2 font-bold hover:bg-plum hover:text-sun transition-colors"
+                    className="cta-feedback mt-4 rounded-full border-4 border-plum px-5 py-2 font-bold"
                     data-testid="button-join-another"
                   >
                     Submit another interest
@@ -125,7 +125,7 @@ export function Join() {
                   {error && (
                     <p role="alert" className="rounded-xl bg-destructive/10 border-2 border-destructive px-4 py-2 text-sm font-semibold text-destructive" data-testid="text-join-error">{error}</p>
                   )}
-                  <button type="submit" disabled={pending} className="inline-flex items-center gap-2 rounded-full bg-plum text-sun font-bold px-7 py-3.5 text-lg hover:bg-teal hover:text-plum transition-colors disabled:opacity-60" data-testid="button-join-submit">
+                  <button type="submit" disabled={pending} className="cta-feedback inline-flex items-center gap-2 rounded-full bg-plum text-sun font-bold px-7 py-3.5 text-lg disabled:opacity-60" data-testid="button-join-submit">
                     {pending ? <><Loader2 className="size-5 animate-spin" aria-hidden /> Saving...</> : <>Count me in <ArrowUpRight className="size-5" aria-hidden /></>}
                   </button>
                   <p className="text-xs text-plum/70">

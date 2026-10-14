@@ -73,7 +73,7 @@ export default function StoriesPage() {
             <div className="mt-6 rounded-[1.75rem] bg-cream ring-1 ring-plum/10 px-6 py-16 text-center" data-testid="empty-stories">
               <p className="font-hand text-4xl text-tangerine">Nothing on this wall yet</p>
               <p className="mt-2 text-muted-foreground">No story matches {q.trim() ? `"${q.trim()}"` : 'that year'}. Try another word or clear the filters.</p>
-              <button onClick={reset} className="mt-6 inline-flex items-center gap-2 rounded-full bg-plum px-6 py-3 font-bold text-sun hover:bg-teal hover:text-plum" data-testid="button-clear-filters">
+              <button onClick={reset} className="cta-feedback mt-6 inline-flex items-center gap-2 rounded-full bg-plum px-6 py-3 font-bold text-sun" data-testid="button-clear-filters">
                 <X className="size-4" aria-hidden /> Clear filters
               </button>
             </div>

@@ -1,7 +1,8 @@
 - [Hero reference scope](hero-reference-scope.md) — preserve hero copy and CTAs when applying the user's photo reference; the image belongs on the right.
-- [Brand colors](dark-brand-color.md) — header matches the hero's dark color; light surfaces use white instead of cream.
+- [Brand colors](dark-brand-color.md) — only supplied eight swatches; light header/hero and black footer; convert profiled swatches before sampling.
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
 - [Story media provenance](story-media-provenance.md) — verify official channel ownership and project relevance; clearly label related films.
 - [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
+- [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.

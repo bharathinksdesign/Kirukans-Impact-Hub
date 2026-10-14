@@ -7,13 +7,13 @@ export function StoryCard({ project: p, featured = false }: { project: Project; 
     <a
       href={storyHref(p.id)}
       data-testid={`card-project-${p.id}`}
-      className={`group h-full w-full text-left overflow-hidden rounded-[1.75rem] bg-card text-plum ring-1 ring-plum/10 shadow-[0_18px_40px_-24px_rgba(28,24,70,0.55)] motion-safe:transition-[transform,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(28,24,70,0.7)] flex flex-col ${featured ? 'md:flex-row' : ''}`}
+      className={`group h-full w-full text-left overflow-hidden rounded-[1.75rem] bg-card text-plum ring-1 ring-plum/10 shadow-[0_18px_40px_-24px_rgba(26,21,71,0.55)] motion-safe:transition-[transform,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(26,21,71,0.7)] flex flex-col ${featured ? 'md:flex-row' : ''}`}
     >
       <div className={`relative overflow-hidden ${p.tone} ${featured ? 'md:w-[58%] aspect-[16/11] md:aspect-auto md:min-h-[22rem]' : 'aspect-[4/3]'} flex items-center justify-center`}>
         {p.photos[0] ? (
           <img src={img(p.photos[0].src)} alt={p.photos[0].alt} loading="lazy" className="absolute inset-0 size-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105" />
         ) : (
-          <span className="text-[9rem] font-extrabold leading-none" aria-hidden>{p.n}</span>
+          <span className="px-6 text-center text-3xl font-extrabold leading-tight" aria-hidden>{p.title}</span>
         )}
         <span className="absolute left-4 top-4 rounded-full bg-cream/95 px-3 py-1 text-xs font-bold tracking-wide text-plum">{p.date}</span>
         {p.photos.length > 1 && (

@@ -61,7 +61,7 @@ export default function StoryPage() {
             </a>
             <div className="mt-8 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
               <Reveal>
-                <p className="font-hand text-3xl text-sun">Story {project.n} · {project.date}</p>
+                <p className="font-hand text-3xl text-sun">{project.date}</p>
                 <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] text-balance" data-testid="text-story-title">{project.title}</h1>
                 <p className="mt-3 text-lg font-semibold text-teal">{project.place}</p>
                 <p className="mt-6 text-xl text-cream/90 leading-relaxed max-w-xl">{project.idea}</p>
@@ -98,7 +98,7 @@ export default function StoryPage() {
         {content.sections.map((s, i) => (
           <section key={s.title} className={i % 2 === 0 ? 'bg-teal text-plum border-y-4 border-plum' : ''}>
             <div className="mx-auto max-w-7xl px-5 py-16 md:py-24 grid md:grid-cols-[auto_1fr] gap-6 md:gap-14">
-              <Reveal><span className="font-hand text-7xl md:text-9xl leading-none text-tangerine">{String(i + 1).padStart(2, '0')}</span></Reveal>
+              <Reveal><span className={`font-hand text-7xl md:text-9xl leading-none ${i % 2 === 0 ? 'text-plum' : 'text-tangerine'}`}>{String(i + 1).padStart(2, '0')}</span></Reveal>
               <Reveal delay={80}>
                 <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl">{s.title}</h2>
                 {s.body.map((t, j) => <p key={j} className="mt-5 text-lg md:text-xl leading-relaxed max-w-2xl">{t}</p>)}
@@ -126,22 +126,29 @@ export default function StoryPage() {
           <div className="mx-auto max-w-7xl px-5">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-3xl text-balance">Walls like this need hands like yours.</h2>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={homeHash('#join')} className="inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-volunteer">Volunteer with Kirukans <ArrowUpRight className="size-5" aria-hidden /></a>
+              <a href={homeHash('#join')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-volunteer">Volunteer with Kirukans <ArrowUpRight className="size-5" aria-hidden /></a>
               <a href={homeHash('#support')} className="inline-flex items-center gap-2 rounded-xl border-2 border-sun text-sun px-6 py-3 font-bold hover:bg-sun hover:text-plum transition-colors" data-testid="link-support">Support our work</a>
             </div>
           </div>
         </section>
 
         {related.length > 0 && (
-          <section className="mx-auto max-w-7xl px-5 py-16 md:py-24">
+          <section id="more-stories" className="mx-auto max-w-7xl px-5 py-16 md:py-24">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">More stories</h2>
             <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {related.map((s) => (
                 <li key={s.id}>
-                  <a href={storyHref(s.id)} className={`group flex h-full flex-col rounded-3xl border-4 border-plum p-6 ${s.tone} hover:-translate-y-1 transition-transform motion-reduce:transition-none`} data-testid={`link-related-${s.id}`}>
-                    <span className="text-sm font-bold">{s.date} · {s.place}</span>
-                    <span className="mt-2 text-2xl font-extrabold leading-tight">{s.title}</span>
-                    <span className="mt-auto pt-6 inline-flex items-center gap-2 font-bold">Read the story <ArrowRight className="size-5" aria-hidden /></span>
+                  <a href={storyHref(s.id)} className="group flex h-full flex-col overflow-hidden rounded-3xl border border-plum/20 bg-card text-plum motion-safe:hover:-translate-y-1 motion-safe:transition-transform" data-testid={`link-related-${s.id}`}>
+                    <div className="aspect-[16/10] w-full overflow-hidden bg-muted">
+                      {s.photos[0] && (
+                        <img src={img(s.photos[0].src)} alt={s.photos[0].alt} loading="lazy" className="size-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105" />
+                      )}
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <span className="text-sm font-semibold text-muted-foreground">{s.date} · {s.place}</span>
+                      <h3 className="mt-3 text-2xl font-extrabold leading-tight">{s.title}</h3>
+                      <span className="mt-auto pt-6 inline-flex items-center gap-2 font-bold underline decoration-sun decoration-2 underline-offset-4">Read the story <ArrowRight className="size-5" aria-hidden /></span>
+                    </div>
                   </a>
                 </li>
               ))}

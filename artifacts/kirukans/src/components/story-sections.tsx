@@ -8,7 +8,8 @@ import { img } from '@/lib/site-data';
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+    <section id="about" className="bg-[#ffffff]">
+      <div className="mx-auto max-w-7xl px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
       <Reveal>
         <div className="relative">
           <img src={img('page-2-image-3.webp')} alt="Kirukans mural volunteers together" className="rounded-3xl w-full aspect-[5/4] object-cover border-4 border-plum" />
@@ -24,6 +25,7 @@ export function About() {
           collaboration, and compassion.
         </p>
       </Reveal>
+      </div>
     </section>
   );
 }
@@ -38,7 +40,7 @@ export function Stories() {
             <p className="font-hand text-3xl text-sun">Fresh off the wall</p>
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">Where we have painted</h2>
           </div>
-          <Link href="/stories" className="inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3 font-bold text-plum motion-safe:transition-transform motion-safe:hover:-translate-y-0.5 hover:bg-teal" data-testid="link-view-all-stories">
+          <Link href="/stories" className="cta-feedback inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3 font-bold text-plum" data-testid="link-view-all-stories">
             View all stories <ArrowRight className="size-4" aria-hidden />
           </Link>
         </Reveal>

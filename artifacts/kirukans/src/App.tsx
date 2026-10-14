@@ -14,6 +14,8 @@ import { AppProviders } from '@/components/app-providers';
 import InboxPage from '@/pages/inbox';
 import { SignInPage, SignUpPage } from '@/pages/auth';
 import DonationResultPage from '@/pages/donation-result';
+import TeamPage from '@/pages/team';
+import { TeamSection } from '@/components/team-section';
 
 function Home() {
   useEffect(() => {
@@ -32,10 +34,11 @@ function Home() {
       <main>
         <Hero />
         <About />
-        <Approach />
         <Stories />
+        <Approach />
         <Impact />
         <Join />
+        <TeamSection />
       </main>
       <Footer />
     </div>
@@ -52,6 +55,7 @@ function App() {
           <Route path="/stories" component={StoriesPage} />
           <Route path="/stories/:id" component={StoryPage} />
           <Route path="/gallery" component={GalleryPage} />
+          <Route path="/team" component={TeamPage} />
           <Route path="/donate/result" component={DonationResultPage} />
           <Route path="/admin/inbox" component={InboxPage} />
           <Route path="/sign-in/*?" component={SignInPage} />

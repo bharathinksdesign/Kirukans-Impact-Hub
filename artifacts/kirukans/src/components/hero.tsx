@@ -11,8 +11,10 @@ export function Hero() {
   function handlePointerMove(event: PointerEvent<HTMLElement>) {
     if (reducedMotion || event.pointerType !== 'mouse') return;
     const rect = event.currentTarget.getBoundingClientRect();
-    rotateX.set(-((event.clientY - rect.top) / rect.height - 0.5) * 7);
-    rotateY.set(((event.clientX - rect.left) / rect.width - 0.5) * 7);
+    const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+    rotateX.set(-(y - 0.5) * 10);
+    rotateY.set((x - 0.5) * 10);
   }
 
   function resetTilt() {
@@ -23,21 +25,27 @@ export function Hero() {
   return (
     <section id="top" className="photo-hero" aria-label="Kirukans community">
       <div className="photo-hero-inner">
-        <div className="hero-copy text-cream">
-          <p className="font-hand text-3xl text-sun">Trichy's volunteer art crew</p>
+        <div className="hero-copy text-plum">
+          <p className="font-hand text-3xl text-ocean">Trichy's volunteer art crew</p>
           <h1 className="mt-2 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[0.98] tracking-tight">
-            Madness in <span className="text-sun">Doing</span>{' '}
-            <span className="text-teal">Goodness</span>
+            Madness in Doing{' '}
+            <span className="hero-title-emphasis">
+              Goodness
+              <svg className="hero-title-stroke" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <path d="M5 12 C58 4 101 15 155 10 S256 5 307 10 S363 15 395 7" />
+                <path d="M14 17 C87 12 128 19 193 15 S305 12 384 14" />
+              </svg>
+            </span>
           </h1>
-          <p className="mt-7 max-w-xl text-lg text-cream/85">
+          <p className="mt-7 max-w-xl text-lg text-plum/85">
             Kirukans is a creative community turning art into action. We pick up brushes, walk into government schools and hospitals, and leave the walls
             brighter than we found them.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#stories" className="inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-6 py-3 hover:bg-cream transition-colors" data-testid="link-hero-stories">
+            <a href="#stories" className="cta-feedback cta-down inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-6 py-3" data-testid="link-hero-stories">
               See our stories <ArrowDown className="size-4" aria-hidden />
             </a>
-            <a href="#support" className="inline-flex items-center gap-2 rounded-full border-2 border-teal text-teal font-bold px-6 py-3 hover:bg-teal hover:text-plum transition-colors" data-testid="link-hero-support">
+            <a href="#support" className="cta-feedback inline-flex items-center gap-2 rounded-full border-2 border-teal text-plum font-bold px-6 py-3 hover:border-plum" data-testid="link-hero-support">
               Support us <ArrowUpRight className="size-4" aria-hidden />
             </a>
           </div>
@@ -45,8 +53,18 @@ export function Hero() {
         <motion.figure
           className="photo-hero-frame"
           style={{ rotateX: reducedMotion ? 0 : rotateX, rotateY: reducedMotion ? 0 : rotateY, transformPerspective: 1000 }}
-          animate={{ y: reducedMotion ? 0 : [0, -8, 0] }}
-          transition={{ y: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
+          initial={reducedMotion ? false : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          whileHover={reducedMotion ? undefined : 'hover'}
+          whileTap={reducedMotion ? undefined : 'pressed'}
+          tabIndex={-1}
+          variants={{
+            hidden: { opacity: 0, y: 32, rotate: -3, scale: 0.94 },
+            visible: { opacity: 1, y: 0, rotate: 0, scale: 1, transition: { duration: reducedMotion ? 0 : 0.85, ease: [0.22, 1, 0.36, 1] } },
+            hover: { y: -8, rotate: 0.7, scale: 1.018, transition: { duration: 0.3 } },
+            pressed: { y: -2, rotate: 0, scale: 0.985, transition: { duration: 0.15 } },
+          }}
           onPointerMove={handlePointerMove}
           onPointerLeave={resetTilt}
           onPointerCancel={resetTilt}
@@ -61,8 +79,12 @@ export function Hero() {
           </div>
           <motion.figcaption
             className="photo-hero-caption font-hand"
-            animate={{ rotate: reducedMotion ? -5 : [-5, -3.5, -5], y: reducedMotion ? 0 : [0, -3, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            variants={{
+              hidden: { opacity: 0, x: -30, y: 12, rotate: -12, scale: 0.92 },
+              visible: { opacity: 1, x: 0, y: 0, rotate: -5, scale: 1, transition: { delay: reducedMotion ? 0 : 0.2, duration: reducedMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] } },
+              hover: { x: 8, y: -7, rotate: -2, scale: 1, transition: { duration: 0.3 } },
+              pressed: { x: 4, y: 0, rotate: -4, scale: 1, transition: { duration: 0.15 } },
+            }}
           >
             Art is better together!
           </motion.figcaption>

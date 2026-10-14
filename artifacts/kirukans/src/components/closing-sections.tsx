@@ -2,6 +2,7 @@ import { FaFacebook, FaYoutube, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { Reveal } from '@/components/reveal';
 import { gallery, img, PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
+export { Impact } from '@/components/impact-section';
 
 export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
   return (
@@ -26,41 +27,6 @@ export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
             </span>
           </button>
         ))}
-      </div>
-    </section>
-  );
-}
-
-const stats = [
-  ['25+', 'murals across government schools and hospitals'],
-  ['5+', 'art and creative workshops'],
-  ['3+', 'Feed the Homeless drives'],
-  ['3+', 'community initiatives'],
-];
-const acts = ['Transgender community programs', 'Government school initiatives', 'Pongal celebrations', 'Hospital murals', 'Donation drives', 'Volunteer programs'];
-
-export function Impact() {
-  return (
-    <section id="impact" className="bg-teal text-plum py-20 md:py-28 border-y-4 border-plum">
-      <div className="mx-auto max-w-7xl px-5">
-        <Reveal>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">What the brushes added up to</h2>
-        </Reveal>
-        <dl className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {stats.map(([n, l], i) => (
-            <Reveal key={l} delay={i * 80}>
-              <div className="rounded-3xl bg-cream border-4 border-plum p-6 h-full">
-                <dt className="text-6xl md:text-7xl font-extrabold text-tangerine">{n}</dt>
-                <dd className="mt-2 font-semibold">{l}</dd>
-              </div>
-            </Reveal>
-          ))}
-        </dl>
-        <ul className="mt-10 flex flex-wrap gap-3">
-          {acts.map((a) => (
-            <li key={a} className="rounded-full bg-plum text-sun font-bold px-5 py-2">{a}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );
@@ -91,6 +57,7 @@ export function Footer() {
               <li><a href={homeHash("#approach")}>What we do</a></li>
               <li><a href={homeHash("#stories")}>Impact stories</a></li>
               <li><a href={`${import.meta.env.BASE_URL}gallery`} data-testid="link-explore-gallery">Gallery</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}team`} data-testid="link-explore-team">Team Kirukans</a></li>
               <li><a href={homeHash("#join")}>Get involved</a></li>
               <li><a href={`${import.meta.env.BASE_URL}admin/inbox`} data-testid="link-team-inbox">Team inbox</a></li>
             </ul>

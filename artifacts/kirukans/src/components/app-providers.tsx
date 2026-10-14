@@ -1,3 +1,4 @@
+import { CLERK_PALETTE } from '@/lib/brand-palette';
 import { useEffect, useRef, type ReactNode } from 'react';
 import { ClerkProvider, useClerk } from '@clerk/react';
 import { publishableKeyFromHost } from '@clerk/react/internal';
@@ -54,13 +55,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
           logoLinkUrl: basePath || '/',
         },
         variables: {
-          colorPrimary: '#1c1846',
-          colorForeground: '#1c1846',
-          colorMutedForeground: '#5e5a70',
-          colorBackground: '#fffdf7',
-          colorInput: '#ffffff',
-          colorInputForeground: '#1c1846',
-          colorDanger: '#b42318',
+          ...CLERK_PALETTE,
           fontFamily: "'Bricolage Grotesque', sans-serif",
           borderRadius: '1rem',
         },

@@ -1,26 +1,21 @@
 import { SignIn, SignUp } from '@clerk/react';
 import { img } from '@/lib/site-data';
+import { BRAND_PALETTE, CLERK_PALETTE } from '@/lib/brand-palette';
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const appearance = {
   variables: {
-    colorPrimary: '#1c1846',
-    colorForeground: '#1c1846',
-    colorMutedForeground: '#4b4570',
-    colorBackground: '#fdf9ee',
-    colorInput: '#ffffff',
-    colorInputForeground: '#1c1846',
-    colorDanger: '#b3261e',
+    ...CLERK_PALETTE,
     fontFamily: "'Bricolage Grotesque', system-ui, sans-serif",
     borderRadius: '0.9rem',
   },
   elements: {
     rootBox: 'w-full flex justify-center',
-    cardBox: 'rounded-3xl border-4 border-[#1c1846] w-[440px] max-w-full overflow-hidden',
-    headerTitle: { fontWeight: 800, color: '#1c1846' },
-    formButtonPrimary: { backgroundColor: '#1c1846', color: '#ffc928', fontWeight: 700 },
-    footerActionLink: { color: '#1c1846', fontWeight: 700 },
+    cardBox: 'rounded-3xl border-4 border-plum w-[440px] max-w-full overflow-hidden',
+    headerTitle: { fontWeight: 800, color: BRAND_PALETTE.navy },
+    formButtonPrimary: { backgroundColor: BRAND_PALETTE.navy, color: BRAND_PALETTE.yellow, fontWeight: 700 },
+    footerActionLink: { color: BRAND_PALETTE.navy, fontWeight: 700 },
   },
 };
 

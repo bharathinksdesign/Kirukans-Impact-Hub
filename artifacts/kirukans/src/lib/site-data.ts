@@ -68,7 +68,7 @@ export const projects: Project[] = [
       { src: 'page-7-image-5.webp', alt: 'Playful educational mural' },
       { src: 'page-7-image-6.webp', alt: 'Kirukans artists at work' },
     ],
-    tone: 'bg-tangerine text-plum',
+    tone: 'bg-tangerine text-ink',
   },
   {
     id: 'nangavaram',

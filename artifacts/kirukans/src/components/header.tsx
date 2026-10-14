@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { img } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
+import { ContactStrip } from '@/components/contact-strip';
 
 const links = [
   ['Our story', '#about'],
   ['What we do', '#approach'],
-  ['Impact stories', '#stories'],
+  ['Impact stories', '/stories'],
+  ['Team Kirukans', '/team'],
   ['Get involved', '#join'],
 ];
 
@@ -17,6 +19,7 @@ const navHref = (path: string) => path.startsWith('#')
 export function Header() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const scrollPosition = () => Math.max(0, Math.min(
@@ -29,7 +32,7 @@ export function Header() {
     const update = () => {
       frame = 0;
       const y = scrollPosition();
-      if (open || y <= 96) {
+      if (open || y <= Math.max(96, headerRef.current?.offsetHeight ?? 96)) {
         setHidden(false);
         lastY = y;
         return;
@@ -53,21 +56,23 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 bg-white text-plum border-b border-plum/10 shadow-[0_4px_16px_-6px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
+      ref={headerRef}
+      className={`sticky top-0 z-40 bg-white text-plum border-b border-plum/10 shadow-[0_4px_16px_-6px_rgba(5,5,5,0.2)] transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
       onFocusCapture={() => setHidden(false)}
       data-scroll-hidden={hidden && !open}
     >
+      <ContactStrip />
       <div className="mx-auto max-w-7xl px-5 h-20 lg:h-24 flex items-center justify-between">
         <a href={homeHash("#top")} className="shrink-0" aria-label="Kirukans home" data-testid="link-home">
           <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />
         </a>
-        <nav aria-label="Primary" className="hidden lg:flex items-center gap-7 text-base font-semibold">
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm xl:text-base font-semibold">
           {links.map(([l, h]) => (
             <a key={h} href={navHref(h)} className="hover:text-plum hover:underline underline-offset-4 transition-colors" data-testid={`link-nav-${l.toLowerCase().replaceAll(' ', '-')}`}>
               {l}
             </a>
           ))}
-          <a href={homeHash('#support')} className="inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold hover:bg-sun/90 transition-colors" data-testid="link-nav-support">
+          <a href={homeHash('#support')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-nav-support">
             Support us <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>
@@ -89,7 +94,7 @@ export function Header() {
               {l}
             </a>
           ))}
-          <a href={homeHash('#support')} onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-sun text-plum px-5 py-3 text-lg text-center" data-testid="link-mobile-support">
+          <a href={homeHash('#support')} onClick={() => setOpen(false)} className="cta-feedback mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-sun text-plum px-5 py-3 text-lg text-center" data-testid="link-mobile-support">
             Support us <ArrowUpRight className="size-5" aria-hidden />
           </a>
         </nav>

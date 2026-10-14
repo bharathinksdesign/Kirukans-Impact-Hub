@@ -152,7 +152,7 @@ export default function DonationCard() {
           type="button"
           onClick={donate}
           disabled={!selected || busy || !data?.available}
-          className="inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-7 py-3 hover:bg-teal transition-colors disabled:opacity-60 disabled:hover:bg-sun"
+          className="cta-feedback inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-7 py-3 disabled:opacity-60"
           data-testid="button-donate"
         >
           {busy ? (
