@@ -3,6 +3,7 @@ import { projects, type Project } from '@/lib/site-data';
 
 export const HOME_URL = import.meta.env.BASE_URL;
 export const homeHash = (h: string) => `${HOME_URL}${h}`;
+export const storyHref = (id: string) => `${HOME_URL}stories/${encodeURIComponent(id)}`;
 
 const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
 

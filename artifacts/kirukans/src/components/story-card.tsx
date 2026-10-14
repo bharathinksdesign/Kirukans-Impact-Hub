@@ -1,10 +1,11 @@
 import { ArrowUpRight, Images } from 'lucide-react';
 import { img, type Project } from '@/lib/site-data';
+import { storyHref } from '@/lib/stories';
 
-export function StoryCard({ project: p, onOpen, featured = false }: { project: Project; onOpen: (p: Project) => void; featured?: boolean }) {
+export function StoryCard({ project: p, featured = false }: { project: Project; featured?: boolean }) {
   return (
-    <button
-      onClick={() => onOpen(p)}
+    <a
+      href={storyHref(p.id)}
       data-testid={`card-project-${p.id}`}
       className={`group h-full w-full text-left overflow-hidden rounded-[1.75rem] bg-card text-plum ring-1 ring-plum/10 shadow-[0_18px_40px_-24px_rgba(28,24,70,0.55)] motion-safe:transition-[transform,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(28,24,70,0.7)] flex flex-col ${featured ? 'md:flex-row' : ''}`}
     >
@@ -30,6 +31,6 @@ export function StoryCard({ project: p, onOpen, featured = false }: { project: P
           <ArrowUpRight className="size-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5" aria-hidden />
         </span>
       </div>
-    </button>
+    </a>
   );
 }

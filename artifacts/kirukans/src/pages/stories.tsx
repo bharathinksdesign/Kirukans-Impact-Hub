@@ -4,15 +4,12 @@ import { ArrowLeft, Search, X } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/closing-sections';
 import { StoryCard } from '@/components/story-card';
-import { ProjectDialog } from '@/components/dialogs';
 import { Reveal } from '@/components/reveal';
-import type { Project } from '@/lib/site-data';
 import { allStories, storyYear, storyYears, useDocumentMeta } from '@/lib/stories';
 
 export default function StoriesPage() {
   useDocumentMeta('All stories | Kirukans', 'Every wall Kirukans has painted in and around Trichy: school murals, hospital walls and community projects, with the volunteers behind them.');
   useEffect(() => { window.scrollTo(0, 0); }, []);
-  const [project, setProject] = useState<Project | null>(null);
   const [q, setQ] = useState('');
   const [year, setYear] = useState('all');
 
@@ -68,7 +65,7 @@ export default function StoriesPage() {
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {results.map((p, i) => (
                 <Reveal key={p.id} delay={(i % 3) * 80}>
-                  <StoryCard project={p} onOpen={setProject} />
+                  <StoryCard project={p} />
                 </Reveal>
               ))}
             </div>
@@ -84,7 +81,6 @@ export default function StoriesPage() {
         </section>
       </main>
       <Footer />
-      <ProjectDialog project={project} onClose={() => setProject(null)} />
     </div>
   );
 }

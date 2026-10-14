@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { ErrorBoundary } from '@/components/error-boundary';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
@@ -7,17 +7,15 @@ import { Hero } from '@/components/hero';
 import { About, Approach, Stories } from '@/components/story-sections';
 import { Impact, Footer } from '@/components/closing-sections';
 import { Join } from '@/components/join-section';
-import { ProjectDialog } from '@/components/dialogs';
 import StoriesPage from '@/pages/stories';
+import StoryPage from '@/pages/story';
 import GalleryPage from '@/pages/gallery';
-import type { Project } from '@/lib/site-data';
 import { AppProviders } from '@/components/app-providers';
 import InboxPage from '@/pages/inbox';
 import { SignInPage, SignUpPage } from '@/pages/auth';
 import DonationResultPage from '@/pages/donation-result';
 
 function Home() {
-  const [project, setProject] = useState<Project | null>(null);
   useEffect(() => {
     const id = window.location.hash.slice(1);
     const t = window.setTimeout(() => {
@@ -35,12 +33,11 @@ function Home() {
         <Hero />
         <About />
         <Approach />
-        <Stories onOpen={setProject} />
+        <Stories />
         <Impact />
         <Join />
       </main>
       <Footer />
-      <ProjectDialog project={project} onClose={() => setProject(null)} />
     </div>
   );
 }
@@ -53,6 +50,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/stories" component={StoriesPage} />
+          <Route path="/stories/:id" component={StoryPage} />
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/donate/result" component={DonationResultPage} />
           <Route path="/admin/inbox" component={InboxPage} />

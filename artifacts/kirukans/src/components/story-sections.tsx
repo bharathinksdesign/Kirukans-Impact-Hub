@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 import { StoryCard } from '@/components/story-card';
 import { allStories, HOME_STORY_COUNT } from '@/lib/stories';
 import { Reveal } from '@/components/reveal';
-import { img, type Project } from '@/lib/site-data';
+import { img } from '@/lib/site-data';
 
 export function About() {
   return (
@@ -56,7 +56,7 @@ export function Approach() {
   );
 }
 
-export function Stories({ onOpen }: { onOpen: (p: Project) => void }) {
+export function Stories() {
   const shown = allStories.slice(0, HOME_STORY_COUNT);
   return (
     <section id="stories" className="bg-plum text-cream py-20 md:py-28">
@@ -73,7 +73,7 @@ export function Stories({ onOpen }: { onOpen: (p: Project) => void }) {
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           {shown.map((p, i) => (
             <Reveal key={p.id} delay={(i % 2) * 100} className={i === 0 ? 'md:col-span-2' : ''}>
-              <StoryCard project={p} onOpen={onOpen} featured={i === 0} />
+              <StoryCard project={p} featured={i === 0} />
             </Reveal>
           ))}
         </div>

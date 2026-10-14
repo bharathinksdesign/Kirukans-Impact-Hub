@@ -2,3 +2,4 @@
 - [Brand colors](dark-brand-color.md) — header matches the hero's dark color; light surfaces use white instead of cream.
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
+- [Story media provenance](story-media-provenance.md) — verify official channel ownership and project relevance; clearly label related films.

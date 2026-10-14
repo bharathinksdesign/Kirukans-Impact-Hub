@@ -1,52 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { img, gallery, type Project } from '@/lib/site-data';
-
-export function ProjectDialog({ project, onClose }: { project: Project | null; onClose: () => void }) {
-  return (
-    <Dialog.Root open={!!project} onOpenChange={(o) => !o && onClose()}>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-plum/80 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
-        <Dialog.Content className="fixed z-50 inset-x-3 top-4 bottom-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[min(56rem,92vw)] overflow-y-auto rounded-3xl bg-cream text-plum border-4 border-sun data-[state=open]:animate-in data-[state=open]:zoom-in-95">
-          {project && (
-            <div>
-              <div className={`${project.tone} p-7 pr-16`}>
-                <p className="font-bold uppercase tracking-wider text-sm">{project.date} / {project.place}</p>
-                <Dialog.Title className="text-3xl md:text-5xl font-extrabold leading-tight mt-1">{project.title}</Dialog.Title>
-              </div>
-              <Dialog.Close className="absolute top-4 right-4 rounded-full bg-cream text-plum p-2 border-2 border-plum" aria-label="Close story" data-testid="button-close-project">
-                <X className="size-5" />
-              </Dialog.Close>
-              <div className="p-7 grid md:grid-cols-2 gap-8">
-                <Dialog.Description asChild>
-                  <div>
-                    <h3 className="font-hand text-3xl text-tangerine">The idea</h3>
-                    <p className="text-lg">{project.idea}</p>
-                  </div>
-                </Dialog.Description>
-                <div>
-                  <h3 className="font-hand text-3xl text-tangerine">Our contribution</h3>
-                  <ul className="space-y-2 text-lg list-disc pl-5 marker:text-teal">
-                    {project.contribution.map((c) => (
-                      <li key={c}>{c}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              {project.photos.length > 0 && (
-                <div className="px-7 pb-7 columns-1 sm:columns-2 gap-4 [&>img]:mb-4">
-                  {project.photos.map((ph) => (
-                    <img key={ph.src} src={img(ph.src)} alt={ph.alt} className="w-full rounded-2xl border-2 border-plum" loading="lazy" />
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
-}
+import { img, gallery } from '@/lib/site-data';
 
 export function Lightbox({ index, setIndex }: { index: number | null; setIndex: (i: number | null) => void }) {
   const n = gallery.length;
