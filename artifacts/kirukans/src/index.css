@@ -50,22 +50,22 @@
   --teal: 174 72% 42%;
   --sun: 44 100% 58%;
   --tangerine: 20 92% 54%;
-  --cream: 42 78% 95%;
+  --cream: 0 0% 100%;
 
-  --background: 42 78% 95%;
+  --background: var(--cream);
   --foreground: var(--plum);
   --border: 266 25% 82%;
-  --card: 42 70% 98%;
+  --card: var(--cream);
   --card-foreground: var(--plum);
   --card-border: 266 25% 82%;
-  --popover: 42 70% 98%;
+  --popover: var(--cream);
   --popover-foreground: var(--plum);
   --popover-border: 266 25% 82%;
   --primary: var(--plum);
-  --primary-foreground: 42 78% 95%;
+  --primary-foreground: var(--cream);
   --secondary: 44 100% 58%;
   --secondary-foreground: var(--plum);
-  --muted: 42 40% 90%;
+  --muted: 0 0% 94%;
   --muted-foreground: 266 20% 35%;
   --accent: 174 72% 42%;
   --accent-foreground: var(--plum);

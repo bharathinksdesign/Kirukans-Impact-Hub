@@ -1,6 +1,6 @@
 ---
-name: Dark brand color
-description: User-approved color direction for Kirukans dark surfaces.
+name: Brand colors
+description: User-approved dark and light surface colors for Kirukans.
 ---
 
 Use the hero's dark navy-purple as the consistent dark brand color rather than introducing alternative dark purples.
@@ -20,3 +20,9 @@ Use the hero’s dark navy-purple with light text for the header.
 **Why:** The user clarified that the top bar should use “the dark color of the hero section only,” replacing the earlier black and teal choices.
 
 **How to apply:** Use the same shared color for the header and hero; do not introduce a separate black or teal header background.
+
+Use white instead of cream/off-white for the website's light surfaces.
+
+**Why:** The user provided the cream background swatch and asked to change that color in the website to white.
+
+**How to apply:** Keep light sections and cards white rather than restoring the cream from earlier design references. Leave the dark hero, yellow and teal brand colors unchanged.

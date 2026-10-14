@@ -1,4 +1,4 @@
 - [Hero reference scope](hero-reference-scope.md) — preserve hero copy and CTAs when applying the user's photo reference; the image belongs on the right.
-- [Dark brand color](dark-brand-color.md) — the user selected the hero's dark color as the shared dark brand color.
+- [Brand colors](dark-brand-color.md) — header matches the hero's dark color; light surfaces use white instead of cream.
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
