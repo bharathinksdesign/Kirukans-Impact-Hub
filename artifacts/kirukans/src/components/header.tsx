@@ -57,7 +57,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 bg-white text-plum border-b border-plum/10 shadow-none transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`sticky top-0 z-40 bg-[#ffffff] text-plum border-b border-plum/10 shadow-none transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
       onFocusCapture={() => setHidden(false)}
       data-scroll-hidden={hidden && !open}
     >

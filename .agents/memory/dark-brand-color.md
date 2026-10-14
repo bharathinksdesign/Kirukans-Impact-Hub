@@ -27,11 +27,11 @@ Do not add a yellow divider below the header. Keep the header logo prominent.
 
 **How to apply:** Keep the header free of a yellow divider or elevation shadow and preserve the prominent logo. The user later explicitly removed the yellow shadow from the top bar alone; keep the subtle neutral border and leave button/card hover shadows unchanged.
 
-Use the palette's light neutral for the header with dark navy text.
+Use pure white (#FFFFFF) for the main header with dark navy text, as a scoped palette exception.
 
-**Why:** After asking to distinguish the top bar from the hero, the user explicitly said “make the top bar white.”
+**Why:** After learning that the top bar was off-white (#F5F7F8), the user explicitly asked to make it white.
 
-**How to apply:** Preserve a light header and dark navigation text using approved palette colours. Retain subtle separation without a yellow divider.
+**How to apply:** Keep the main navigation surface and mobile menu pure white; leave the teal contact strip and light-grey hero unchanged. Retain dark navigation text and subtle separation without a yellow divider or header shadow.
 
 Use the supplied light neutral instead of warm cream for light surfaces.
 
