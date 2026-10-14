@@ -146,6 +146,16 @@
 }
 @media (hover: hover) and (pointer: fine) {
   :where(:hover) { --brand-elevation-color: hsl(var(--sun)); }
+  /* Yellow actions need a contrasting violet shadow, including outlined
+     actions that turn yellow on hover and the yellow video-play disc. */
+  :where(
+    :is(button, a, [role="button"]):is(.bg-sun, .hover\:bg-sun):not(:disabled):not([aria-disabled="true"]):hover,
+    button:not(:disabled):not([aria-disabled="true"]):hover > .bg-sun
+  ) {
+    --brand-elevation-color: hsl(var(--plum));
+    --tw-shadow: var(--shadow-sm);
+    box-shadow: var(--tw-inset-shadow, 0 0 transparent), var(--tw-inset-ring-shadow, 0 0 transparent), var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
 }
 
 /* Clerk owns its internal CSS; keep its outer elevation in the same language. */

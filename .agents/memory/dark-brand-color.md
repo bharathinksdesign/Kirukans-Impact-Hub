@@ -74,3 +74,9 @@ Use crisp, solid yellow offset shadows only on hover across the website, not sof
 **Why:** The user supplied the Create card as the reference, then clarified “the shadows should only come while we hover not all the time.”
 
 **How to apply:** Use approved yellow, a bottom-right offset and zero blur only while hovered by a hover-capable pointer; cards use navy outlines. Resting and selected states have no visible elevation. Scale the offset down for small controls; preserve keyboard focus rings and reduced-motion behaviour.
+
+Yellow buttons use the approved dark violet shadow on hover instead of yellow.
+
+**Why:** The user explicitly asked “for buttons which are yellow make the dark violet color shadow.”
+
+**How to apply:** Apply the contrasting violet shadow to yellow-filled actions, including those becoming yellow on hover. Keep the hover-only rule; other surfaces retain yellow shadows.
