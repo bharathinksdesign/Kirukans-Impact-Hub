@@ -9,7 +9,7 @@ import { teamMembers } from '@/lib/team-data';
 import { useDocumentMeta } from '@/lib/stories';
 
 export default function TeamPage() {
-  useDocumentMeta('Team Kirukans | Kirukans Charitable Trust', 'Meet the founder, managing director and secretary of Kirukans Charitable Trust.');
+  useDocumentMeta('Team Kirukans | Kirukans Charitable Trust', 'Meet the founder, managing director, secretary and core members of Kirukans Charitable Trust.');
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div className="grain min-h-[100dvh]">
