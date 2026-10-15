@@ -17,7 +17,6 @@ import DonationResultPage from '@/pages/donation-result';
 import TeamPage from '@/pages/team';
 import { TeamSection } from '@/components/team-section';
 import AboutPage from '@/pages/about';
-import OurWorkPage from '@/pages/our-work';
 import VolunteerPage from '@/pages/volunteer';
 
 function Home() {
@@ -60,7 +59,6 @@ function App() {
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/team" component={TeamPage} />
           <Route path="/about" component={AboutPage} />
-          <Route path="/our-work" component={OurWorkPage} />
           <Route path="/volunteer" component={VolunteerPage} />
           <Route path="/donate/result" component={DonationResultPage} />
           <Route path="/admin/inbox" component={InboxPage} />

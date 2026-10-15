@@ -6,7 +6,6 @@ import { ContactStrip } from '@/components/contact-strip';
 
 const links = [
   ['About us', '/about'],
-  ['Our work', '/our-work'],
   ['Impact stories', '/stories'],
   ['Our team', '/team'],
   ['Volunteer', '/volunteer'],

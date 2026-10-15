@@ -34,10 +34,10 @@ export default function AboutPage() {
       </section>
       <Approach />
       <section className="mx-auto max-w-7xl px-5 py-16 md:py-20 flex flex-wrap items-center justify-between gap-6">
-        <p className="text-2xl md:text-3xl font-extrabold text-plum max-w-xl">Want to meet the people behind the paint, or see what we have painted?</p>
+        <p className="text-2xl md:text-3xl font-extrabold text-plum max-w-xl">Want to meet the people behind the paint, or explore the stories of our work?</p>
         <div className="flex flex-wrap gap-3">
           <PageCta href="/team" testid="link-about-team">Team Kirukans <ArrowRight className="size-4" aria-hidden /></PageCta>
-          <PageCta href="/our-work" testid="link-about-work">Our work <ArrowRight className="size-4" aria-hidden /></PageCta>
+          <PageCta href="/stories" testid="link-about-stories">Impact stories <ArrowRight className="size-4" aria-hidden /></PageCta>
         </div>
       </section>
     </PageShell>

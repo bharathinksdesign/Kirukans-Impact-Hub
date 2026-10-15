@@ -54,7 +54,6 @@ export function Footer() {
             <h2 className="footer-heading">Explore</h2>
             <ul className="footer-links">
               <li><a href={`${import.meta.env.BASE_URL}about`}>About us</a></li>
-              <li><a href={`${import.meta.env.BASE_URL}our-work`}>Our work</a></li>
               <li><a href={homeHash("#stories")}>Impact stories</a></li>
               <li><a href={`${import.meta.env.BASE_URL}gallery`} data-testid="link-explore-gallery">Gallery</a></li>
               <li><a href={`${import.meta.env.BASE_URL}team`} data-testid="link-explore-team">Our team</a></li>
