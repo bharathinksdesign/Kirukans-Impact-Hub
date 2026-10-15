@@ -1,4 +1,4 @@
-export const img = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
+export const img = (name: string) => /^https?:\/\//i.test(name) ? name : `${import.meta.env.BASE_URL}images/${name}`;
 
 export const PHONE_HREF = 'tel:+918939018125';
 export const PHONE_TEXT = '+91 89390 18125';
@@ -86,6 +86,23 @@ export const projects: Project[] = [
       { src: 'nangavaram-mural.webp', alt: 'Space and science mural at the Nangavaram computer lab' },
     ],
     tone: 'bg-plum text-sun',
+  },
+  {
+    id: 'krishna-home-pongal',
+    n: '05',
+    title: 'Pongal at Krishna Home',
+    place: 'Krishna Home',
+    date: 'Pongal 2025',
+    idea: 'A Pongal celebration at Krishna Home, documented in a Kirukans Charitable Trust event video.',
+    contribution: [
+      'A Pongal gathering at Krishna Home in 2025.',
+      'The video image shows a Pongal pot and a group gathered nearby.',
+    ],
+    photos: [{
+      src: 'https://i.ytimg.com/vi/wswz2AB6FFc/maxresdefault.jpg',
+      alt: 'Pongal pot and a group gathered at Krishna Home during the 2025 celebration',
+    }],
+    tone: 'bg-sun text-plum',
   },
 ];
 

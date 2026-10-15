@@ -2,7 +2,7 @@ export type StoryContent = {
   intro: string[];
   sections: { title: string; body: string[] }[];
   facts: { label: string; value: string }[];
-  video?: { id: string; title: string; caption: string; kind: 'project' | 'related' };
+  video?: { id: string; title: string; caption: string; kind: 'project' | 'related' | 'event' };
   photoCaptions: Record<string, string>;
 };
 
@@ -10,6 +10,36 @@ export type StoryContent = {
 // YouTube descriptions. These are intentions and documented activities,
 // not measured educational outcomes or invented testimonials.
 export const storyContent: Record<string, StoryContent> = {
+  'krishna-home-pongal': {
+    intro: [
+      'Kirukans Charitable Trust’s video documents a Pongal celebration at Krishna Home, published as “Pongal Celebration at Krishna Home | Kirukans Charitable Trust | Pongal 2025.”',
+      'The video image shows a Pongal pot, children and adults gathered nearby, and a speaker addressing the group.',
+    ],
+    sections: [
+      {
+        title: 'A Pongal gathering',
+        body: [
+          'A Pongal pot sits at the centre of the scene as the group gathers around it. The video records this celebration at Krishna Home in 2025.',
+          'The event film preserves a moment shared by the Krishna Home community and Kirukans Charitable Trust.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Krishna Home' },
+      { label: 'When', value: 'Pongal 2025' },
+      { label: 'The occasion', value: 'A Pongal celebration' },
+      { label: 'The source', value: 'Kirukans Charitable Trust event video' },
+    ],
+    video: {
+      id: 'wswz2AB6FFc',
+      title: 'Pongal Celebration at Krishna Home | Kirukans Charitable Trust | Pongal 2025',
+      caption: 'The event video published on the official Kirukans YouTube channel.',
+      kind: 'event',
+    },
+    photoCaptions: {
+      'https://i.ytimg.com/vi/wswz2AB6FFc/maxresdefault.jpg': 'YouTube-hosted thumbnail for Kirukans’ Pongal 2025 celebration at Krishna Home.',
+    },
+  },
   nangavaram: {
     intro: [
       'A computer lab is a place to discover new possibilities. At P.U.M Government School in Nangavaram, Kirukans brought that sense of discovery onto the walls surrounding the High Tech Lab.',

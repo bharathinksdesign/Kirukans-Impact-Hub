@@ -62,14 +62,15 @@ export function PhotoGallery({ photos }: { photos: StoryPhoto[] }) {
   );
 }
 
-export type StoryVideoData = { id: string; title: string; caption: string; kind: 'project' | 'related' };
+export type StoryVideoData = { id: string; title: string; caption: string; kind: 'project' | 'related' | 'event' };
 
 export function StoryVideo({ video }: { video: StoryVideoData }) {
   const [play, setPlay] = useState(false);
   const related = video.kind === 'related';
+  const heading = related ? 'A related film from Kirukans' : video.kind === 'event' ? 'The event film' : 'The project film';
   return (
     <div>
-      <p className="font-hand text-3xl text-tangerine">{related ? 'A related film from Kirukans' : 'The project film'}</p>
+      <p className="font-hand text-3xl text-tangerine">{heading}</p>
       <div className="mt-3 aspect-video w-full overflow-hidden rounded-2xl border-4 border-plum bg-plum">
         {play ? (
           <iframe
