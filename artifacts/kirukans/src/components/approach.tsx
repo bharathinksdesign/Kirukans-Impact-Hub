@@ -4,9 +4,9 @@ import { Reveal } from '@/components/reveal';
 import { homeHash, HOME_URL } from '@/lib/stories';
 
 const pillars = [
-  { t: 'Create', d: 'Making space for imagination: art, craft, creativity and hands-on experiences that encourage self-expression.', src: 'create.svg', href: '#stories', cta: 'See what we have made' },
-  { t: 'Connect', d: 'Bringing people closer through community gatherings, collaborations and inclusive experiences that build meaningful connections.', src: 'connect.svg', href: '#join', cta: 'Get involved' },
-  { t: 'Contribute', d: 'Outreach, volunteering and initiatives that channel community energy toward meaningful causes.', src: 'contribute.svg', href: '#support', cta: 'Support our work' },
+  { t: 'Create', d: 'Making space for imagination: art, craft, creativity and hands-on experiences that encourage self-expression.', src: 'create.svg', href: 'stories', cta: 'See what we have made' },
+  { t: 'Connect', d: 'Bringing people closer through community gatherings, collaborations and inclusive experiences that build meaningful connections.', src: 'connect.svg', href: 'volunteer', cta: 'Get involved' },
+  { t: 'Contribute', d: 'Outreach, volunteering and initiatives that channel community energy toward meaningful causes.', src: 'contribute.svg', href: 'volunteer', cta: 'Support our work' },
 ];
 
 export function Approach() {

@@ -4,17 +4,14 @@ import { StoryCard } from '@/components/story-card';
 import { allStories, HOME_STORY_COUNT } from '@/lib/stories';
 import { Reveal } from '@/components/reveal';
 import { Approach } from '@/components/approach';
-import { img } from '@/lib/site-data';
+import { AboutPhotoGallery } from '@/components/about-photo-gallery';
 
 export function About() {
   return (
     <section id="about" className="bg-[#ffffff]">
       <div className="mx-auto max-w-7xl px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
       <Reveal>
-        <div className="relative">
-          <img src={img('page-2-image-3.webp')} alt="Kirukans mural volunteers together" className="rounded-3xl w-full aspect-[5/4] object-cover border-4 border-plum" />
-          <img src={img('page-2-image-2.webp')} alt="An artist painting the Kalam mural" className="absolute -bottom-8 -right-3 w-2/5 rounded-2xl border-4 border-sun rotate-3 aspect-square object-cover shadow-xl" />
-        </div>
+        <AboutPhotoGallery />
       </Reveal>
       <Reveal delay={120}>
         <p className="font-hand text-3xl text-tangerine">Who we are</p>

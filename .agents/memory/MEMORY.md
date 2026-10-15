@@ -4,6 +4,7 @@
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
 - [Story media provenance](story-media-provenance.md) — verify official channel ownership and project relevance; clearly label related films.
 - [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
+- [About photo treatment](about-photo-treatment.md) — keep the plum/yellow overlapping frames and subtle image motion; no lightbox.
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
 - [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.
 - [Navigation language](navigation-language.md) — direct menu wording; distinguish volunteering from donating and stories from impact totals.

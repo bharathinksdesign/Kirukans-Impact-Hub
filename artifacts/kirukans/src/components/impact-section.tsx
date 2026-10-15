@@ -8,7 +8,7 @@ const stats = [
   {
     id: 'murals', value: 25, label: 'murals across government schools and hospitals',
     detail: 'Our murals bring colour and imagination into schools and hospitals. Explore the project stories to meet the people and see the work behind the painted walls.',
-    cta: 'Explore our project stories', href: homeHash('#stories'),
+    cta: 'Explore our project stories', href: homeHash('stories'),
   },
   {
     id: 'workshops', value: 5, label: 'art and creative workshops',
@@ -18,12 +18,12 @@ const stats = [
   {
     id: 'food-drives', value: 3, label: 'Feed the Homeless drives',
     detail: 'Food outreach is another part of our community work, bringing care and support to people experiencing homelessness.',
-    cta: 'Get involved in volunteering', href: homeHash('#join'),
+    cta: 'Get involved in volunteering', href: homeHash('volunteer'),
   },
   {
     id: 'community', value: 3, label: 'community initiatives',
     detail: 'School initiatives, community programs and seasonal celebrations bring people together beyond the painted walls.',
-    cta: 'Join our volunteer community', href: homeHash('#join'),
+    cta: 'Join our volunteer community', href: homeHash('volunteer'),
   },
 ];
 const acts = ['Transgender community programs', 'Government school initiatives', 'Pongal celebrations', 'Hospital murals', 'Donation drives', 'Volunteer programs'];
