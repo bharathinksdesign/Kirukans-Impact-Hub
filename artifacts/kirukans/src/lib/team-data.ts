@@ -9,6 +9,6 @@ export const teamMembers: TeamMember[] = [
   { id: 'bharathi-raja', name: 'Bharathi Raja', role: 'Secretary', photo: 'team-bharathi-raja-extended.webp' },
   { id: 's-monica', name: 'S Monica', role: 'Core member', photo: 'team-s-monica-office.webp' },
   { id: 'ramesh-kumar-m-k', name: 'Ramesh Kumar M K', role: 'Core member', photo: 'team-ramesh-kumar-extended.webp' },
-  { id: 'bhavadharani-r', name: 'Bhavadharani R', role: 'Core member', photo: 'team-bhavadharani-extended.webp' },
+  { id: 'bhavadharani-r', name: 'Bhavadharani R', role: 'Core member', photo: 'team-bhavadharani-professional.webp' },
   { id: 'arenganayagi-s', name: 'Arenganayagi S', role: 'Core member', photo: 'team-arenganayagi-extended.webp' },
 ];
