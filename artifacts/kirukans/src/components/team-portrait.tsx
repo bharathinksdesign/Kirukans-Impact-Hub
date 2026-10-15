@@ -3,7 +3,7 @@ import { img } from '@/lib/site-data';
 
 export function TeamPortrait({ m }: { m: TeamMember }) {
   return (
-    <img src={img(m.photo)} alt={`${m.name}, ${m.role} of Kirukans`} width={512} height={512} loading="lazy" className="size-full object-contain" />
+    <img src={img(m.photo)} alt={`${m.name}, ${m.role} of Kirukans`} width={512} height={512} loading="lazy" className="size-full rounded-2xl object-cover" />
   );
 }
 
