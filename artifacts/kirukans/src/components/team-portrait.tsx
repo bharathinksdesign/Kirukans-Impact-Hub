@@ -1,5 +1,6 @@
 import type { TeamMember } from '@/lib/team-data';
 import { img } from '@/lib/site-data';
+import { FaLinkedin } from 'react-icons/fa';
 
 export function TeamPortrait({ m }: { m: TeamMember }) {
   return (
@@ -15,7 +16,17 @@ export function TeamCard({ m }: { m: TeamMember }) {
       </div>
       <div className="p-6">
         <p className="font-hand text-2xl leading-none text-tangerine">{m.role}</p>
-        <h3 className="mt-2 text-xl md:text-2xl font-extrabold tracking-tight">{m.name}</h3>
+        <div className="mt-2 flex items-center justify-between gap-3">
+          <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">{m.name}</h3>
+          <span
+            className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-plum/20 text-plum/75"
+            title="LinkedIn profile link not provided"
+            role="img"
+            aria-label="LinkedIn profile link not provided"
+          >
+            <FaLinkedin className="size-[18px]" aria-hidden="true" />
+          </span>
+        </div>
         {m.bio && <p className="mt-3 text-muted-foreground">{m.bio}</p>}
       </div>
     </article>
