@@ -7,7 +7,7 @@ export const teamMembers: TeamMember[] = [
   { id: 'sundar', name: 'Sundar', role: 'Founder', photo: 'team-sundar-extended.webp', linkedin: 'https://www.linkedin.com/in/sundar-sm-offi/' },
   { id: 'shishira', name: 'Shishira', role: 'Co-founder', photo: 'team-shishira-extended.webp', linkedin: 'https://www.linkedin.com/in/shishira-rams-aia-562550161/' },
   { id: 'bharathi-raja', name: 'Bharathi Raja', role: 'Secretary & Co-founder', photo: 'team-bharathi-raja-extended.webp', linkedin: 'https://www.linkedin.com/in/bharathi-raja-productdesigner' },
-  { id: 's-monica', name: 'S Monica', role: 'Core member', photo: 'team-s-monica-office.webp', linkedin: 'https://www.linkedin.com/in/monicas20/' },
+  { id: 's-monica', name: 'S Monica', role: 'Core member', photo: 'team-s-monica-update.webp', linkedin: 'https://www.linkedin.com/in/monicas20/' },
   { id: 'ramesh-kumar-m-k', name: 'Ramesh Kumar M K', role: 'Core member', photo: 'team-ramesh-kumar-extended.webp', linkedin: 'https://www.linkedin.com/in/rameshkumarmk/' },
   { id: 'durga-sri', name: 'Durga Sri', role: 'Core member', photo: 'team-durga-sri.webp', linkedin: 'https://www.linkedin.com/in/durgasri-r-0318b7199/' },
   { id: 'sibi-bharathy', name: 'Sibi Bharathy', role: 'Core member', photo: 'team-sibi-bharathy.webp', linkedin: 'https://www.linkedin.com/in/sibi-bharathy-s/' },
