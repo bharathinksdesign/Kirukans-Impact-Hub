@@ -1,7 +1,7 @@
 import { Mail, Phone } from 'lucide-react';
 import { FaFacebookF, FaXTwitter, FaYoutube, FaThreads, FaMedium, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
-import { YOUTUBE } from '@/lib/site-data';
+import { PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
 
 const socials: { name: string; icon: IconType; href?: string }[] = [
   { name: 'Facebook', icon: FaFacebookF },
@@ -15,8 +15,6 @@ const socials: { name: string; icon: IconType; href?: string }[] = [
 
 // Public contact details supplied in the user's header reference.
 const email = 'kirukansfoundation@gmail.com';
-const phone = '+91 6382601992';
-
 export function ContactStrip() {
   return (
     <div className="bg-teal text-plum" data-testid="contact-strip">
@@ -37,8 +35,8 @@ export function ContactStrip() {
           ))}
         </ul>
         <div className="flex shrink-0 flex-nowrap items-center gap-1 sm:gap-x-4 text-xs font-medium">
-          <a href="tel:+916382601992" aria-label={`Call Kirukans at ${phone}`} className="inline-flex size-7 sm:w-auto items-center justify-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-phone">
-            <Phone className="size-3.5 shrink-0" aria-hidden="true" /> <span className="hidden sm:inline">{phone}</span>
+          <a href={PHONE_HREF} aria-label={`Call Kirukans at ${PHONE_TEXT}`} className="inline-flex size-7 sm:w-auto items-center justify-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-phone">
+            <Phone className="size-3.5 shrink-0" aria-hidden="true" /> <span className="hidden sm:inline">{PHONE_TEXT}</span>
           </a>
           <span className="hidden sm:block h-3 w-px bg-plum/30" aria-hidden="true" />
           <a href={`mailto:${email}`} aria-label={`Email Kirukans at ${email}`} className="inline-flex size-7 sm:w-auto items-center justify-center gap-1.5 whitespace-nowrap hover:underline underline-offset-4" data-testid="link-strip-email">
