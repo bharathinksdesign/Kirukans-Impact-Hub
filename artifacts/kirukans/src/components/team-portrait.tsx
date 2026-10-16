@@ -18,14 +18,27 @@ export function TeamCard({ m }: { m: TeamMember }) {
         <p className="font-hand text-2xl leading-none text-tangerine">{m.role}</p>
         <div className="mt-2 flex items-center justify-between gap-3">
           <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">{m.name}</h3>
-          <span
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-plum/20 text-plum/75"
-            title="LinkedIn profile link not provided"
-            role="img"
-            aria-label="LinkedIn profile link not provided"
-          >
-            <FaLinkedin className="size-[18px]" aria-hidden="true" />
-          </span>
+          {m.linkedin ? (
+            <a
+              href={m.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-plum/20 text-plum/75 transition-colors hover:border-plum hover:bg-plum hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2"
+              aria-label={`View ${m.name}'s LinkedIn profile (opens in a new tab)`}
+              title={`View ${m.name} on LinkedIn`}
+            >
+              <FaLinkedin className="size-[18px]" aria-hidden="true" />
+            </a>
+          ) : (
+            <span
+              className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-plum/20 text-plum/75"
+              title="LinkedIn profile link not provided"
+              role="img"
+              aria-label="LinkedIn profile link not provided"
+            >
+              <FaLinkedin className="size-[18px]" aria-hidden="true" />
+            </span>
+          )}
         </div>
         {m.bio && <p className="mt-3 text-muted-foreground">{m.bio}</p>}
       </div>
