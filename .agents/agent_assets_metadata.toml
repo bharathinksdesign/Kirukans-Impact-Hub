@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "b87BaTi1U0ssRtbFvBlMJ"
+uri = "file://generated-artifacts/Kirukans-Impact-Hub-static-site.zip"
+type = "unspecified"
+title = "Download Kirukans static site"
+description = "Apache-ready frontend ZIP with index.html, assets, and SPA routing rules in .htaccess. Upload the ZIP contents directly to the domain document root."
+logical_id = "aa9c08ed-2a50-4583-ac43-bd54e574aa93"
+content_hash = "sha256:1e9e421a1330d039b496ad6e5e72c9c93d62f0793c6c59512c2f3190193f987b"
+size = 26190067
+mtime_ms = 1792264923694
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:114a55c4-51a8-4347-9585-acf8c7d0c7e7/aa9c08ed-2a50-4583-ac43-bd54e574aa93/816cea26-0680-4a9c-a30b-4147124448b8"
+storage_version_token = "1792265288896241"
+content_type = "application/octet-stream"
