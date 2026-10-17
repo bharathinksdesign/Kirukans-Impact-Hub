@@ -6,6 +6,12 @@ Node.js API process (Node.js 22 or newer). Static-only hosting can serve the
 frontend but cannot run the API required for volunteer enquiries or the private
 inbox.
 
+For Apache/static-only hosting, deploy the contents of the built
+`artifacts/kirukans/dist/public` directory. Its `.htaccess` serves frontend
+client-side routes through `index.html` and deliberately does not rewrite `/api`
+requests. Volunteer enquiries and the private inbox still require a separately
+hosted Node.js API.
+
 The root intentionally does not pin `packageManager`: Hostinger supplies pnpm
 11.24.0 through Corepack, and its build environment does not switch to a
 different version declared by the project.
