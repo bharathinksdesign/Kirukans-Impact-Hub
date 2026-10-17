@@ -9,48 +9,62 @@ import { AboutPhotoGallery } from '@/components/about-photo-gallery';
 export function About({ detailed = false }: { detailed?: boolean } = {}) {
   return (
     <section id="about" className="bg-[#ffffff]">
-      <div className="mx-auto max-w-7xl px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
-      <Reveal>
-        <AboutPhotoGallery />
-      </Reveal>
-      <Reveal delay={120}>
-        <p className="font-hand text-3xl text-tangerine">{detailed ? 'Who we are' : 'Our purpose'}</p>
-        {detailed ? (
-          <>
-            <h2 className="text-4xl md:text-6xl font-extrabold leading-none tracking-tight">Creativity, compassion, and collective action.</h2>
-            <div className="mt-6 space-y-5 text-lg text-muted-foreground">
-              <p>
-                What started as a group of like-minded individuals passionate about social impact has grown into a community-driven initiative dedicated to making a difference.
-              </p>
-              <p>
-                From painting murals in government schools, hospitals, and public spaces to conducting creative workshops for children, we use art, compassion, and collective action to inspire hope and bring communities together.
-              </p>
-              <div className="rounded-2xl border-l-4 border-sun bg-sun/10 p-5 md:p-6">
-                <h3 className="text-xl font-extrabold text-plum">A moment that reminds us why we began</h3>
-                <p className="mt-3">
-                  One of our most memorable moments was meeting Thaiyama during our Feed the Homeless initiative. Moved by her story and her need for a wheelchair, we came together as a community to raise the funds to provide one. Her smile reminded us why we started and strengthened our commitment to serving those in need.
+      <div className={`mx-auto grid max-w-7xl items-center gap-10 px-5 ${detailed ? 'py-14 md:py-20 lg:grid-cols-[0.9fr_1.1fr]' : 'py-20 md:grid-cols-2 md:gap-12 md:py-28'}`}>
+        <Reveal className="min-w-0">
+          <AboutPhotoGallery />
+        </Reveal>
+        <Reveal delay={120} className="min-w-0">
+          {detailed ? (
+            <article className="rounded-[2rem] border-2 border-plum bg-white p-6 md:p-9 lg:p-10">
+              <p className="font-hand text-3xl text-tangerine">Who we are</p>
+              <h2 className="mt-2 text-4xl font-extrabold leading-tight tracking-tight text-plum md:text-5xl" data-testid="heading-about-story">
+                Creativity, compassion, and collective action.
+              </h2>
+              <div className="mt-6 space-y-5 text-base leading-relaxed text-plum/85 md:text-lg">
+                <p>
+                  What started as a group of like-minded individuals passionate about social impact has grown into a community-driven initiative dedicated to making a difference.
                 </p>
+                <p>
+                  From painting murals in government schools, hospitals, and public spaces to conducting creative workshops for children, we use art, compassion, and collective action to inspire hope and bring communities together.
+                </p>
+                <div className="rounded-r-2xl border-l-4 border-sun bg-cream p-5 md:p-6">
+                  <h3 className="text-xl font-extrabold text-plum">A moment that reminds us why we began</h3>
+                  <p className="mt-3">
+                    One of our most memorable moments was meeting Thaiyama during our Feed the Homeless initiative. Moved by her story and her need for a wheelchair, we came together as a community to raise the funds to provide one. Her smile reminded us why we started and strengthened our commitment to serving those in need.
+                  </p>
+                </div>
+                <div className="border-t-2 border-plum/10 pt-6">
+                  <p>
+                    Today, as Kirukans Charitable Trust, we continue to believe that every act of kindness matters. Through art, service, and community participation, we strive to create a world where everyone has the opportunity to live with dignity, hope, and happiness.
+                  </p>
+                  <div className="mt-5 flex flex-wrap items-baseline justify-between gap-x-5 gap-y-2 rounded-2xl bg-plum px-5 py-4 text-cream">
+                    <p className="font-hand text-2xl text-sun">Our motto</p>
+                    <p className="text-lg font-extrabold">Madness in doing goodness.</p>
+                  </div>
+                </div>
               </div>
-              <p>
-                Today, as Kirukans Charitable Trust, we continue to believe that every act of kindness matters. Through art, service, and community participation, we strive to create a world where everyone has the opportunity to live with dignity, hope, and happiness.
+            </article>
+          ) : (
+            <article className="rounded-[2rem] bg-plum p-7 text-cream md:p-10 lg:p-12">
+              <p className="font-hand text-3xl text-sun">Our purpose</p>
+              <h2 className="mt-2 text-4xl font-extrabold leading-tight tracking-tight md:text-6xl" data-testid="heading-home-about-purpose">
+                Art, but make it useful.
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-cream/85 md:text-lg">
+                Kirukans is a creative community turning art into action. We bring people together to transform schools, hospitals, and communities through murals,
+                workshops, and meaningful initiatives, creating brighter spaces, spreading kindness, and inspiring positive change through creativity,
+                collaboration, and compassion.
               </p>
-              <div className="border-t-2 border-plum/10 pt-5">
-                <p className="font-hand text-2xl text-tangerine">Our motto</p>
-                <p className="mt-1 text-2xl font-extrabold text-plum">Madness in doing goodness.</p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 className="text-4xl md:text-6xl font-extrabold leading-none tracking-tight">Art, but make it useful.</h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Kirukans is a creative community turning art into action. We bring people together to transform schools, hospitals, and communities through murals,
-              workshops, and meaningful initiatives, creating brighter spaces, spreading kindness, and inspiring positive change through creativity,
-              collaboration, and compassion.
-            </p>
-          </>
-        )}
-      </Reveal>
+              <Link
+                href="/about"
+                className="cta-feedback mt-8 inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3 font-bold text-plum"
+                data-testid="link-home-about-story"
+              >
+                Read our story <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </article>
+          )}
+        </Reveal>
       </div>
     </section>
   );
