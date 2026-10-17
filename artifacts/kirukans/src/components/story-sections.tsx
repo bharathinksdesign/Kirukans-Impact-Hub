@@ -14,7 +14,7 @@ export function About({ detailed = false }: { detailed?: boolean } = {}) {
         <AboutPhotoGallery />
       </Reveal>
       <Reveal delay={120}>
-        <p className="font-hand text-3xl text-tangerine">Who we are</p>
+        <p className="font-hand text-3xl text-tangerine">{detailed ? 'Who we are' : 'Our purpose'}</p>
         {detailed ? (
           <>
             <h2 className="text-4xl md:text-6xl font-extrabold leading-none tracking-tight">Creativity, compassion, and collective action.</h2>
