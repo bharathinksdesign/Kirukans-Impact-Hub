@@ -71,6 +71,69 @@ export const storyContent: Record<string, StoryContent> = {
       'pongal-krishna-home-volunteer-group.webp': 'Kirukans volunteers and Krishna Home residents pose together.',
     },
   },
+  'christian-mission-service-workshop': {
+    intro: [
+      'Kirukans conducted a creative workshop at Christian Mission Service Children’s Home in Kilpauk, Chennai, bringing students together to explore art through hands-on activities.',
+      'Students tried mural painting, texture painting, poster colours, coconut-shell doll making, clay modelling and more. They enjoyed the workshop and learned by creating together.',
+    ],
+    sections: [
+      {
+        title: 'Painting beyond the page',
+        body: [
+          'Students explored mural painting and worked with texture and poster colours. The activities gave them different ways to experiment with colour, materials and ideas.',
+          'From painting together on a wall to creating their own pictures, the workshop made room for students to try new techniques at their own pace.',
+        ],
+      },
+      {
+        title: 'Making, shaping and imagining',
+        body: [
+          'The workshop also included coconut-shell doll making, clay modelling and other fun activities. Students shaped, painted and built their own creations.',
+          'The day was filled with participation and discovery, as students learned new ways to express their ideas through art.',
+        ],
+      },
+      {
+        title: 'A day enjoyed together',
+        body: [
+          'Students took part in the activities and enjoyed the workshop. Kirukans is grateful to Christian Mission Service Children’s Home for welcoming the team.',
+          'The workshop reflects Kirukans’ belief in using creative activities to bring people together and make space for learning through art.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Christian Mission Service Children’s Home · Kilpauk, Chennai' },
+      { label: 'When', value: 'October 2021' },
+      { label: 'Activities', value: 'Mural, texture and poster-colour painting' },
+      { label: 'Also explored', value: 'Coconut-shell dolls and clay modelling' },
+      { label: 'Organized by', value: 'Kirukans Charitable Trust' },
+    ],
+    video: {
+      id: 'bhIgRA4YO2M',
+      title: 'Kirukans creative workshop at a children’s home in Chennai',
+      caption: 'Watch scenes from the workshop at Christian Mission Service Children’s Home in Kilpauk, Chennai.',
+      kind: 'event',
+      thumbnail: 'creative-workshop-cms-02.webp',
+    },
+    photoCaptions: {
+      'creative-workshop-cms-01.webp': 'A student focuses on a drawing during the workshop.',
+      'creative-workshop-cms-02.webp': 'Students proudly share the artwork they made together.',
+      'creative-workshop-cms-03.webp': 'A student paints a coconut shell as part of a craft activity.',
+      'creative-workshop-cms-04.webp': 'A volunteer encourages a young student during the event.',
+      'creative-workshop-cms-05.webp': 'Students gather for an activity at the children’s home.',
+      'creative-workshop-cms-06.webp': 'Students and volunteers work with paint and materials.',
+      'creative-workshop-cms-07.webp': 'The title card for the Kirukans Creative Workshop.',
+      'creative-workshop-cms-08.webp': 'Students and volunteers pose beside a mural.',
+      'creative-workshop-cms-09.webp': 'A student paints a mural outdoors.',
+      'creative-workshop-cms-10.webp': 'Students make textured artwork together.',
+      'creative-workshop-cms-11.webp': 'A close view of a colourful textured painting.',
+      'creative-workshop-cms-12.webp': 'Students use poster colours to create artwork.',
+      'creative-workshop-cms-13.webp': 'Paintings made during the workshop are laid out to dry.',
+      'creative-workshop-cms-14.webp': 'The students’ completed paintings on display.',
+      'creative-workshop-cms-15.webp': 'A student decorates a handmade craft.',
+      'creative-workshop-cms-16.webp': 'A student adds colour to a poster painting.',
+      'creative-workshop-cms-17.webp': 'A volunteer demonstrates a painting activity.',
+      'creative-workshop-cms-18.webp': 'Students and volunteers paint together during the workshop.',
+    },
+  },
   'trans-pongal': {
     intro: [
       'On 13 January 2024, Kirukans Charitable Trust brought together more than 30 transgender people at St Joseph’s Church in Trichy for Trans Pongal.',

@@ -146,6 +146,94 @@ export const projects: Project[] = [
     tone: 'bg-sun text-plum',
   },
   {
+    id: 'christian-mission-service-workshop',
+    n: '07',
+    title: 'Kirukans Creative Workshop',
+    place: 'Christian Mission Service Children’s Home, Kilpauk, Chennai',
+    date: 'October 2021',
+    idea: 'A hands-on creative workshop where students explored painting, mural-making, clay and other art activities.',
+    contribution: [
+      'Mural painting, texture painting and poster-colour activities.',
+      'Coconut-shell doll making, clay modelling and other creative activities.',
+      'A day of learning, making and enjoying art together.',
+    ],
+    photos: [
+      {
+        src: 'creative-workshop-cms-02.webp',
+        alt: 'Students proudly display their artwork at the Christian Mission Service workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-01.webp',
+        alt: 'A student concentrates on drawing during the workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-03.webp',
+        alt: 'A student paints a coconut shell as part of a hands-on activity.',
+      },
+      {
+        src: 'creative-workshop-cms-04.webp',
+        alt: 'A volunteer shares a moment with a young student during the workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-05.webp',
+        alt: 'Students gather for a group activity at the children’s home.',
+      },
+      {
+        src: 'creative-workshop-cms-06.webp',
+        alt: 'Students and volunteers work with paint and materials at a table.',
+      },
+      {
+        src: 'creative-workshop-cms-07.webp',
+        alt: 'Kirukans Creative Workshop title card.',
+      },
+      {
+        src: 'creative-workshop-cms-08.webp',
+        alt: 'Students and volunteers pose in front of a mural at the workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-09.webp',
+        alt: 'A student paints a mural on an outdoor wall.',
+      },
+      {
+        src: 'creative-workshop-cms-10.webp',
+        alt: 'Students experiment with texture painting together.',
+      },
+      {
+        src: 'creative-workshop-cms-11.webp',
+        alt: 'A colourful textured artwork made during the workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-12.webp',
+        alt: 'Students create colourful artwork with poster paints.',
+      },
+      {
+        src: 'creative-workshop-cms-13.webp',
+        alt: 'Students’ finished paintings arranged for display.',
+      },
+      {
+        src: 'creative-workshop-cms-14.webp',
+        alt: 'Completed workshop paintings arranged together.',
+      },
+      {
+        src: 'creative-workshop-cms-15.webp',
+        alt: 'A student decorates a handmade craft during the workshop.',
+      },
+      {
+        src: 'creative-workshop-cms-16.webp',
+        alt: 'A student adds colour to a poster painting.',
+      },
+      {
+        src: 'creative-workshop-cms-17.webp',
+        alt: 'A volunteer demonstrates a painting activity to students.',
+      },
+      {
+        src: 'creative-workshop-cms-18.webp',
+        alt: 'Students and volunteers paint together during the creative workshop.',
+      },
+    ],
+    tone: 'bg-teal text-plum',
+  },
+  {
     id: 'trans-pongal',
     n: '06',
     title: 'Trans Pongal',

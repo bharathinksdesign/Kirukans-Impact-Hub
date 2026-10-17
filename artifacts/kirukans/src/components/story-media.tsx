@@ -82,9 +82,9 @@ export function StoryVideo({ video }: { video: StoryVideoData }) {
   const watchUrl = instagram
     ? `https://www.instagram.com/reel/${video.id}/`
     : `https://www.youtube.com/watch?v=${video.id}`;
-  const thumbnail = instagram
-    ? video.thumbnail ? img(video.thumbnail) : undefined
-    : `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+  const thumbnail = video.thumbnail
+    ? img(video.thumbnail)
+    : instagram ? undefined : `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
   return (
     <div>
       <p className="font-hand text-3xl text-tangerine">{heading}</p>
