@@ -63,7 +63,13 @@ export default function StoryPage() {
               <Reveal>
                 <p className="font-hand text-3xl text-sun">{project.date}</p>
                 <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] text-balance" data-testid="text-story-title">{project.title}</h1>
-                <p className="mt-3 text-lg font-semibold text-teal">{project.place}</p>
+                <p className="mt-3 text-lg font-semibold text-teal">
+                  {project.placeHref ? (
+                    <a href={project.placeHref} target="_blank" rel="noopener noreferrer" className="underline decoration-transparent underline-offset-4 hover:decoration-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal" aria-label={`Open ${project.title} location in a new tab`}>
+                      {project.place}
+                    </a>
+                  ) : project.place}
+                </p>
                 <p className="mt-6 text-xl text-cream/90 leading-relaxed max-w-xl">{project.idea}</p>
               </Reveal>
               <Reveal delay={120}>

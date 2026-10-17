@@ -12,23 +12,38 @@ export type StoryContent = {
 export const storyContent: Record<string, StoryContent> = {
   'krishna-home-pongal': {
     intro: [
-      'Kirukans Charitable Trust’s video documents a Pongal celebration at Krishna Home, published as “Pongal Celebration at Krishna Home | Kirukans Charitable Trust | Pongal 2025.”',
-      'Photographs from the gathering show the Pongal pot, children, older residents and volunteers sharing the celebration.',
+      'For Pongal 2025, Kirukans Charitable Trust celebrated the festival at Krishna Home in Thiruvalarai, Trichy, alongside elders and youngsters.',
+      'The day brought everyone together through cultural traditions, singing, games and dance. The elders’ smiles made it especially memorable for the team.',
     ],
     sections: [
       {
-        title: 'A Pongal gathering',
+        title: 'Culture, colour and connection',
         body: [
-          'A Pongal pot sits at the centre of the scene as the group gathers around it. The video records this celebration at Krishna Home in 2025.',
-          'The event film preserves a moment shared by the Krishna Home community and Kirukans Charitable Trust.',
+          'The celebration began with traditional Kolam preparation, setting up the Pongal pot and decorating the space. Singing and ice-breaking activities helped everyone feel comfortable and joyful.',
+          'Elders and youngsters joined in the celebration, sharing a day shaped by tradition, fun and time together.',
+        ],
+      },
+      {
+        title: 'Games, music and shared memories',
+        body: [
+          'Activities included a Tamil-letter lucky game (Uyir Ezhuthu), a soda bottle filling challenge, a lemon-and-spoon game and a ball-passing game. The day also included dance performances and the traditional Uriyadi game.',
+          'Everyone took part and enjoyed the activities. Seeing the elders’ happiness made the Pongal celebration a particularly special day for the Kirukans team.',
+        ],
+      },
+      {
+        title: 'A contribution to Krishna Home',
+        body: [
+          'Along with celebrating, Kirukans Charitable Trust donated 10 fans and lights for the home.',
+          'The trust thanks everyone who supported the celebration directly and indirectly. Together, the day became a beautiful memory filled with culture, fun and humanity.',
         ],
       },
     ],
     facts: [
-      { label: 'Where', value: 'Krishna Home' },
+      { label: 'Where', value: 'Krishna Home · Thiruvalarai, Trichy' },
       { label: 'When', value: 'Pongal 2025' },
-      { label: 'The occasion', value: 'A Pongal celebration' },
-      { label: 'The source', value: 'Kirukans Charitable Trust event video' },
+      { label: 'Together', value: 'Elders and youngsters' },
+      { label: 'Donated', value: '10 fans and lights for the home' },
+      { label: 'Organized by', value: 'Kirukans Charitable Trust' },
     ],
     video: {
       id: 'wswz2AB6FFc',

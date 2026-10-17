@@ -9,6 +9,7 @@ export type Project = {
   n: string;
   title: string;
   place: string;
+  placeHref?: string;
   date: string;
   idea: string;
   contribution: string[];
@@ -91,12 +92,14 @@ export const projects: Project[] = [
     id: 'krishna-home-pongal',
     n: '05',
     title: 'Pongal at Krishna Home',
-    place: 'Krishna Home',
+    place: 'Thiruvalarai, Trichy',
+    placeHref: 'https://share.google/0mPGCrX49pXLnqoqz',
     date: 'Pongal 2025',
-    idea: 'A Pongal celebration at Krishna Home, documented in a Kirukans Charitable Trust event video.',
+    idea: 'Kirukans Charitable Trust celebrated Pongal 2025 at Krishna Home in Thiruvalarai, Trichy, with elders and youngsters.',
     contribution: [
-      'A Pongal gathering at Krishna Home in 2025.',
-      'Children, residents and volunteers came together for the celebration.',
+      'Traditional Kolam preparation, Pongal pot setup and cultural decorations.',
+      'Singing, ice-breaking activities, games, dance performances and Uriyadi.',
+      'Donated 10 fans and lights for Krishna Home.',
     ],
     photos: [
       {
