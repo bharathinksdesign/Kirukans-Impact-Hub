@@ -1,3 +1,5 @@
+import { storyContent } from '@/lib/story-content';
+
 export const img = (name: string) => /^https?:\/\//i.test(name) ? name : `${import.meta.env.BASE_URL}images/${name}`;
 
 export const PHONE_HREF = 'tel:+918939018125';
@@ -421,12 +423,49 @@ export const projects: Project[] = [
       'Honoured doctors, nurses and other frontline workers who served their communities.',
       'Documented the process from initial concept art through painting and completion.',
     ],
-    photos: [],
+    photos: [
+      {
+        src: 'lalgudi-frontline-mural-wide.webp',
+        alt: 'The completed Lalgudi Government Hospital mural, “You are truly our hero,” honouring frontline workers.',
+      },
+      {
+        src: 'lalgudi-frontline-wall-before-day.webp',
+        alt: 'The Government Hospital wall in Lalgudi before the frontline heroes mural was painted.',
+      },
+      {
+        src: 'lalgudi-frontline-mural-closeup-1.webp',
+        alt: 'A close view of the mural portraits honouring medical frontline workers.',
+      },
+      {
+        src: 'lalgudi-frontline-mural-closeup-2.webp',
+        alt: 'More portraits from the frontline heroes mural at the hospital.',
+      },
+      {
+        src: 'lalgudi-frontline-team-full.webp',
+        alt: 'Volunteers stand in front of the completed mural at night.',
+      },
+      {
+        src: 'lalgudi-frontline-painting-frame-1.webp',
+        alt: 'A volunteer paints the message on the hospital mural at night.',
+      },
+      {
+        src: 'lalgudi-frontline-painting-frame-2.webp',
+        alt: 'A volunteer paints the red background around the mural portraits.',
+      },
+      {
+        src: 'lalgudi-frontline-team-night.webp',
+        alt: 'Kirukans volunteers stand beside the mural during the night painting session.',
+      },
+      {
+        src: 'lalgudi-frontline-wall-before-night.webp',
+        alt: 'The hospital wall before the mural, seen at night.',
+      },
+    ],
     tone: 'bg-teal text-plum',
   },
 ];
 
-export const gallery = [
+const featuredGallery = [
   { src: 'page-1-image-7.webp', alt: 'Kirukans community workshop', cap: 'Community workshop' },
   { src: 'page-2-image-3.webp', alt: 'Mural volunteer group', cap: 'The mural crew' },
   { src: 'page-2-image-2.webp', alt: 'Artist painting the Kalam mural', cap: 'Painting Kalam' },
@@ -439,4 +478,20 @@ export const gallery = [
   { src: 'page-7-image-4.webp', alt: 'Painted corridor', cap: 'The corridor' },
   { src: 'page-7-image-5.webp', alt: 'Playful educational mural', cap: 'Doodles that teach' },
   { src: 'page-7-image-6.webp', alt: 'Artists at work', cap: 'Artists at work' },
+];
+
+const gallerySources = new Set(featuredGallery.map((photo) => photo.src));
+
+export const gallery = [
+  ...featuredGallery,
+  ...projects.flatMap((project) =>
+    project.photos.flatMap((photo) => {
+      if (gallerySources.has(photo.src) || /title card/i.test(photo.alt)) return [];
+      gallerySources.add(photo.src);
+      return [{
+        ...photo,
+        cap: storyContent[project.id]?.photoCaptions[photo.src] ?? photo.alt,
+      }];
+    }),
+  ),
 ];

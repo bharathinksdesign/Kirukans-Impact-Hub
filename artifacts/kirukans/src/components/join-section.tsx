@@ -104,12 +104,12 @@ export function Join() {
                       <input className={field} value={name} onChange={(e) => { setName(e.target.value); setError(null); }} placeholder="Your name" autoComplete="name" maxLength={120} disabled={pending} data-testid="input-join-name" />
                     </label>
                     <label className="block text-sm font-semibold">
-                      Email (optional)
+                      Email
                       <input className={field} type="email" value={email} onChange={(e) => { setEmail(e.target.value); setError(null); }} placeholder="Your email address" autoComplete="email" maxLength={254} disabled={pending} data-testid="input-join-email" />
                     </label>
                   </div>
                   <label className="block text-sm font-semibold">
-                    Mobile / WhatsApp number (optional)
+                    Mobile / WhatsApp number
                     <input className={field} type="tel" value={phone} onChange={(e) => { setPhone(e.target.value); setError(null); }} placeholder="+91 98765 43210" autoComplete="tel" maxLength={30} disabled={pending} aria-describedby="contact-help" data-testid="input-join-phone" />
                   </label>
                   <p id="contact-help" className="text-sm text-plum/75">Provide either an email or a mobile number—or both. Include a country code for numbers outside India.</p>

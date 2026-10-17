@@ -9,7 +9,7 @@ import { AboutPhotoGallery } from '@/components/about-photo-gallery';
 export function About({ detailed = false }: { detailed?: boolean } = {}) {
   return (
     <section id="about" className="bg-[#ffffff]">
-      <div className={`mx-auto grid max-w-7xl items-center px-5 ${detailed ? 'grid-cols-1 gap-12 py-20 md:grid-cols-2 md:py-28' : 'gap-10 py-20 md:grid-cols-2 md:gap-12 md:py-28'}`}>
+      <div className={`mx-auto grid max-w-7xl items-center ${detailed ? 'grid-cols-1 gap-12 px-5 py-20 md:grid-cols-2 md:py-28' : 'gap-10 px-5 py-20 md:grid-cols-2 md:gap-9 md:px-14 md:py-28'}`}>
         <Reveal className="min-w-0">
           <AboutPhotoGallery />
         </Reveal>
@@ -43,19 +43,19 @@ export function About({ detailed = false }: { detailed?: boolean } = {}) {
               </div>
             </>
           ) : (
-            <article className="rounded-[2rem] bg-plum p-7 text-cream md:p-10 lg:p-12">
-              <p className="font-hand text-3xl text-sun">Our purpose</p>
-              <h2 className="mt-2 text-4xl font-extrabold leading-tight tracking-tight md:text-6xl" data-testid="heading-home-about-purpose">
+            <article className="rounded-[2rem] bg-cream p-7 text-plum md:p-9">
+              <p className="font-hand text-xl text-tangerine">Our purpose</p>
+              <h2 className="mt-2 text-3xl font-extrabold leading-[1.1] tracking-tight text-plum md:text-[2.75rem]" data-testid="heading-home-about-purpose">
                 Art, but make it useful.
               </h2>
-              <p className="mt-6 text-base leading-relaxed text-cream/85 md:text-lg">
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 Kirukans is a creative community turning art into action. We bring people together to transform schools, hospitals, and communities through murals,
                 workshops, and meaningful initiatives, creating brighter spaces, spreading kindness, and inspiring positive change through creativity,
                 collaboration, and compassion.
               </p>
               <Link
                 href="/about"
-                className="cta-feedback mt-8 inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3 font-bold text-plum"
+                className="cta-feedback mt-6 inline-flex items-center gap-2 rounded-full bg-sun px-5 py-2.5 text-sm font-bold text-plum"
                 data-testid="link-home-about-story"
               >
                 Read our story <ArrowRight className="size-4" aria-hidden />

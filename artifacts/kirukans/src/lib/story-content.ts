@@ -478,6 +478,16 @@ export const storyContent: Record<string, StoryContent> = {
       caption: 'The project film follows the tribute mural from concept art through painting and completion at a government hospital in Lalgudi.',
       kind: 'project',
     },
-    photoCaptions: {},
+    photoCaptions: {
+      'lalgudi-frontline-mural-wide.webp': 'The completed “You are truly our hero” mural at Government Hospital, Lalgudi.',
+      'lalgudi-frontline-wall-before-day.webp': 'The hospital wall before the frontline heroes mural was painted.',
+      'lalgudi-frontline-mural-closeup-1.webp': 'A close view of the mural’s portraits of frontline workers.',
+      'lalgudi-frontline-mural-closeup-2.webp': 'The mural continues with more portraits of community heroes.',
+      'lalgudi-frontline-team-full.webp': 'Kirukans volunteers gather in front of the completed mural.',
+      'lalgudi-frontline-painting-frame-1.webp': 'A volunteer paints the tribute lettering on the wall.',
+      'lalgudi-frontline-painting-frame-2.webp': 'A volunteer paints the mural around the frontline worker portraits.',
+      'lalgudi-frontline-team-night.webp': 'Volunteers stand with the mural during the night painting session.',
+      'lalgudi-frontline-wall-before-night.webp': 'A night-time view of the hospital wall before the mural was painted.',
+    },
   },
 };

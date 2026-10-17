@@ -56,3 +56,9 @@ For submitted video screenshots, visibly lift dark shadows across every image wh
 **Why:** The user clarified that every Diwali screenshot needs a noticeable enhancement. Generative enhancement can also recompose screenshots or add padding, so non-generative correction preserves the actual scene.
 
 **How to apply:** Keep originals untouched, test and visually verify tonal changes on a sample before batch-processing, export at the source aspect ratio, and inspect a contact sheet and page preview. Use new asset filenames when replacing processed images to avoid stale browser caches.
+
+For ImageMagick shadow lifts, verify the transform on a side-by-side sample rather than inferring the direction from the gamma value.
+
+**Why:** On a submitted mural screenshot, a lower gamma setting darkened the RGB image; a `1.3` gamma with a small brightness lift produced the intended visible shadow recovery.
+
+**How to apply:** Check both the rendered comparison and RGB channel values on one representative frame before processing the rest.
