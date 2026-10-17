@@ -48,6 +48,11 @@ export default function StoryPage() {
 
   const photos = project.photos.map((p) => ({ ...p, cap: content.photoCaptions[p.src] ?? p.alt }));
   const hero = photos[0];
+  const heroVideoThumbnail = content.video
+    ? content.video.platform === 'instagram'
+      ? content.video.thumbnail ? img(content.video.thumbnail) : undefined
+      : `https://i.ytimg.com/vi/${content.video.id}/hqdefault.jpg`
+    : undefined;
   const related = allStories.filter((s) => s.id !== id && storyContent[s.id]);
 
   return (
@@ -77,6 +82,11 @@ export default function StoryPage() {
                   <figure className="relative">
                     <img src={img(hero.src)} alt={hero.alt} className="block w-full h-auto rounded-[55px_8px_55px_8px] md:rounded-[110px_12px_110px_12px]" />
                     <figcaption className="mt-4 text-sm text-cream/80 max-w-lg">{hero.cap}</figcaption>
+                  </figure>
+                ) : heroVideoThumbnail ? (
+                  <figure className="relative">
+                    <img src={heroVideoThumbnail} alt={`YouTube thumbnail for ${project.title}`} className="block w-full h-auto rounded-[55px_8px_55px_8px] md:rounded-[110px_12px_110px_12px]" />
+                    <figcaption className="mt-4 text-sm text-cream/80 max-w-lg">Video thumbnail from the project film.</figcaption>
                   </figure>
                 ) : (
                   <div className="relative flex min-h-[20rem] flex-col items-center justify-center overflow-hidden rounded-[55px_8px_55px_8px] border-2 border-teal/40 bg-sun px-8 py-12 text-center text-plum md:min-h-[25rem] md:rounded-[110px_12px_110px_12px]">

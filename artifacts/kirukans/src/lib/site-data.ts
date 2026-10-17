@@ -409,6 +409,21 @@ export const projects: Project[] = [
     ],
     tone: 'bg-teal text-plum',
   },
+  {
+    id: 'frontline-heroes-lalgudi',
+    n: '10',
+    title: 'A Tribute to Our Frontline Heroes',
+    place: 'Government Hospital, Lalgudi, Tamil Nadu',
+    date: 'July 2021',
+    idea: 'A mural honouring doctors, nurses and other essential workers who risked their lives to protect others during the COVID-19 pandemic.',
+    contribution: [
+      'Transformed a government hospital wall into a vibrant expression of gratitude, courage and hope.',
+      'Honoured doctors, nurses and other frontline workers who served their communities.',
+      'Documented the process from initial concept art through painting and completion.',
+    ],
+    photos: [],
+    tone: 'bg-teal text-plum',
+  },
 ];
 
 export const gallery = [

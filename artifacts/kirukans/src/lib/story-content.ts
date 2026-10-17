@@ -448,4 +448,36 @@ export const storyContent: Record<string, StoryContent> = {
       'page-5-image-1.webp': 'Kirukans volunteers at the Anganvadi School mural project in Thalakudi.',
     },
   },
+  'frontline-heroes-lalgudi': {
+    intro: [
+      'Created in the aftermath of the COVID-19 pandemic, this mural is a tribute to the frontline workers who stood strong during one of humanity’s most challenging times. From doctors and nurses to countless other essential workers, this artwork honours the real-life heroes who risked their lives to protect others.',
+    ],
+    sections: [
+      {
+        title: 'A wall transformed by gratitude',
+        body: [
+          'Through this project, Kirukans transformed a government hospital wall into a vibrant expression of gratitude, courage and hope.',
+        ],
+      },
+      {
+        title: 'From concept art to the finished mural',
+        body: [
+          'From developing the initial concept art to painting the wall and completing the final artwork, this project captures the entire mural-making journey and the power of art to honour those who serve our communities.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Government Hospital, Lalgudi, Tamil Nadu' },
+      { label: 'When', value: 'July 2021' },
+      { label: 'The tribute', value: 'Doctors, nurses and frontline workers' },
+      { label: 'The work', value: 'A hospital mural, from concept art to completion' },
+    ],
+    video: {
+      id: 'ijpDhz_89as',
+      title: 'Lalgudi || mural painting || Tribute to front line workers || wall painting',
+      caption: 'The project film follows the tribute mural from concept art through painting and completion at a government hospital in Lalgudi.',
+      kind: 'project',
+    },
+    photoCaptions: {},
+  },
 };
