@@ -28,3 +28,17 @@ mtime_ms = 1792265835558
 storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:114a55c4-51a8-4347-9585-acf8c7d0c7e7/3a246207-869f-4366-8457-e766d7d2a328/8d3792a4-63aa-4bcf-ab6b-e9f0bd02d98f"
 storage_version_token = "1792265855855274"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "lkOcLIuV6tsvP2u9U82IU"
+uri = "file://generated-artifacts/Kirukans-Impact-Hub-full-deploy.zip"
+type = "unspecified"
+title = "Download complete Kirukans deployment ZIP"
+description = "Full Hostinger app at ZIP root: website, API, database workspace, pnpm lockfile, and Hostinger build/start scripts. Build verified from the extracted ZIP. Configure Hostinger environment variables as described in HOSTINGER.md."
+logical_id = "416e809e-bdd0-43ed-b93c-89cbcefa3a51"
+content_hash = "sha256:62ba95cf03739f705173467c2a6671e409a6d17af785fa938f7b89c1e3b5f4a1"
+size = 26280041
+mtime_ms = 1792266081299
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:114a55c4-51a8-4347-9585-acf8c7d0c7e7/416e809e-bdd0-43ed-b93c-89cbcefa3a51/426de21d-cc71-4564-9875-db52b67821ca"
+storage_version_token = "1792266168584870"
+content_type = "application/octet-stream"
