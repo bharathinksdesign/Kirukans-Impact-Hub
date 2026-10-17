@@ -28,12 +28,24 @@ pnpm run build:hostinger
 pnpm start
 ```
 
-The root `start` script now points to the Hostinger runtime. Configure Hostinger
-to run `pnpm start` and pass its assigned
-`PORT` environment variable through to the app. The start command serves the
-built website and API from one Node.js process. `BASE_PATH=/` is set for the
-production build, and the start command enables the Hostinger-specific runtime
-without changing the Replit workflows.
+The Hostinger application root must be the repository root (the folder with
+`package.json` and `pnpm-workspace.yaml`). Configure the panel with:
+
+| Setting | Value |
+| --- | --- |
+| Node.js version | 22 or newer |
+| Package manager | pnpm |
+| Build command | `pnpm run build:hostinger` |
+| Entry/start file | `server.mjs` |
+| Start command, if requested separately | `pnpm start` |
+| Output directory | Leave unset for the Node.js app |
+
+The root `server.mjs` loads the compiled API entry at
+`artifacts/api-server/dist/index.mjs`, enables the Hostinger production mode,
+and serves the built frontend and API from one Node.js process. It uses
+Hostinger's assigned `PORT` (falling back to 3000 for local runs) and binds the
+server on `0.0.0.0`. Do not set the entry file to `dist/index.mjs`; this
+workspace builds the server under `artifacts/api-server/dist/`.
 
 ## Host environment variables
 
