@@ -64,6 +64,65 @@ export const storyContent: Record<string, StoryContent> = {
       'pongal-krishna-home-volunteer-group.webp': 'Kirukans volunteers and Krishna Home residents pose together.',
     },
   },
+  'trans-pongal': {
+    intro: [
+      'On 13 January 2024, Kirukans Charitable Trust brought together more than 30 transgender people at St Joseph’s Church in Trichy for Trans Pongal.',
+      'The community prepared Pongal in the traditional way, joined in festival games and shared a joyful day together. Kirukans also provided one month of groceries to the participants.',
+    ],
+    sections: [
+      {
+        title: 'A Pongal celebration with everyone',
+        body: [
+          'The gathering began with traditional Pongal preparation at St Joseph’s Church. Cooking and celebrating together made space for the community to share in the festival and its traditions.',
+          'In many village settings, transgender people are often left out of games and group activities. Trans Pongal was created as an inclusive celebration where everyone could take part.',
+        ],
+      },
+      {
+        title: 'Games, laughter and time together',
+        body: [
+          'After preparing Pongal, participants and volunteers enjoyed Pongal games and activities together. The day brought people together through play, conversation and celebration.',
+          'The Kirukans team remembers the gathering as a joyful day shared with the community.',
+        ],
+      },
+      {
+        title: 'Practical support for the month ahead',
+        body: [
+          'As part of the celebration, Kirukans Charitable Trust gave the participants one month of groceries.',
+          'Trans Pongal brought tradition, inclusion and practical support together in one memorable day.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'St Joseph’s Church, Trichy' },
+      { label: 'When', value: '13 January 2024' },
+      { label: 'Together', value: '30+ transgender people' },
+      { label: 'Activities', value: 'Traditional Pongal and festival games' },
+      { label: 'Shared support', value: 'One month of groceries' },
+      { label: 'Organized by', value: 'Kirukans Charitable Trust' },
+    ],
+    photoCaptions: {
+      'trans-pongal-group-hero.webp': 'More than 30 community members and volunteers gather for Trans Pongal on 13 January 2024.',
+      'trans-pongal-traditional-preparation.webp': 'Community members prepare Pongal in the traditional way at St Joseph’s Church.',
+      'trans-pongal-pot-group.webp': 'Participants gather around the Pongal pot as it cooks.',
+      'trans-pongal-kolam-pot.webp': 'A Kolam and decorated Pongal pot mark the traditional celebration.',
+      'trans-pongal-pot-detail.webp': 'A participant tends the Pongal pot during the gathering.',
+      'trans-pongal-dance.webp': 'Participants dance together during the Pongal celebration.',
+      'trans-pongal-traditional-game.webp': 'A participant takes part in a Pongal game.',
+      'trans-pongal-games-intro.webp': 'A volunteer speaks with participants during the celebration.',
+      'trans-pongal-community-gathering.webp': 'Community members gather inside St Joseph’s Church.',
+      'trans-pongal-grocery-gift-1.webp': 'A grocery packet is presented to a community member.',
+      'trans-pongal-grocery-gift-2.webp': 'Participants gather with a grocery packet during the distribution.',
+      'trans-pongal-grocery-gift-3.webp': 'A volunteer presents groceries to a community member.',
+      'trans-pongal-grocery-gift-4.webp': 'A grocery packet is shared at the gathering.',
+      'trans-pongal-grocery-gift-5.webp': 'A community member receives a grocery packet from a volunteer.',
+      'trans-pongal-grocery-gift-6.webp': 'Community members and volunteers share a moment during grocery distribution.',
+      'trans-pongal-community-portrait.webp': 'A participant enjoys the Trans Pongal gathering.',
+      'trans-pongal-community-moment-1.webp': 'Participants and volunteers share a joyful moment at the event.',
+      'trans-pongal-community-moment-2.webp': 'Community members take part in the celebration.',
+      'trans-pongal-community-moment-3.webp': 'Participants share a moment during Trans Pongal.',
+      'trans-pongal-group-evening.webp': 'Participants and volunteers gather outside St Joseph’s Church after the celebration.',
+    },
+  },
   nangavaram: {
     intro: [
       'A computer lab is a place to discover new possibilities. At P.U.M Government School in Nangavaram, Kirukans brought that sense of discovery onto the walls surrounding the High Tech Lab.',

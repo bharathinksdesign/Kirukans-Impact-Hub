@@ -100,8 +100,8 @@ export function StoryVideo({ video }: { video: StoryVideoData }) {
 export function ChannelNote() {
   return (
     <div className="rounded-2xl border-4 border-plum bg-sun text-plum p-6 md:p-8">
-      <p className="font-hand text-3xl">More from the walls</p>
-      <p className="mt-2 text-lg font-semibold max-w-2xl">We have not matched a film to this project yet. The official Kirukans channel holds the trust's mural work, workshops and community activities.</p>
+      <p className="font-hand text-3xl">More from Kirukans</p>
+      <p className="mt-2 text-lg font-semibold max-w-2xl">There isn’t a video link for this story yet. Visit the official Kirukans channel for murals, workshops and community activities.</p>
       <a href={YOUTUBE} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-xl bg-plum text-sun px-5 py-3 font-bold" data-testid="link-channel">
         Visit the Kirukans YouTube channel <ExternalLink className="size-4" aria-hidden />
       </a>

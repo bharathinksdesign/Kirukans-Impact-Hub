@@ -145,6 +145,102 @@ export const projects: Project[] = [
     ],
     tone: 'bg-sun text-plum',
   },
+  {
+    id: 'trans-pongal',
+    n: '06',
+    title: 'Trans Pongal',
+    place: 'St Joseph’s Church, Trichy',
+    date: 'January 2024',
+    idea: 'Kirukans brought together 30+ transgender people for an inclusive Pongal celebration at St Joseph’s Church in Trichy.',
+    contribution: [
+      'Prepared Pongal in the traditional way together.',
+      'Made space for everyone to join in Pongal games and activities.',
+      'Provided one month of groceries to the participants.',
+    ],
+    photos: [
+      {
+        src: 'trans-pongal-group-hero.webp',
+        alt: 'Transgender participants and Kirukans volunteers gather with the Trans Pongal event banner outside St Joseph’s Church in Trichy.',
+      },
+      {
+        src: 'trans-pongal-traditional-preparation.webp',
+        alt: 'Community members prepare Pongal in the traditional way outside the church.',
+      },
+      {
+        src: 'trans-pongal-pot-group.webp',
+        alt: 'Participants gather around a Pongal pot as it cooks over a fire.',
+      },
+      {
+        src: 'trans-pongal-kolam-pot.webp',
+        alt: 'A decorated Pongal pot and Kolam mark the traditional celebration.',
+      },
+      {
+        src: 'trans-pongal-pot-detail.webp',
+        alt: 'A participant tends the Pongal pot during the celebration.',
+      },
+      {
+        src: 'trans-pongal-dance.webp',
+        alt: 'Participants dance together during the Pongal celebration.',
+      },
+      {
+        src: 'trans-pongal-traditional-game.webp',
+        alt: 'A participant takes part in a Pongal game.',
+      },
+      {
+        src: 'trans-pongal-games-intro.webp',
+        alt: 'A volunteer speaks with participants during the event.',
+      },
+      {
+        src: 'trans-pongal-community-gathering.webp',
+        alt: 'Community members gather inside St Joseph’s Church during Trans Pongal.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-1.webp',
+        alt: 'A grocery packet is presented to a community member.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-2.webp',
+        alt: 'Participants gather with a grocery packet during the distribution.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-3.webp',
+        alt: 'A volunteer presents groceries to a community member.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-4.webp',
+        alt: 'A grocery packet is shared at the gathering.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-5.webp',
+        alt: 'A community member receives a grocery packet from a volunteer.',
+      },
+      {
+        src: 'trans-pongal-grocery-gift-6.webp',
+        alt: 'Community members and volunteers share a moment during grocery distribution.',
+      },
+      {
+        src: 'trans-pongal-community-portrait.webp',
+        alt: 'A participant enjoys the Trans Pongal gathering.',
+      },
+      {
+        src: 'trans-pongal-community-moment-1.webp',
+        alt: 'Participants and volunteers share a joyful moment at the event.',
+      },
+      {
+        src: 'trans-pongal-community-moment-2.webp',
+        alt: 'Community members take part in the celebration.',
+      },
+      {
+        src: 'trans-pongal-community-moment-3.webp',
+        alt: 'Participants share a moment during Trans Pongal.',
+      },
+      {
+        src: 'trans-pongal-group-evening.webp',
+        alt: 'Participants and volunteers gather outside St Joseph’s Church after the celebration.',
+      },
+    ],
+    tone: 'bg-teal text-plum',
+  },
 ];
 
 export const gallery = [

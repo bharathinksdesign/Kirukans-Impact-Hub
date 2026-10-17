@@ -8,7 +8,7 @@ import { Reveal } from '@/components/reveal';
 import { allStories, storyYear, storyYears, useDocumentMeta } from '@/lib/stories';
 
 export default function StoriesPage() {
-  useDocumentMeta('All stories | Kirukans', 'Every wall Kirukans has painted in and around Trichy: school murals, hospital walls and community projects, with the volunteers behind them.');
+  useDocumentMeta('Impact stories | Kirukans', 'Stories from Kirukans Charitable Trust community celebrations, education and creative projects around Trichy.');
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [q, setQ] = useState('');
   const [year, setYear] = useState('all');
@@ -35,7 +35,7 @@ export default function StoriesPage() {
           <Reveal className="mt-8 max-w-3xl">
             <p className="font-hand text-3xl text-tangerine">The whole collection</p>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-none tracking-tight">Every wall, every story</h1>
-            <p className="mt-5 text-lg text-muted-foreground">Murals, handprints and long nights with volunteers, newest first. Open any story for the idea, what we made and the photos.</p>
+            <p className="mt-5 text-lg text-muted-foreground">Murals, community celebrations and shared moments with volunteers, newest first. Open any story to meet the people, see the work and explore the photos.</p>
           </Reveal>
 
           <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

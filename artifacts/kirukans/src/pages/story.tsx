@@ -33,7 +33,7 @@ export default function StoryPage() {
         <Header />
         <main className="flex-1 bg-plum text-cream grid place-items-center px-5 py-20" data-testid="story-not-found">
           <div className="max-w-xl text-center">
-            <p className="font-hand text-4xl text-sun">This wall is still blank</p>
+            <p className="font-hand text-4xl text-sun">This story isn’t here yet</p>
             <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight">We could not find that story</h1>
             <p className="mt-4 text-cream/80">The link may be mistyped, or the story has moved.</p>
             <a href={`${HOME_URL}stories`} className="mt-8 inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-back-stories">
@@ -84,7 +84,7 @@ export default function StoryPage() {
 
         <section className="mx-auto max-w-7xl px-5 py-16 md:py-24 grid lg:grid-cols-[1.4fr_1fr] gap-12">
           <Reveal>
-            <p className="font-hand text-3xl text-tangerine">Meet the wall</p>
+            <p className="font-hand text-3xl text-tangerine">The story</p>
             {content.intro.map((t, i) => (
               <p key={i} className={`mt-5 max-w-2xl leading-relaxed ${i === 0 ? 'text-2xl md:text-3xl font-semibold leading-snug' : 'text-lg text-muted-foreground'}`}>{t}</p>
             ))}
@@ -130,7 +130,7 @@ export default function StoryPage() {
 
         <section className="bg-plum text-cream py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-5">
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-3xl text-balance">Walls like this need hands like yours.</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-3xl text-balance">Help make the next story possible.</h2>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href={homeHash('#join')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-volunteer">Volunteer with Kirukans <ArrowUpRight className="size-5" aria-hidden /></a>
               <a href={homeHash('#support')} className="inline-flex items-center gap-2 rounded-xl border-2 border-sun text-sun px-6 py-3 font-bold hover:bg-sun hover:text-plum transition-colors" data-testid="link-support">Support our work</a>
