@@ -1,10 +1,9 @@
 - [Hero reference scope](hero-reference-scope.md) — preserve hero copy and CTAs when applying the user's photo reference; the image belongs on the right.
 - [Brand colors](dark-brand-color.md) — only supplied eight swatches; light header/hero and black footer; convert profiled swatches before sampling.
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
-- [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
 - [Story media provenance](story-media-provenance.md) — verify media relevance, use YouTube’s own thumbnails, and preserve documentary image framing.
 - [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
 - [About photo treatment](about-photo-treatment.md) — keep the plum/yellow overlapping frames and subtle image motion; no lightbox.
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
 - [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.
-- [Navigation language](navigation-language.md) — direct menu wording; distinguish volunteering from donating and stories from impact totals.
+- [Navigation language](navigation-language.md) — use direct volunteer and story labels; avoid donation calls to action.
