@@ -62,36 +62,53 @@ export function PhotoGallery({ photos }: { photos: StoryPhoto[] }) {
   );
 }
 
-export type StoryVideoData = { id: string; title: string; caption: string; kind: 'project' | 'related' | 'event' };
+export type StoryVideoData = {
+  id: string;
+  title: string;
+  caption: string;
+  kind: 'project' | 'related' | 'event';
+  platform?: 'youtube' | 'instagram';
+  thumbnail?: string;
+};
 
 export function StoryVideo({ video }: { video: StoryVideoData }) {
   const [play, setPlay] = useState(false);
+  const instagram = video.platform === 'instagram';
   const related = video.kind === 'related';
   const heading = related ? 'A related film from Kirukans' : video.kind === 'event' ? 'The event film' : 'The project film';
+  const embedUrl = instagram
+    ? `https://www.instagram.com/reel/${video.id}/embed/`
+    : `https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`;
+  const watchUrl = instagram
+    ? `https://www.instagram.com/reel/${video.id}/`
+    : `https://www.youtube.com/watch?v=${video.id}`;
+  const thumbnail = instagram
+    ? video.thumbnail ? img(video.thumbnail) : undefined
+    : `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
   return (
     <div>
       <p className="font-hand text-3xl text-tangerine">{heading}</p>
-      <div className="mt-3 aspect-video w-full overflow-hidden rounded-2xl border-4 border-plum bg-plum">
+      <div className={`mt-3 ${instagram ? 'mx-auto aspect-[9/16] max-w-[420px]' : 'aspect-video'} w-full overflow-hidden rounded-2xl border-4 border-plum bg-plum`}>
         {play ? (
           <iframe
             className="size-full"
-            src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`}
+            src={embedUrl}
             title={video.title}
             referrerPolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow={instagram ? 'clipboard-write; encrypted-media; picture-in-picture; web-share' : 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'}
             allowFullScreen
             data-testid="iframe-story-video"
           />
         ) : (
           <button onClick={() => setPlay(true)} className="relative size-full flex flex-col items-center justify-center gap-4 p-6 text-center text-cream group" aria-label={`Play video: ${video.title}`} data-testid="button-play-video">
-            <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-45" />
+            {thumbnail && <img src={thumbnail} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-45" />}
             <span className="relative grid place-items-center size-20 rounded-full bg-sun text-plum group-hover:scale-105 transition-transform motion-reduce:transition-none"><Play className="size-9 ml-1" fill="currentColor" aria-hidden /></span>
           </button>
         )}
       </div>
       <p className="mt-3 text-muted-foreground">{video.caption}</p>
-      <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 font-bold underline underline-offset-4 hover:text-tangerine" data-testid="link-watch-youtube">
-        Watch on YouTube <ExternalLink className="size-4" aria-hidden />
+      <a href={watchUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 font-bold underline underline-offset-4 hover:text-tangerine" data-testid={instagram ? 'link-watch-instagram' : 'link-watch-youtube'}>
+        {instagram ? 'Watch on Instagram' : 'Watch on YouTube'} <ExternalLink className="size-4" aria-hidden />
       </a>
     </div>
   );

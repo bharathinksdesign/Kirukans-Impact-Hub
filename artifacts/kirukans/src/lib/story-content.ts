@@ -2,7 +2,14 @@ export type StoryContent = {
   intro: string[];
   sections: { title: string; body: string[] }[];
   facts: { label: string; value: string }[];
-  video?: { id: string; title: string; caption: string; kind: 'project' | 'related' | 'event' };
+  video?: {
+    id: string;
+    title: string;
+    caption: string;
+    kind: 'project' | 'related' | 'event';
+    platform?: 'youtube' | 'instagram';
+    thumbnail?: string;
+  };
   photoCaptions: Record<string, string>;
 };
 
@@ -100,6 +107,14 @@ export const storyContent: Record<string, StoryContent> = {
       { label: 'Shared support', value: 'One month of groceries' },
       { label: 'Organized by', value: 'Kirukans Charitable Trust' },
     ],
+    video: {
+      id: 'C2QPNgmBSm6',
+      title: 'Trans Pongal at St Joseph’s Church, Trichy',
+      caption: 'Instagram Reel from the Trans Pongal celebration.',
+      kind: 'event',
+      platform: 'instagram',
+      thumbnail: 'trans-pongal-group-hero.webp',
+    },
     photoCaptions: {
       'trans-pongal-group-hero.webp': 'More than 30 community members and volunteers gather for Trans Pongal on 13 January 2024.',
       'trans-pongal-traditional-preparation.webp': 'Community members prepare Pongal in the traditional way at St Joseph’s Church.',
