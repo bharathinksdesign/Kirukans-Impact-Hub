@@ -5,47 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface DonationPrice {
-  id: string;
-  /** Amount in paise */
-  amount: number;
-}
-
-export interface DonationOptions {
-  prices: DonationPrice[];
-  currency: string;
-  testMode: boolean;
-  available: boolean;
-}
-
-export interface DonationCheckoutInput {
-  priceId: string;
-  requestId: string;
-}
-
-export interface DonationCheckout {
-  url: string;
-  testMode: boolean;
-}
-
-export type DonationConfirmationStatus = typeof DonationConfirmationStatus[keyof typeof DonationConfirmationStatus];
-
-
-export const DonationConfirmationStatus = {
-  paid: 'paid',
-  pending: 'pending',
-  unpaid: 'unpaid',
-  expired: 'expired',
-} as const;
-
-export interface DonationConfirmation {
-  status: DonationConfirmationStatus;
-  /** Amount in paise */
-  amount: number;
-  currency: string;
-  testMode: boolean;
-}
-
 export interface HealthStatus {
   status: string;
 }

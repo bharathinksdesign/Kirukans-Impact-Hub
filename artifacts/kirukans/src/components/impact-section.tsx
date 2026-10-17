@@ -26,7 +26,7 @@ const stats = [
     cta: 'Join our volunteer community', href: homeHash('volunteer'),
   },
 ];
-const acts = ['Transgender community programs', 'Government school initiatives', 'Pongal celebrations', 'Hospital murals', 'Donation drives', 'Volunteer programs'];
+const acts = ['Transgender community programs', 'Government school initiatives', 'Pongal celebrations', 'Hospital murals', 'Community outreach', 'Volunteer programs'];
 
 function ImpactCard({ stat, expanded, onToggle }: {
   stat: typeof stats[number]; expanded: boolean; onToggle: () => void;

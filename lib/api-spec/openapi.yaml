@@ -11,51 +11,6 @@ tags:
   - name: health
     description: Health operations
 paths:
-  /donations:
-    get:
-      operationId: getDonationOptions
-      summary: Available one-time INR donations
-      responses:
-        "200":
-          description: Donation options and payment mode
-          content:
-            application/json:
-              schema: { $ref: "#/components/schemas/DonationOptions" }
-        "503": { description: Donations unavailable }
-  /donations/checkout:
-    post:
-      operationId: createDonationCheckout
-      summary: Create secure Stripe donation checkout
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: { $ref: "#/components/schemas/DonationCheckoutInput" }
-      responses:
-        "201":
-          description: Checkout created
-          content:
-            application/json:
-              schema: { $ref: "#/components/schemas/DonationCheckout" }
-        "400": { description: Invalid donation selection }
-        "503": { description: Donations unavailable }
-  /donations/confirmation/{sessionId}:
-    get:
-      operationId: getDonationConfirmation
-      summary: Verify donation payment with Stripe
-      parameters:
-        - in: path
-          name: sessionId
-          required: true
-          schema: { type: string }
-      responses:
-        "200":
-          description: Verified payment state without donor details
-          content:
-            application/json:
-              schema: { $ref: "#/components/schemas/DonationConfirmation" }
-        "404": { description: Donation not found }
-        "503": { description: Verification temporarily unavailable }
   /healthz:
     get:
       operationId: healthCheck
@@ -140,42 +95,6 @@ paths:
         "404": { description: Enquiry not found }
 components:
   schemas:
-    DonationPrice:
-      type: object
-      required: [id, amount]
-      properties:
-        id: { type: string }
-        amount: { type: integer, description: Amount in paise }
-    DonationOptions:
-      type: object
-      required: [prices, currency, testMode, available]
-      properties:
-        prices:
-          type: array
-          items: { $ref: "#/components/schemas/DonationPrice" }
-        currency: { type: string }
-        testMode: { type: boolean }
-        available: { type: boolean }
-    DonationCheckoutInput:
-      type: object
-      required: [priceId, requestId]
-      properties:
-        priceId: { type: string }
-        requestId: { type: string, format: uuid }
-    DonationCheckout:
-      type: object
-      required: [url, testMode]
-      properties:
-        url: { type: string }
-        testMode: { type: boolean }
-    DonationConfirmation:
-      type: object
-      required: [status, amount, currency, testMode]
-      properties:
-        status: { type: string, enum: [paid, pending, unpaid, expired] }
-        amount: { type: integer, description: Amount in paise }
-        currency: { type: string }
-        testMode: { type: boolean }
     HealthStatus:
       type: object
       properties:

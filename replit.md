@@ -35,7 +35,7 @@ Kirukans' motto is “Madness in Doing Goodness”; its approach is Create, Conn
 
 The user supplied a nine-page pitch deck, a Figma prototype, a Figma media-stack file, and the Kirukans Trust YouTube channel. All nine PDF pages were reviewed as text and rendered images. Figma did not expose the full designs to public retrieval; do not claim that those files have been completely reviewed or reproduced.
 
-Use the user's real project photos and deck-supported stories and impact figures. Do not fabricate beneficiary counts, testimonials, staff names, payment details, or social accounts. The first website is informational, with direct phone contact and a link to the supplied YouTube channel; no donation payment processing or simulated form submissions.
+Use the user's real project photos and deck-supported stories and impact figures. Do not fabricate beneficiary counts, testimonials, staff names, payment details, or social accounts. The website is informational, with direct phone contact and a link to the supplied YouTube channel; do not add payment processing or simulated form submissions.
 
 ## User preferences
 

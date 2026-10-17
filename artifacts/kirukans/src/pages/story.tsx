@@ -155,7 +155,7 @@ export default function StoryPage() {
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-3xl text-balance">Help make the next story possible.</h2>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href={homeHash('#join')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-volunteer">Volunteer with Kirukans <ArrowUpRight className="size-5" aria-hidden /></a>
-              <a href={homeHash('#support')} className="inline-flex items-center gap-2 rounded-xl border-2 border-sun text-sun px-6 py-3 font-bold hover:bg-sun hover:text-plum transition-colors" data-testid="link-support">Support our work</a>
+              <a href={homeHash('#join')} className="inline-flex items-center gap-2 rounded-xl border-2 border-sun text-sun px-6 py-3 font-bold hover:bg-sun hover:text-plum transition-colors" data-testid="link-story-volunteer">Join as a volunteer</a>
             </div>
           </div>
         </section>

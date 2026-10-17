@@ -40,7 +40,7 @@ export const storyContent: Record<string, StoryContent> = {
       {
         title: 'A contribution to Krishna Home',
         body: [
-          'Along with celebrating, Kirukans Charitable Trust donated 10 fans and lights for the home.',
+          'Along with celebrating, Kirukans Charitable Trust provided 10 fans and lights for the home.',
           'The trust thanks everyone who supported the celebration directly and indirectly. Together, the day became a beautiful memory filled with culture, fun and humanity.',
         ],
       },
@@ -49,7 +49,7 @@ export const storyContent: Record<string, StoryContent> = {
       { label: 'Where', value: 'Krishna Home · Thiruvalarai, Trichy' },
       { label: 'When', value: 'Pongal 2025' },
       { label: 'Together', value: 'Elders and youngsters' },
-      { label: 'Donated', value: '10 fans and lights for the home' },
+      { label: 'Provided', value: '10 fans and lights for the home' },
       { label: 'Organized by', value: 'Kirukans Charitable Trust' },
     ],
     video: {

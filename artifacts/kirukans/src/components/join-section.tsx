@@ -3,7 +3,6 @@ import type { FormEvent } from 'react';
 import { ArrowUpRight, Loader2 } from 'lucide-react';
 import { useCreateVolunteerEnquiry } from '@workspace/api-client-react';
 import { Reveal } from '@/components/reveal';
-import DonationCard from '@/components/donation-card';
 import CommunityInvite from '@/components/community-invite';
 
 function errMessage(e: unknown): string {
@@ -71,12 +70,12 @@ export function Join() {
               </h2>
             </div>
             <p className="text-lg md:max-w-sm md:ml-auto">
-              Paint, create, lend a hand or help a cause. Let's make a brighter future together.
+              Paint, create and lend a hand. Let's make a brighter future together.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-[1.15fr_1fr]">
+        <div className="mx-auto mt-10 max-w-3xl">
           <Reveal>
             <div className="h-full rounded-3xl bg-cream border-4 border-plum p-6 md:p-9">
               <h3 className="text-3xl font-extrabold">Join Kirukans</h3>
@@ -134,12 +133,6 @@ export function Join() {
                 </form>
               )}
               <CommunityInvite />
-            </div>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div id="support" className="h-full rounded-3xl bg-plum text-cream p-6 md:p-9 flex flex-col">
-              <DonationCard />
             </div>
           </Reveal>
         </div>

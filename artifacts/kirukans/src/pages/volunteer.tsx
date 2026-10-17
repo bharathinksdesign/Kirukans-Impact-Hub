@@ -12,7 +12,7 @@ export default function VolunteerPage() {
   return (
     <PageShell
       title="Volunteer | Kirukans Charitable Trust"
-      description="Volunteer with Kirukans in Trichy. Paint, create, lend a hand or help a cause by sharing your details with the trust team."
+      description="Volunteer with Kirukans in Trichy. Paint, create, lend a hand and share your creativity with the trust team."
       kicker="Volunteer"
       heading="Bring your hands, we will bring the paint"
       intro="You do not need to be a professional artist. Bring your creativity and care to murals, workshops, outreach and volunteer programs."

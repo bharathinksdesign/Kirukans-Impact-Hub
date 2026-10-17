@@ -13,7 +13,6 @@ import GalleryPage from '@/pages/gallery';
 import { AppProviders } from '@/components/app-providers';
 import InboxPage from '@/pages/inbox';
 import { SignInPage, SignUpPage } from '@/pages/auth';
-import DonationResultPage from '@/pages/donation-result';
 import TeamPage from '@/pages/team';
 import { TeamSection } from '@/components/team-section';
 import AboutPage from '@/pages/about';
@@ -60,7 +59,6 @@ function App() {
           <Route path="/team" component={TeamPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/volunteer" component={VolunteerPage} />
-          <Route path="/donate/result" component={DonationResultPage} />
           <Route path="/admin/inbox" component={InboxPage} />
           <Route path="/sign-in/*?" component={SignInPage} />
           <Route path="/sign-up/*?" component={SignUpPage} />

@@ -45,8 +45,8 @@ export function Hero() {
             <a href={`${import.meta.env.BASE_URL}stories`} className="cta-feedback inline-flex items-center gap-2 rounded-full bg-sun text-plum font-bold px-6 py-3" data-testid="link-hero-stories">
               See our stories <ArrowUpRight className="size-4" aria-hidden />
             </a>
-            <a href={`${import.meta.env.BASE_URL}volunteer`} className="cta-feedback inline-flex items-center gap-2 rounded-full border-2 border-plum text-plum font-bold px-6 py-3 hover:border-plum" data-testid="link-hero-support">
-              Support us <ArrowUpRight className="size-4" aria-hidden />
+            <a href={`${import.meta.env.BASE_URL}volunteer`} className="cta-feedback inline-flex items-center gap-2 rounded-full border-2 border-plum text-plum font-bold px-6 py-3 hover:border-plum" data-testid="link-hero-volunteer">
+              Volunteer <ArrowUpRight className="size-4" aria-hidden />
             </a>
           </div>
         </div>

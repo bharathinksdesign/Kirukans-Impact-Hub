@@ -9,49 +9,6 @@ import * as zod from 'zod';
 
 
 /**
- * @summary Available one-time INR donations
- */
-export const GetDonationOptionsResponse = zod.object({
-  "prices": zod.array(zod.object({
-  "id": zod.string(),
-  "amount": zod.number().int().describe('Amount in paise')
-})),
-  "currency": zod.string(),
-  "testMode": zod.boolean(),
-  "available": zod.boolean()
-})
-
-
-/**
- * @summary Create secure Stripe donation checkout
- */
-export const CreateDonationCheckoutBody = zod.object({
-  "priceId": zod.string(),
-  "requestId": zod.string().uuid()
-})
-
-export const CreateDonationCheckoutResponse = zod.object({
-  "url": zod.string(),
-  "testMode": zod.boolean()
-})
-
-
-/**
- * @summary Verify donation payment with Stripe
- */
-export const GetDonationConfirmationParams = zod.object({
-  "sessionId": zod.coerce.string()
-})
-
-export const GetDonationConfirmationResponse = zod.object({
-  "status": zod.enum(['paid', 'pending', 'unpaid', 'expired']),
-  "amount": zod.number().int().describe('Amount in paise'),
-  "currency": zod.string(),
-  "testMode": zod.boolean()
-})
-
-
-/**
  * Returns server health status
  * @summary Health check
  */

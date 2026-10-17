@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { img } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
 import { ContactStrip } from '@/components/contact-strip';
@@ -71,9 +71,6 @@ export function Header() {
               {l}
             </a>
           ))}
-          <a href={homeHash('#support')} className="cta-feedback inline-flex items-center gap-2 rounded-xl bg-sun text-plum px-6 py-3 font-bold" data-testid="link-nav-support">
-            Donate <ArrowUpRight className="size-5" aria-hidden />
-          </a>
         </nav>
         <button
           className="lg:hidden p-2"
@@ -93,9 +90,6 @@ export function Header() {
               {l}
             </a>
           ))}
-          <a href={homeHash('#support')} onClick={() => setOpen(false)} className="cta-feedback mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-sun text-plum px-5 py-3 text-lg text-center" data-testid="link-mobile-support">
-            Donate <ArrowUpRight className="size-5" aria-hidden />
-          </a>
         </nav>
       )}
     </header>

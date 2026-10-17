@@ -101,7 +101,7 @@ export const projects: Project[] = [
     contribution: [
       'Traditional Kolam preparation, Pongal pot setup and cultural decorations.',
       'Singing, ice-breaking activities, games, dance performances and Uriyadi.',
-      'Donated 10 fans and lights for Krishna Home.',
+      'Provided 10 fans and lights for Krishna Home.',
     ],
     photos: [
       {

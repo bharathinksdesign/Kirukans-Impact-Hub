@@ -16,9 +16,7 @@
   },
   "private": true,
   "dependencies": {
-    "@replit/connectors-sdk": "^0.4.3",
-    "stripe": "^20.4.1",
-    "stripe-replit-sync": "^1.0.0"
+    "@replit/connectors-sdk": "^0.4.3"
   },
   "devDependencies": {
     "prettier": "^3.9.6",
