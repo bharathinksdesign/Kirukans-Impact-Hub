@@ -15,10 +15,11 @@ corepack enable
 corepack prepare pnpm@10.26.1 --activate
 pnpm install --frozen-lockfile
 pnpm run build:hostinger
-pnpm run start:hostinger
+pnpm start
 ```
 
-Configure Hostinger to run `pnpm run start:hostinger` and pass its assigned
+The root `start` script now points to the Hostinger runtime. Configure Hostinger
+to run `pnpm start` and pass its assigned
 `PORT` environment variable through to the app. The start command serves the
 built website and API from one Node.js process. `BASE_PATH=/` is set for the
 production build, and the start command enables the Hostinger-specific runtime
