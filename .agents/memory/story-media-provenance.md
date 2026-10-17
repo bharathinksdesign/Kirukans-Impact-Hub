@@ -44,3 +44,9 @@ The header's “Impact stories” menu item should open the full “The whole co
 **Why:** The user explicitly asked for this menu destination.
 
 **How to apply:** Keep the desktop and mobile menu destinations consistent; homepage teaser CTAs can still link to the homepage section.
+
+Treat uploaded event photos as documentary records: preserve their original framing and use modest, non-generative exposure and color corrections.
+
+**Why:** Generative image enhancement can recompose screenshots into a different aspect ratio or add padding, even when asked to preserve the scene. Local adjustments improved visibility while retaining the actual frame.
+
+**How to apply:** Keep originals untouched, export enhanced copies at the source aspect ratio, and inspect a contact sheet and the story preview before replacing gallery images.

@@ -174,8 +174,19 @@ export const storyContent: Record<string, StoryContent> = {
       title: 'Kirukans Diwali || Trichy junction || Thala Diwali',
       caption: 'Watch Kirukans’ Diwali 2022 celebration with families living beneath Trichy Junction Bridge.',
       kind: 'event',
+      thumbnail: 'diwali-bridge-group.webp',
     },
-    photoCaptions: {},
+    photoCaptions: {
+      'diwali-bridge-group.webp': 'Families and volunteers gather together for Diwali beneath Trichy Junction Bridge.',
+      'diwali-bridge-decor.webp': 'Colourful handmade decorations on display during the celebration.',
+      'diwali-bridge-sparkler.webp': 'A participant lights a sparkler during the night-time celebration.',
+      'diwali-bridge-sparklers.webp': 'A participant holds sparklers during the Diwali celebration.',
+      'diwali-bridge-firework.webp': 'Fireworks glow during the Diwali gathering.',
+      'diwali-bridge-gathering.webp': 'Families share time together during the visit.',
+      'diwali-bridge-elder-child.webp': 'An elder and child share a moment during the gathering.',
+      'diwali-bridge-group-evening.webp': 'Families, children and volunteers pose together after celebrating.',
+      'diwali-bridge-clothing-gift.webp': 'A family receives clothing as part of the Diwali gifts.',
+    },
   },
   'trans-pongal': {
     intro: [

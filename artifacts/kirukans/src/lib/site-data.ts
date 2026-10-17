@@ -245,7 +245,44 @@ export const projects: Project[] = [
       'Sweets, crackers and clothes for families and children.',
       'A shared Diwali celebration and time to listen to families’ experiences.',
     ],
-    photos: [],
+    photos: [
+      {
+        src: 'diwali-bridge-group.webp',
+        alt: 'Families and Kirukans volunteers gather together at night during Diwali 2022.',
+      },
+      {
+        src: 'diwali-bridge-decor.webp',
+        alt: 'Colourful handmade decorations on display during the Diwali celebration.',
+      },
+      {
+        src: 'diwali-bridge-sparkler.webp',
+        alt: 'A participant lights a sparkler during the night-time celebration.',
+      },
+      {
+        src: 'diwali-bridge-sparklers.webp',
+        alt: 'A participant holds sparklers during the Diwali celebration.',
+      },
+      {
+        src: 'diwali-bridge-firework.webp',
+        alt: 'A firework glows during the Diwali gathering.',
+      },
+      {
+        src: 'diwali-bridge-gathering.webp',
+        alt: 'Families spend time together during the visit.',
+      },
+      {
+        src: 'diwali-bridge-elder-child.webp',
+        alt: 'An elder and child share a moment during the gathering.',
+      },
+      {
+        src: 'diwali-bridge-group-evening.webp',
+        alt: 'Families, children and volunteers pose together at the end of the celebration.',
+      },
+      {
+        src: 'diwali-bridge-clothing-gift.webp',
+        alt: 'A family receives clothing during the Diwali visit.',
+      },
+    ],
     tone: 'bg-sun text-plum',
   },
   {
