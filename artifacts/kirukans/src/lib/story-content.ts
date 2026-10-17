@@ -13,7 +13,7 @@ export const storyContent: Record<string, StoryContent> = {
   'krishna-home-pongal': {
     intro: [
       'Kirukans Charitable Trust’s video documents a Pongal celebration at Krishna Home, published as “Pongal Celebration at Krishna Home | Kirukans Charitable Trust | Pongal 2025.”',
-      'The video image shows a Pongal pot, children and adults gathered nearby, and a speaker addressing the group.',
+      'Photographs from the gathering show the Pongal pot, children, older residents and volunteers sharing the celebration.',
     ],
     sections: [
       {
@@ -37,7 +37,16 @@ export const storyContent: Record<string, StoryContent> = {
       kind: 'event',
     },
     photoCaptions: {
-      'https://i.ytimg.com/vi/wswz2AB6FFc/maxresdefault.jpg': 'YouTube-hosted thumbnail for Kirukans’ Pongal 2025 celebration at Krishna Home.',
+      'pongal-krishna-home-group-hero.webp': 'Children, residents and volunteers gathered at Krishna Home for Pongal.',
+      'pongal-krishna-home-mic.webp': 'A volunteer speaks with children during the event.',
+      'pongal-krishna-home-pot.webp': 'The Pongal pot cooking over a fire.',
+      'pongal-krishna-home-residents.webp': 'Residents spending time together outdoors.',
+      'pongal-krishna-home-group-wide.webp': 'Children, residents and volunteers gather beneath the trees.',
+      'pongal-krishna-home-activity-1.webp': 'A child joins a playful activity.',
+      'pongal-krishna-home-activity-2.webp': 'Children take part in an outdoor group activity.',
+      'pongal-krishna-home-gift.webp': 'A gift is shared during the gathering.',
+      'pongal-krishna-home-gathering.webp': 'Residents, children and volunteers share time together.',
+      'pongal-krishna-home-volunteer-group.webp': 'Kirukans volunteers and Krishna Home residents pose together.',
     },
   },
   nangavaram: {

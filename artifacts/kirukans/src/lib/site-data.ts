@@ -96,12 +96,50 @@ export const projects: Project[] = [
     idea: 'A Pongal celebration at Krishna Home, documented in a Kirukans Charitable Trust event video.',
     contribution: [
       'A Pongal gathering at Krishna Home in 2025.',
-      'The video image shows a Pongal pot and a group gathered nearby.',
+      'Children, residents and volunteers came together for the celebration.',
     ],
-    photos: [{
-      src: 'https://i.ytimg.com/vi/wswz2AB6FFc/maxresdefault.jpg',
-      alt: 'Pongal pot and a group gathered at Krishna Home during the 2025 celebration',
-    }],
+    photos: [
+      {
+        src: 'pongal-krishna-home-group-hero.webp',
+        alt: 'Children, residents and volunteers gather at Krishna Home for Pongal.',
+      },
+      {
+        src: 'pongal-krishna-home-mic.webp',
+        alt: 'A volunteer speaks with children during the gathering.',
+      },
+      {
+        src: 'pongal-krishna-home-pot.webp',
+        alt: 'A traditional Pongal pot cooks over a fire.',
+      },
+      {
+        src: 'pongal-krishna-home-residents.webp',
+        alt: 'Residents sit together outdoors during the celebration.',
+      },
+      {
+        src: 'pongal-krishna-home-group-wide.webp',
+        alt: 'Children, residents and volunteers gathered beneath the trees.',
+      },
+      {
+        src: 'pongal-krishna-home-activity-1.webp',
+        alt: 'A child takes part in a playful activity during the event.',
+      },
+      {
+        src: 'pongal-krishna-home-activity-2.webp',
+        alt: 'Children take part in an outdoor group activity.',
+      },
+      {
+        src: 'pongal-krishna-home-gift.webp',
+        alt: 'A gift is shared with a resident during the gathering.',
+      },
+      {
+        src: 'pongal-krishna-home-gathering.webp',
+        alt: 'Residents, children and volunteers share time together outdoors.',
+      },
+      {
+        src: 'pongal-krishna-home-volunteer-group.webp',
+        alt: 'Kirukans volunteers and Krishna Home residents pose together.',
+      },
+    ],
     tone: 'bg-sun text-plum',
   },
 ];
