@@ -2,11 +2,25 @@ import Stripe from 'stripe';
 import { StripeSync } from 'stripe-replit-sync';
 
 async function getStripeCredentials(): Promise<{ secretKey: string; webhookSecret?: string }> {
+  const directSecretKey = process.env.STRIPE_SECRET_KEY?.trim();
+  if (directSecretKey) {
+    return {
+      secretKey: directSecretKey,
+      webhookSecret: process.env.STRIPE_WEBHOOK_SECRET?.trim() || undefined,
+    };
+  }
+
+  if (process.env.HOSTINGER_DEPLOYMENT === 'true') {
+    throw new Error('STRIPE_SECRET_KEY must be configured for this deployment.');
+  }
+
   const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
   const token = process.env.REPL_IDENTITY
     ? `repl ${process.env.REPL_IDENTITY}`
     : process.env.WEB_REPL_RENEWAL ? `depl ${process.env.WEB_REPL_RENEWAL}` : null;
-  if (!hostname || !token) throw new Error('Stripe connection is unavailable.');
+  if (!hostname || !token) {
+    throw new Error('Set STRIPE_SECRET_KEY or connect Stripe through Replit.');
+  }
   const response = await fetch(
     `https://${hostname}/api/v2/connection?include_secrets=true&connector_names=stripe`,
     { headers: { Accept: 'application/json', X_REPLIT_TOKEN: token }, signal: AbortSignal.timeout(10000) },

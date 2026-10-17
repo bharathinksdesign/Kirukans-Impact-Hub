@@ -34,12 +34,23 @@ async function donationPrices() {
 
 // Trusted runtime domains, never a user-supplied redirect URL or arbitrary Host.
 function checkoutOrigin(origin: string | undefined): string | null {
-  const domains = [process.env.REPLIT_DOMAINS, process.env.REPLIT_DEV_DOMAIN]
-    .flatMap(value => value?.split(',') ?? []).map(value => value.trim()).filter(Boolean);
-  if (!origin) return domains[0] ? `https://${domains[0]}` : null;
+  const candidates = [
+    process.env.PUBLIC_APP_URL,
+    process.env.REPLIT_DOMAINS,
+    process.env.REPLIT_DEV_DOMAIN,
+  ].flatMap(value => value?.split(',') ?? []).map(value => value.trim()).filter(Boolean);
+  const trustedOrigins = candidates.flatMap(value => {
+    try {
+      const url = new URL(value.includes('://') ? value : `https://${value}`);
+      return url.protocol === 'https:' ? [url.origin] : [];
+    } catch {
+      return [];
+    }
+  });
+  if (!origin) return trustedOrigins[0] ?? null;
   try {
     const url = new URL(origin);
-    return url.protocol === 'https:' && domains.includes(url.host) ? url.origin : null;
+    return url.protocol === 'https:' && trustedOrigins.includes(url.origin) ? url.origin : null;
   } catch { return null; }
 }
 

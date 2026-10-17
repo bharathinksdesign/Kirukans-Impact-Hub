@@ -1,4 +1,7 @@
 import express, { type Express } from "express";
+import { existsSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import cors from "cors";
 import pinoHttp from "pino-http";
 import router from "./routes";
@@ -29,7 +32,11 @@ app.use(
     },
   }),
 );
-app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
+// Replit-managed Clerk requires Replit's proxy setup. External hosting uses a
+// separately configured Clerk instance and sends Frontend API calls directly.
+if (process.env.HOSTINGER_DEPLOYMENT !== 'true') {
+  app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
+}
 app.post('/api/stripe/webhook', express.raw({ type: 'application/json', limit: '2mb' }), async (req, res) => {
   const signature = req.get('stripe-signature');
   if (!signature) { res.status(400).json({ error: 'Missing signature' }); return; }
@@ -62,5 +69,28 @@ app.use(
 );
 
 app.use("/api", router);
+
+if (process.env.SERVE_FRONTEND === 'true') {
+  const frontendDist = resolve(dirname(fileURLToPath(import.meta.url)), '../../kirukans/dist/public');
+  const indexFile = resolve(frontendDist, 'index.html');
+  if (!existsSync(indexFile)) {
+    throw new Error(`Built frontend not found at ${indexFile}. Run pnpm run build:hostinger first.`);
+  }
+
+  app.use(express.static(frontendDist, { index: false }));
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
+      next();
+      return;
+    }
+    if (req.path === '/api' || req.path.startsWith('/api/')) {
+      next();
+      return;
+    }
+    res.sendFile(indexFile, (error) => {
+      if (error) next(error);
+    });
+  });
+}
 
 export default app;
