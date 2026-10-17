@@ -14,3 +14,17 @@ mtime_ms = 1792264923694
 storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:114a55c4-51a8-4347-9585-acf8c7d0c7e7/aa9c08ed-2a50-4583-ac43-bd54e574aa93/816cea26-0680-4a9c-a30b-4147124448b8"
 storage_version_token = "1792265288896241"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "V7f4l0-U0IXywzZabfve0"
+uri = "file://generated-artifacts/Kirukans-Impact-Hub-hostinger-express.zip"
+type = "unspecified"
+title = "Download Hostinger Express app"
+description = "Framework-uploader package with root package.json and start script, Express static server, and the built Kirukans frontend. Choose Express and run npm start. Frontend only; API must be hosted separately."
+logical_id = "3a246207-869f-4366-8457-e766d7d2a328"
+content_hash = "sha256:638c968e1fb28b279ad0462ba9a43ff466a59df785a4fae08c6e0836b4e168c9"
+size = 26193666
+mtime_ms = 1792265660518
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:114a55c4-51a8-4347-9585-acf8c7d0c7e7/3a246207-869f-4366-8457-e766d7d2a328/be73335f-77be-4134-bbda-d58f71c1c1d2"
+storage_version_token = "1792265696308098"
+content_type = "application/octet-stream"
