@@ -234,6 +234,21 @@ export const projects: Project[] = [
     tone: 'bg-teal text-plum',
   },
   {
+    id: 'diwali-trichy-junction-bridge',
+    n: '08',
+    title: 'Diwali with Families at Trichy Junction Bridge',
+    place: 'Trichy Junction Bridge, Trichy',
+    date: 'October 2022',
+    idea: 'Kirukans celebrated Diwali with families living beneath Trichy Junction Bridge, sharing festive essentials, time and conversation.',
+    contribution: [
+      'Grocery essentials for each family.',
+      'Sweets, crackers and clothes for families and children.',
+      'A shared Diwali celebration and time to listen to families’ experiences.',
+    ],
+    photos: [],
+    tone: 'bg-sun text-plum',
+  },
+  {
     id: 'trans-pongal',
     n: '06',
     title: 'Trans Pongal',

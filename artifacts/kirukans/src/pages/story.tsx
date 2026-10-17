@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'wouter';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/closing-sections';
 import { Reveal } from '@/components/reveal';
@@ -73,10 +73,20 @@ export default function StoryPage() {
                 <p className="mt-6 text-xl text-cream/90 leading-relaxed max-w-xl">{project.idea}</p>
               </Reveal>
               <Reveal delay={120}>
-                <figure className="relative">
-                  <img src={img(hero.src)} alt={hero.alt} className="block w-full h-auto rounded-[55px_8px_55px_8px] md:rounded-[110px_12px_110px_12px]" />
-                  <figcaption className="mt-4 text-sm text-cream/80 max-w-lg">{hero.cap}</figcaption>
-                </figure>
+                {hero ? (
+                  <figure className="relative">
+                    <img src={img(hero.src)} alt={hero.alt} className="block w-full h-auto rounded-[55px_8px_55px_8px] md:rounded-[110px_12px_110px_12px]" />
+                    <figcaption className="mt-4 text-sm text-cream/80 max-w-lg">{hero.cap}</figcaption>
+                  </figure>
+                ) : (
+                  <div className="relative flex min-h-[20rem] flex-col items-center justify-center overflow-hidden rounded-[55px_8px_55px_8px] border-2 border-teal/40 bg-sun px-8 py-12 text-center text-plum md:min-h-[25rem] md:rounded-[110px_12px_110px_12px]">
+                    <span className="absolute -right-12 -top-16 size-56 rounded-full border-[24px] border-plum/10" aria-hidden />
+                    <span className="absolute -bottom-24 -left-12 size-64 rounded-full border-[30px] border-tangerine/20" aria-hidden />
+                    <Sparkles className="relative size-12 text-tangerine" aria-hidden />
+                    <p className="relative mt-6 font-hand text-4xl md:text-5xl">A Diwali shared together</p>
+                    <p className="relative mt-3 max-w-sm text-base font-semibold md:text-lg">Groceries, festive gifts and time spent with families in Trichy</p>
+                  </div>
+                )}
               </Reveal>
             </div>
           </div>
@@ -119,14 +129,16 @@ export default function StoryPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 md:py-24">
-          <Reveal>
-            <p className="font-hand text-3xl text-tangerine">Look closer</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">{photos.length > 1 ? 'Photographs from the project' : 'The project photograph'}</h2>
-            <p className="mt-2 text-muted-foreground">Tap any photo to enlarge it.</p>
-          </Reveal>
-          <div className="mt-8"><PhotoGallery photos={photos} /></div>
-        </section>
+        {photos.length > 0 && (
+          <section className="mx-auto max-w-7xl px-5 py-16 md:py-24">
+            <Reveal>
+              <p className="font-hand text-3xl text-tangerine">Look closer</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">{photos.length > 1 ? 'Photographs from the project' : 'The project photograph'}</h2>
+              <p className="mt-2 text-muted-foreground">Tap any photo to enlarge it.</p>
+            </Reveal>
+            <div className="mt-8"><PhotoGallery photos={photos} /></div>
+          </section>
+        )}
 
         <section className="bg-plum text-cream py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-5">
@@ -146,8 +158,13 @@ export default function StoryPage() {
                 <li key={s.id}>
                   <a href={storyHref(s.id)} className="group flex h-full flex-col overflow-hidden rounded-3xl border border-plum/20 bg-card text-plum motion-safe:hover:-translate-y-1 motion-safe:transition-transform" data-testid={`link-related-${s.id}`}>
                     <div className="aspect-[16/10] w-full overflow-hidden bg-muted">
-                      {s.photos[0] && (
+                      {s.photos[0] ? (
                         <img src={img(s.photos[0].src)} alt={s.photos[0].alt} loading="lazy" className="size-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105" />
+                      ) : (
+                        <div className={`flex size-full flex-col items-center justify-center gap-3 p-6 text-center ${s.tone}`}>
+                          <Sparkles className="size-8" aria-hidden />
+                          <span className="text-lg font-extrabold leading-tight">{s.title}</span>
+                        </div>
                       )}
                     </div>
                     <div className="flex flex-1 flex-col p-6">

@@ -35,7 +35,7 @@ export default function StoriesPage() {
           <Reveal className="mt-8 max-w-3xl">
             <p className="font-hand text-3xl text-tangerine">The whole collection</p>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-none tracking-tight">Every wall, every story</h1>
-            <p className="mt-5 text-lg text-muted-foreground">Murals, community celebrations and shared moments with volunteers, newest first. Open any story to meet the people, see the work and explore the photos.</p>
+            <p className="mt-5 text-lg text-muted-foreground">Murals, community celebrations and shared moments with volunteers, newest first. Open any story to learn about the people, place and work behind it.</p>
           </Reveal>
 
           <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

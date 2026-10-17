@@ -134,6 +134,49 @@ export const storyContent: Record<string, StoryContent> = {
       'creative-workshop-cms-18.webp': 'Students and volunteers paint together during the workshop.',
     },
   },
+  'diwali-trichy-junction-bridge': {
+    intro: [
+      'Diwali 2022 was different for the Kirukans team. We celebrated with families living beneath Trichy Junction Bridge, sharing the festival and time together.',
+      'We brought grocery essentials for each family, along with sweets, crackers and clothes for families and children. They celebrated with us and spoke openly about the difficulties they face as they work to make a living.',
+    ],
+    sections: [
+      {
+        title: 'A Diwali shared together',
+        body: [
+          'The Kirukans team spent Diwali with families living beneath the Trichy Junction Bridge. Grocery essentials were provided for each family, along with sweets, crackers and clothes for the families and children.',
+          'The families joined in the celebration and shared the day with the team.',
+        ],
+      },
+      {
+        title: 'Taking time to listen',
+        body: [
+          'During the visit, families spoke from the heart about the challenges they face in their daily lives and in securing their survival. They continue to move forward with hope as they meet those challenges.',
+          'Being welcomed into their celebration gave the team a chance to listen, share time and celebrate together.',
+        ],
+      },
+      {
+        title: 'A brighter kind of light',
+        body: [
+          'The light from the crackers we lit that Diwali was not as bright as the joy on the families’ faces.',
+          'For the Kirukans team, the day remains a reminder that celebrating together and listening to one another can make a festival memorable.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Trichy Junction Bridge, Trichy' },
+      { label: 'When', value: 'October 2022' },
+      { label: 'Shared', value: 'Groceries for each family' },
+      { label: 'For the festival', value: 'Sweets, crackers and clothes for families and children' },
+      { label: 'Organized by', value: 'Kirukans Charitable Trust' },
+    ],
+    video: {
+      id: 'v2PBM_G8vws',
+      title: 'Kirukans Diwali || Trichy junction || Thala Diwali',
+      caption: 'Watch Kirukans’ Diwali 2022 celebration with families living beneath Trichy Junction Bridge.',
+      kind: 'event',
+    },
+    photoCaptions: {},
+  },
   'trans-pongal': {
     intro: [
       'On 13 January 2024, Kirukans Charitable Trust brought together more than 30 transgender people at St Joseph’s Church in Trichy for Trans Pongal.',
