@@ -82,9 +82,9 @@ export function StoryVideo({ video }: { video: StoryVideoData }) {
   const watchUrl = instagram
     ? `https://www.instagram.com/reel/${video.id}/`
     : `https://www.youtube.com/watch?v=${video.id}`;
-  const thumbnail = video.thumbnail
-    ? img(video.thumbnail)
-    : instagram ? undefined : `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+  const thumbnail = instagram
+    ? video.thumbnail ? img(video.thumbnail) : undefined
+    : `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
   return (
     <div>
       <p className="font-hand text-3xl text-tangerine">{heading}</p>
@@ -101,7 +101,7 @@ export function StoryVideo({ video }: { video: StoryVideoData }) {
           />
         ) : (
           <button onClick={() => setPlay(true)} className="relative size-full flex flex-col items-center justify-center gap-4 p-6 text-center text-cream group" aria-label={`Play video: ${video.title}`} data-testid="button-play-video">
-            {thumbnail && <img src={thumbnail} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-45" />}
+            {thumbnail && <img src={thumbnail} alt="" className="absolute inset-0 size-full object-cover opacity-45" />}
             <span className="relative grid place-items-center size-20 rounded-full bg-sun text-plum group-hover:scale-105 transition-transform motion-reduce:transition-none"><Play className="size-9 ml-1" fill="currentColor" aria-hidden /></span>
           </button>
         )}

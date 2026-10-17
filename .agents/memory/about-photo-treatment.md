@@ -8,3 +8,9 @@ Use the reference-style photo collage in the About section: a large photo with a
 **Why:** The user asked to restore this section to match their reference and keep only minor interaction after a previous, more elaborate lightbox treatment.
 
 **How to apply:** Preserve this composition on desktop and mobile; limit image effects to small responsive motion and hover-only shadow.
+
+When new About-page content needs a photo that has not been supplied, use a clearly reserved placeholder rather than selecting or generating a substitute.
+
+**Why:** The user said they will add a photo later if the layout needs one.
+
+**How to apply:** Keep existing About photos unless asked to replace them; for any new photo slot, leave a simple mock space until the user provides an image.

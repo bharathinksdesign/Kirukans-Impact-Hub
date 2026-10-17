@@ -2,7 +2,7 @@
 - [Brand colors](dark-brand-color.md) — only supplied eight swatches; light header/hero and black footer; convert profiled swatches before sampling.
 - [Volunteer enquiry privacy](volunteer-enquiry-privacy.md) — enquiries belong in a private website inbox; public sign-up must never grant inbox access.
 - [Stripe compatibility](stripe-compatibility.md) — connector-template schema drift and silent skipping of missing SQL migration assets require runtime checks.
-- [Story media provenance](story-media-provenance.md) — verify media relevance; visibly lift dark screenshots while preserving original framing.
+- [Story media provenance](story-media-provenance.md) — verify media relevance, use YouTube’s own thumbnails, and preserve documentary image framing.
 - [What we do illustrations](what-we-do-illustrations.md) — supplied hand-drawn artwork, readable copy and restrained panels rather than full-colour cards.
 - [About photo treatment](about-photo-treatment.md) — keep the plum/yellow overlapping frames and subtle image motion; no lightbox.
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.

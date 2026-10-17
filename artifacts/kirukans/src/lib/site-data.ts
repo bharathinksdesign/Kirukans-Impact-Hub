@@ -149,7 +149,7 @@ export const projects: Project[] = [
     id: 'christian-mission-service-workshop',
     n: '07',
     title: 'Kirukans Creative Workshop',
-    place: 'Christian Mission Service Children’s Home, Kilpauk, Chennai',
+    place: 'Children’s Home, Kilpauk, Chennai',
     date: 'October 2021',
     idea: 'A hands-on creative workshop where students explored painting, mural-making, clay and other art activities.',
     contribution: [
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     photos: [
       {
         src: 'creative-workshop-cms-02.webp',
-        alt: 'Students proudly display their artwork at the Christian Mission Service workshop.',
+        alt: 'Students proudly display their artwork during the children’s home workshop.',
       },
       {
         src: 'creative-workshop-cms-01.webp',
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     id: 'diwali-trichy-junction-bridge',
     n: '08',
     title: 'Diwali with Families at Trichy Junction Bridge',
-    place: 'Trichy Junction Bridge, Trichy',
+    place: 'Trichy Junction Bridge',
     date: 'October 2022',
     idea: 'Kirukans celebrated Diwali with families living beneath Trichy Junction Bridge, sharing festive essentials, time and conversation.',
     contribution: [
@@ -377,6 +377,34 @@ export const projects: Project[] = [
       {
         src: 'trans-pongal-group-evening.webp',
         alt: 'Participants and volunteers gather outside St Joseph’s Church after the celebration.',
+      },
+    ],
+    tone: 'bg-teal text-plum',
+  },
+  {
+    id: 'manakkal-first-mural',
+    n: '09',
+    title: 'The Power of Education',
+    place: 'Manakkal Government Primary School',
+    date: 'June 2021',
+    idea: 'A first mural for the school library block, celebrating education as a path to imagination, knowledge and possibility.',
+    contribution: [
+      'An education-themed mural painted on the school library block.',
+      'An open book at the centre, surrounded by colour and imagery about learning.',
+      'Kirukans’ first mural, supported by friends as the team slowly took shape.',
+    ],
+    photos: [
+      {
+        src: 'manakkal-education-before-after.webp',
+        alt: 'Before-and-after view of the Manakkal Government Primary School library block, including the completed education mural.',
+      },
+      {
+        src: 'manakkal-education-lettering.webp',
+        alt: 'Close-up of painted lettering and textured green paint on the mural.',
+      },
+      {
+        src: 'manakkal-first-mural-team.webp',
+        alt: 'Friends who supported the first mural stand in front of the finished painting.',
       },
     ],
     tone: 'bg-teal text-plum',

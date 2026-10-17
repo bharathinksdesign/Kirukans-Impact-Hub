@@ -73,7 +73,7 @@ export const storyContent: Record<string, StoryContent> = {
   },
   'christian-mission-service-workshop': {
     intro: [
-      'Kirukans conducted a creative workshop at Christian Mission Service Children’s Home in Kilpauk, Chennai, bringing students together to explore art through hands-on activities.',
+      'Kirukans conducted a creative workshop at a children’s home in Kilpauk, Chennai, bringing students together to explore art through hands-on activities.',
       'Students tried mural painting, texture painting, poster colours, coconut-shell doll making, clay modelling and more. They enjoyed the workshop and learned by creating together.',
     ],
     sections: [
@@ -94,13 +94,13 @@ export const storyContent: Record<string, StoryContent> = {
       {
         title: 'A day enjoyed together',
         body: [
-          'Students took part in the activities and enjoyed the workshop. Kirukans is grateful to Christian Mission Service Children’s Home for welcoming the team.',
+          'Students took part in the activities and enjoyed the workshop. Kirukans is grateful to the children’s home for welcoming the team.',
           'The workshop reflects Kirukans’ belief in using creative activities to bring people together and make space for learning through art.',
         ],
       },
     ],
     facts: [
-      { label: 'Where', value: 'Christian Mission Service Children’s Home · Kilpauk, Chennai' },
+      { label: 'Where', value: 'Children’s Home · Kilpauk, Chennai' },
       { label: 'When', value: 'October 2021' },
       { label: 'Activities', value: 'Mural, texture and poster-colour painting' },
       { label: 'Also explored', value: 'Coconut-shell dolls and clay modelling' },
@@ -109,9 +109,8 @@ export const storyContent: Record<string, StoryContent> = {
     video: {
       id: 'bhIgRA4YO2M',
       title: 'Kirukans creative workshop at a children’s home in Chennai',
-      caption: 'Watch scenes from the workshop at Christian Mission Service Children’s Home in Kilpauk, Chennai.',
+      caption: 'Watch scenes from the workshop at the children’s home in Kilpauk, Chennai.',
       kind: 'event',
-      thumbnail: 'creative-workshop-cms-02.webp',
     },
     photoCaptions: {
       'creative-workshop-cms-01.webp': 'A student focuses on a drawing during the workshop.',
@@ -163,7 +162,7 @@ export const storyContent: Record<string, StoryContent> = {
       },
     ],
     facts: [
-      { label: 'Where', value: 'Trichy Junction Bridge, Trichy' },
+      { label: 'Where', value: 'Trichy Junction Bridge' },
       { label: 'When', value: 'October 2022' },
       { label: 'Shared', value: 'Groceries for each family' },
       { label: 'For the festival', value: 'Sweets, crackers and clothes for families and children' },
@@ -174,7 +173,6 @@ export const storyContent: Record<string, StoryContent> = {
       title: 'Kirukans Diwali || Trichy junction || Thala Diwali',
       caption: 'Watch Kirukans’ Diwali 2022 celebration with families living beneath Trichy Junction Bridge.',
       kind: 'event',
-      thumbnail: 'diwali-bridge-group-bright.webp',
     },
     photoCaptions: {
       'diwali-bridge-group-bright.webp': 'Families and volunteers gather together for Diwali beneath Trichy Junction Bridge.',
@@ -253,6 +251,46 @@ export const storyContent: Record<string, StoryContent> = {
       'trans-pongal-community-moment-2.webp': 'Community members take part in the celebration.',
       'trans-pongal-community-moment-3.webp': 'Participants share a moment during Trans Pongal.',
       'trans-pongal-group-evening.webp': 'Participants and volunteers gather outside St Joseph’s Church after the celebration.',
+    },
+  },
+  'manakkal-first-mural': {
+    intro: [
+      'In June 2021, we painted our first mural on the library block at Manakkal Government Primary School. Its theme was “The Power of Education.”',
+      'The open book at the centre represents the foundation of learning. The colourful mural around it celebrates education as a path to imagination, knowledge and possibilities.',
+    ],
+    sections: [
+      {
+        title: 'An open book, a world of possibility',
+        body: [
+          'At the centre of the mural is an open book—the starting point for learning. Colourful scenes around it reflect how education can help children dream, explore and shape their futures.',
+          'The mural was created for the school’s library block, bringing its message about learning into a space connected with reading and discovery.',
+        ],
+      },
+      {
+        title: 'The first mural, the beginning of a team',
+        body: [
+          'This was the first mural we painted as Kirukans. Friends supported us at this early stage, and the people who came together for the work gradually formed the team behind the trust.',
+          'It marked the beginning of a journey that continued to grow, project by project.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Manakkal Government Primary School' },
+      { label: 'When', value: 'June 2021' },
+      { label: 'Theme', value: 'The Power of Education' },
+      { label: 'Milestone', value: 'Kirukans’ first mural' },
+      { label: 'Supported by', value: 'Friends who helped the team take shape' },
+    ],
+    video: {
+      id: 'IW10sJuEtM8',
+      title: 'WALL PAINTING || MANAKAL || LALGUDI || KIRUKANS || MURAL PAINTING ||',
+      caption: 'A Kirukans mural-painting film from Manakkal, Lalgudi.',
+      kind: 'project',
+    },
+    photoCaptions: {
+      'manakkal-education-before-after.webp': 'Before-and-after views of the school library block, with the education mural completed.',
+      'manakkal-education-lettering.webp': 'A close detail of the mural’s painted lettering and textured wall.',
+      'manakkal-first-mural-team.webp': 'Friends stand together in front of the finished mural, early in Kirukans’ journey.',
     },
   },
   nangavaram: {

@@ -9,6 +9,12 @@ Verify videos against the trust's actual official YouTube handle before embeddin
 
 **How to apply:** Confirm the video's author matches the official channel and that its description identifies the relevant project. A working video ID alone is not enough.
 
+For YouTube story videos, use only the thumbnail supplied for that video ID; never choose a project photo as the video preview.
+
+**Why:** The user asked that story videos display the YouTube thumbnail only, not an image selected by the site editor.
+
+**How to apply:** Derive YouTube previews from the video ID. Keep separate thumbnail handling only for non-YouTube platforms where needed.
+
 Clearly label related films when no matching project film is available.
 
 **Why:** A Kirukans creative workshop in Chennai is relevant to its work, but it is not footage of the Anganvadi School project in Thalakudi.
