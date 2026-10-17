@@ -45,8 +45,8 @@ The header's “Impact stories” menu item should open the full “The whole co
 
 **How to apply:** Keep the desktop and mobile menu destinations consistent; homepage teaser CTAs can still link to the homepage section.
 
-Treat uploaded event photos as documentary records: preserve their original framing and use modest, non-generative exposure and color corrections.
+For submitted video screenshots, visibly lift dark shadows across every image while preserving the original framing and documentary content. Do not treat a barely noticeable adjustment as a completed enhancement.
 
-**Why:** Generative image enhancement can recompose screenshots into a different aspect ratio or add padding, even when asked to preserve the scene. Local adjustments improved visibility while retaining the actual frame.
+**Why:** The user clarified that every Diwali screenshot needs a noticeable enhancement. Generative enhancement can also recompose screenshots or add padding, so non-generative correction preserves the actual scene.
 
-**How to apply:** Keep originals untouched, export enhanced copies at the source aspect ratio, and inspect a contact sheet and the story preview before replacing gallery images.
+**How to apply:** Keep originals untouched, test and visually verify tonal changes on a sample before batch-processing, export at the source aspect ratio, and inspect a contact sheet and page preview. Use new asset filenames when replacing processed images to avoid stale browser caches.
