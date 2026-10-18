@@ -1,0 +1,113 @@
+Build 01a14e24-067d-735d-bbd5-a6ad7c07c575 started
+Source: previous deployment source
+
+[1;36m==> Restoring previous source[0m
+Restoring source files from the last successful deployment
+[32mRestore completed in 0.5s[0m
+Source ready, build will begin shortly...
+
+[1;36m==> Preparing build[0m
+Node.js:            22
+Package manager:    pnpm
+Build command:      pnpm run build
+Output directory:   none
+Entry file:         server.mjs
+Application type:   Other
+Mode:               publish
+Environment:        variables loaded from .env
+Staging source files
+
+[1;36m==> Installing dependencies[0m
+Running "pnpm install"
+Scope: all 9 workspace projects
+✓ Lockfile passes supply-chain policies (verified 1h ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +563
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/u580631647/.local/share/pnpm/store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 563, reused 491, downloaded 0, added 457
+Progress: resolved 563, reused 491, downloaded 0, added 551
+Progress: resolved 563, reused 491, downloaded 0, added 563, done
+
+dependencies:
++ @replit/connectors-sdk 0.4.3
+
+devDependencies:
++ prettier 3.9.6
++ typescript 5.9.3
+
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+. preinstall: Done
+Done in 4.4s using pnpm v11.24.0
+[32mDependencies installed in 4.7s[0m
+
+[1;36m==> Building[0m
+Running "pnpm run build"
+$ pnpm run typecheck && pnpm -r --if-present run build
+$ pnpm run typecheck:libs && pnpm -r --filter "./artifacts/**" --filter "./scripts" --if-present run typecheck
+$ tsc --build
+Scope: 4 of 9 workspace projects
+artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+artifacts/kirukans typecheck$ tsc -p tsconfig.json --noEmit
+artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+scripts typecheck$ tsc -p tsconfig.json --noEmit
+scripts typecheck: Done
+artifacts/api-server typecheck: Done
+artifacts/mockup-sandbox typecheck: Done
+artifacts/kirukans typecheck: Done
+Scope: 8 of 9 workspace projects
+artifacts/mockup-sandbox build$ vite build
+artifacts/mockup-sandbox build: vite v7.3.6 building client environment for production...
+artifacts/mockup-sandbox build: transforming...
+artifacts/mockup-sandbox build: ✓ 30 modules transformed.
+artifacts/mockup-sandbox build: rendering chunks...
+artifacts/mockup-sandbox build: computing gzip size...
+artifacts/mockup-sandbox build: dist/index.html                   4.42 kB │ gzip:  1.23 kB
+artifacts/mockup-sandbox build: dist/assets/index-C4GxwS3y.css   88.37 kB │ gzip: 14.82 kB
+artifacts/mockup-sandbox build: dist/assets/index-CqOx4XgY.js   187.72 kB │ gzip: 59.46 kB
+artifacts/mockup-sandbox build: ✓ built in 1.10s
+artifacts/mockup-sandbox build: Done
+artifacts/api-server build$ node ./build.mjs
+artifacts/kirukans build$ vite build --config vite.config.ts
+artifacts/api-server build:   dist/index.mjs                       2.8mb ⚠️
+artifacts/api-server build:   dist/pino-worker.mjs               153.5kb
+artifacts/api-server build:   dist/pino-file.mjs                 142.1kb
+artifacts/api-server build:   dist/pino-pretty.mjs               115.3kb
+artifacts/api-server build:   dist/thread-stream-worker.mjs        7.4kb
+artifacts/api-server build:   dist/index.mjs.map                   5.1mb
+artifacts/api-server build:   dist/pino-worker.mjs.map           256.9kb
+artifacts/api-server build:   dist/pino-file.mjs.map             229.1kb
+artifacts/api-server build:   dist/pino-pretty.mjs.map           209.5kb
+artifacts/api-server build:   dist/thread-stream-worker.mjs.map   12.0kb
+artifacts/api-server build: ⚡ Done in 258ms
+artifacts/api-server build: Done
+artifacts/kirukans build: vite v7.3.6 building client environment for production...
+artifacts/kirukans build: transforming...
+artifacts/kirukans build: ✓ 2278 modules transformed.
+artifacts/kirukans build: rendering chunks...
+artifacts/kirukans build: computing gzip size...
+artifacts/kirukans build: dist/public/index.html                   1.15 kB │ gzip:   0.57 kB
+artifacts/kirukans build: dist/public/assets/index-6PwNnzLr.css  117.38 kB │ gzip:  19.93 kB
+artifacts/kirukans build: dist/public/assets/index-Q1zEFOEe.js   649.31 kB │ gzip: 199.24 kB
+artifacts/kirukans build: (!) Some chunks are larger than 500 kB after minification. Consider:
+artifacts/kirukans build: - Using dynamic import() to code-split the application
+artifacts/kirukans build: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+artifacts/kirukans build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+artifacts/kirukans build: ✓ built in 4.81s
+artifacts/kirukans build: Done
+[32mBuild completed in 18.8s[0m
+
+[1;36m==> Publishing[0m
+Copying build output to version 01a14e24-067d-735d-bbd5-a6ad7c07c575
+Switching "current" to the new version
+Syncing public_html
+[32mPublished in 14.8s[0m
+
+[1;36m==> Restarting application[0m
+Reloading server configuration
+Restarting Node.js server
+[32mApplication restarted in 0.3s[0m
+[32mDeployment completed in 41.3s[0m
