@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+  --color-plum: hsl(var(--plum));
+  --color-teal: hsl(var(--teal));
+  --color-sun: hsl(var(--sun));
+  --color-tangerine: hsl(var(--tangerine));
+  --color-cream: hsl(var(--cream));
+  --color-pink: hsl(var(--pink));
+  --color-ocean: hsl(var(--ocean));
+  --color-ink: hsl(var(--ink));
+  --color-white: hsl(var(--cream));
+  --color-black: hsl(var(--ink));
+  --font-sans: var(--app-font-sans);
+  --font-display: var(--app-font-display);
+  --font-hand: 'Caveat', cursive;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Elevation is invisible at rest and yellow only on actual pointer hover.
+     Keep ring shadows independent so keyboard focus stays visible. */
+  --shadow-2xs: 1px 1px 0 var(--brand-elevation-color);
+  --shadow-xs: 2px 2px 0 var(--brand-elevation-color);
+  --shadow-sm: 3px 3px 0 var(--brand-elevation-color);
+  --shadow: 4px 4px 0 var(--brand-elevation-color);
+  --shadow-md: 5px 5px 0 var(--brand-elevation-color);
+  --shadow-lg: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-xl: 8px 8px 0 var(--brand-elevation-color);
+  --shadow-2xl: 10px 10px 0 var(--brand-elevation-color);
+  --shadow-brand: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-brand-hover: 8px 8px 0 var(--brand-elevation-color);
+}
+
+:root {
+  /* The eight supplied swatches, converted from the image profile to sRGB. */
+  --plum: 246 54.34782609% 18.03921569%;
+  --teal: 167.90697674 55.36480687% 45.68627451%;
+  --sun: 43.37662338 100% 54.70588235%;
+  --pink: 342.77511962 82.60869565% 49.60784314%;
+  --ocean: 205.35211268 83.52941176% 16.66666667%;
+  --cream: 200 17.64705882% 96.66666667%;
+  --ink: 0 0% 1.96078431%;
+  --gray: 225 4.70588235% 33.33333333%;
+  /* Compatibility alias: existing orange accents now use the supplied pink. */
+  --tangerine: var(--pink);
+
+  --background: var(--cream);
+  --foreground: var(--plum);
+  --border: var(--gray);
+  --card: var(--cream);
+  --card-foreground: var(--plum);
+  --card-border: var(--gray);
+  --popover: var(--cream);
+  --popover-foreground: var(--plum);
+  --popover-border: var(--gray);
+  --primary: var(--plum);
+  --primary-foreground: var(--cream);
+  --secondary: var(--sun);
+  --secondary-foreground: var(--plum);
+  --muted: var(--cream);
+  --muted-foreground: var(--gray);
+  --accent: var(--teal);
+  --accent-foreground: var(--plum);
+  --destructive: var(--pink);
+  --destructive-foreground: var(--ink);
+  --input: var(--gray);
+  --ring: var(--ocean);
+
+  --app-font-sans: 'Bricolage Grotesque', system-ui, sans-serif;
+  --app-font-display: 'Montserrat', system-ui, sans-serif;
+  --radius: 1rem;
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6,
+  nav, button, [role="button"],
+  .font-bold, .font-extrabold, .font-semibold, .font-black {
+    font-family: var(--app-font-display);
+  }
+  :focus-visible {
+    outline: 3px solid hsl(var(--ocean));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Palette pink marks errors; navy keeps their smaller text readable. */
+.text-destructive { color: hsl(var(--plum)); }
+
+/* Reset on each element, not just :root: hovering a container must not
+   turn on shadows on its non-hovered descendants. Touch has no sticky hover. */
+:where(*) {
+  --brand-elevation-color: transparent;
+  /* Custom CSS consumers also need locally resolved tokens (theme variables
+     inherited from :root would retain the root's transparent resting colour). */
+  --shadow-sm: 3px 3px 0 var(--brand-elevation-color);
+  --shadow-brand: 6px 6px 0 var(--brand-elevation-color);
+  --shadow-brand-hover: 8px 8px 0 var(--brand-elevation-color);
+}
+@media (hover: hover) and (pointer: fine) {
+  :where(:hover) { --brand-elevation-color: hsl(var(--sun)); }
+  /* Yellow actions need a contrasting violet shadow, including outlined
+     actions that turn yellow on hover and the yellow video-play disc. */
+  :where(
+    :is(button, a, [role="button"]):is(.bg-sun, .hover\:bg-sun):not(:disabled):not([aria-disabled="true"]):hover,
+    button:not(:disabled):not([aria-disabled="true"]):hover > .bg-sun
+  ) {
+    --brand-elevation-color: hsl(var(--plum));
+    --tw-shadow: var(--shadow-sm);
+    box-shadow: var(--tw-inset-shadow, 0 0 transparent), var(--tw-inset-ring-shadow, 0 0 transparent), var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
+}
+
+/* Clerk owns its internal CSS; keep its outer elevation in the same language. */
+.cl-cardBox { box-shadow: var(--shadow-brand) !important; }
+.cl-card { box-shadow: none !important; }
+
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-10px) rotate(calc(var(--r, 0deg) + 2deg)); }
+}
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 32s linear infinite; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.about-photo-main,
+.about-photo-detail {
+  box-shadow: none;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.about-photo-main img,
+.about-photo-detail img {
+  display: block;
+  transition: transform 280ms ease;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .about-photo-main:hover img,
+  .about-photo-detail:hover img { transform: scale(1.025); }
+  .about-photo-detail:hover { transform: translateY(-3px); box-shadow: var(--shadow-brand); }
+}
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .about-photo-main:active img,
+  .about-photo-detail:active img { transform: scale(1.015); }
+  .about-photo-detail:active { transform: translateY(-1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-photo-main,
+  .about-photo-detail,
+  .about-photo-main img,
+  .about-photo-detail img { transition: none; }
+}
+
+.photo-hero { background: hsl(var(--cream)); padding: 72px 0; }
+.photo-hero-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5.8%;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 56px;
+}
+.hero-copy { min-width: 0; }
+@media (min-width: 640px) {
+  html { scroll-padding-top: 9rem; }
+}
+.cta-feedback {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.cta-feedback svg:not(.animate-spin) { transition: translate 180ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .cta-feedback:not(:disabled):not([aria-disabled="true"]):hover {
+    box-shadow: var(--shadow-sm);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cta-feedback:not(:disabled):not([aria-disabled="true"]):hover { transform: translateY(-2px); }
+  .cta-feedback:not(:disabled):not([aria-disabled="true"]):hover svg:not(.animate-spin) { translate: 2px -2px; }
+  .cta-feedback.cta-down:hover svg { translate: 0 2px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cta-feedback:not(:disabled):not([aria-disabled="true"]):active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-feedback, .cta-feedback svg { transition: none; }
+}
+.hero-title-emphasis { position: relative; display: inline-block; }
+.hero-title-stroke {
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  width: 100%;
+  height: 0.28em;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: hsl(var(--sun));
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.photo-hero-frame { position: relative; margin: 0; }
+.photo-hero-image-window { overflow: hidden; border-radius: 110px 12px 110px 12px; }
+.photo-hero-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 110px 12px 110px 12px;
+  transition: transform 700ms ease;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .photo-hero-frame:hover .photo-hero-image { transform: scale(1.055); }
+}
+.photo-hero-caption {
+  position: absolute;
+  left: -3.3%;
+  bottom: 12.5%;
+  background: hsl(var(--sun));
+  color: hsl(var(--plum));
+  padding: 16px 22px;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.25;
+  transform: rotate(-5deg);
+}
+@media (max-width: 800px) {
+  .photo-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .photo-hero-image { aspect-ratio: 1.68; }
+}
+@media (max-width: 600px) {
+  .photo-hero { padding: 26px 0 38px; }
+  .photo-hero-inner { padding: 0 6%; }
+  .photo-hero-image { aspect-ratio: 1.3; border-radius: 55px 8px 55px 8px; }
+  .photo-hero-image-window { border-radius: 55px 8px 55px 8px; }
+  .photo-hero-caption { left: -2%; bottom: 9%; padding: 12px 16px; font-size: clamp(23px, 5.9vw, 32px); }
+}
+
+.site-footer {
+  background: hsl(var(--ink));
+  color: hsl(var(--cream));
+  border: 1px solid hsl(var(--gray));
+  border-radius: 0 0 18px 18px;
+  font-family: Arial, sans-serif;
+}
+.footer-inner { max-width: 1440px; margin: 0 auto; padding: 54px 5.2% 27px; }
+.footer-columns { display: grid; grid-template-columns: 1.15fr .6fr 1fr 1.1fr; gap: 38px; }
+.footer-logo { width: 142px; height: auto; }
+.footer-trust-name { margin-top: 8px; font-size: 15px; font-weight: 800; font-family: var(--app-font-display); }
+.footer-motto { color: hsl(var(--sun)); font-size: 24px; font-weight: 700; margin-top: 4px; white-space: nowrap; }
+.footer-socials { display: flex; align-items: center; gap: 24px; margin-top: 22px; }
+.footer-socials svg { width: 17px; height: 17px; }
+.footer-socials > :nth-child(3) { margin-left: 30px; }
+.footer-heading { color: hsl(var(--sun)); font-size: 10px; font-weight: 700; text-transform: uppercase; margin: 3px 0 18px; }
+.footer-links { display: grid; gap: 20px; font-size: 12px; list-style: none; }
+.footer-label { font-size: 11px; color: hsl(var(--cream)); }
+.footer-phone { display: inline-block; margin-top: 16px; font-size: 16px; }
+.footer-address { font-style: normal; font-size: 12px; line-height: 1.6; }
+.footer-registration { margin-top: 16px; }
+.footer-registrar { font-size: 10px; color: hsl(var(--cream)); margin-top: 12px; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid hsl(var(--gray)); margin-top: 36px; padding-top: 32px; color: hsl(var(--cream)); font-size: 10px; }
+.site-footer a { transition: color .2s; }
+.site-footer a:hover { color: hsl(var(--sun)); }
+@media (max-width: 900px) {
+  .footer-columns { grid-template-columns: 1fr 1fr; gap: 38px 30px; }
+}
+@media (max-width: 480px) {
+  .footer-inner { padding: 36px 24px 24px; }
+  .footer-columns { grid-template-columns: 1fr; gap: 32px; }
+  .footer-motto { white-space: normal; }
+  .footer-links { gap: 16px; }
+  .footer-bottom { flex-direction: column; margin-top: 32px; padding-top: 24px; line-height: 1.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .floaty, .marquee { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

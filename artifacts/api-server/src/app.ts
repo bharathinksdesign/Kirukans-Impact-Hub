@@ -1,0 +1,85 @@
+import express, { type Express } from "express";
+import { existsSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import cors from "cors";
+import pinoHttp from "pino-http";
+import router from "./routes";
+import { logger } from "./lib/logger";
+import { clerkMiddleware } from '@clerk/express';
+import { publishableKeyFromHost } from '@clerk/shared/keys';
+import { CLERK_PROXY_PATH, clerkProxyMiddleware, getClerkProxyHost } from './middlewares/clerkProxyMiddleware';
+
+const app: Express = express();
+
+app.use(
+  pinoHttp({
+    logger,
+    serializers: {
+      req(req) {
+        return {
+          id: req.id,
+          method: req.method,
+          url: req.url?.split("?")[0],
+        };
+      },
+      res(res) {
+        return {
+          statusCode: res.statusCode,
+        };
+      },
+    },
+  }),
+);
+// Replit-managed Clerk requires Replit's proxy setup. External hosting uses a
+// separately configured Clerk instance and sends Frontend API calls directly.
+if (process.env.HOSTINGER_DEPLOYMENT !== 'true') {
+  app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
+}
+app.set('trust proxy', 1);
+app.use((req, res, next) => cors({
+  credentials: true,
+  origin: (origin, callback) => {
+    if (!origin) { callback(null, true); return; }
+    try { callback(null, new URL(origin).host === getClerkProxyHost(req)); }
+    catch { callback(null, false); }
+  },
+})(req, res, next));
+app.use(express.json({ limit: '16kb' }));
+app.use(express.urlencoded({ extended: true }));
+
+app.use(
+  clerkMiddleware((req) => ({
+    publishableKey: publishableKeyFromHost(
+      getClerkProxyHost(req) ?? "",
+      process.env.CLERK_PUBLISHABLE_KEY,
+    ),
+  })),
+);
+
+app.use("/api", router);
+
+if (process.env.SERVE_FRONTEND === 'true') {
+  const frontendDist = resolve(dirname(fileURLToPath(import.meta.url)), '../../kirukans/dist/public');
+  const indexFile = resolve(frontendDist, 'index.html');
+  if (!existsSync(indexFile)) {
+    throw new Error(`Built frontend not found at ${indexFile}. Run pnpm run build:hostinger first.`);
+  }
+
+  app.use(express.static(frontendDist, { index: false }));
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
+      next();
+      return;
+    }
+    if (req.path === '/api' || req.path.startsWith('/api/')) {
+      next();
+      return;
+    }
+    res.sendFile(indexFile, (error) => {
+      if (error) next(error);
+    });
+  });
+}
+
+export default app;
