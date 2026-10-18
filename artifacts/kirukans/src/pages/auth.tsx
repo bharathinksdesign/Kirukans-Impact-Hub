@@ -23,7 +23,7 @@ function Shell({ children, title }: { children: React.ReactNode; title: string }
   return (
     <div className="min-h-[100dvh] bg-sun text-plum flex flex-col items-center justify-center px-4 py-10 gap-5">
       <a href={`${basePath}/`} aria-label="Kirukans home">
-        <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-20 w-auto" />
+        <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="h-20 w-auto" />
       </a>
       <p className="font-hand text-3xl">{title}</p>
       {children}

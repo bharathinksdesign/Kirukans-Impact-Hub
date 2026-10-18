@@ -7,3 +7,4 @@
 - [Display typography](display-typography.md) — Montserrat for headings, navigation and important controls.
 - [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.
 - [Navigation language](navigation-language.md) — use direct volunteer and story labels; avoid donation calls to action.
+- [Public-route performance](public-route-performance.md) — keep Clerk off public pages; load auth only for sign-in, sign-up and private inbox routes.

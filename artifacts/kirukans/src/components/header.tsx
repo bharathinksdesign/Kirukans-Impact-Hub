@@ -63,7 +63,7 @@ export function Header() {
       <ContactStrip />
       <div className="mx-auto max-w-7xl px-5 h-20 lg:h-24 flex items-center justify-between">
         <a href={homeHash("#top")} className="shrink-0" aria-label="Kirukans home" data-testid="link-home">
-          <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />
+          <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />
         </a>
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm xl:text-base font-semibold">
           {links.map(([l, h]) => (

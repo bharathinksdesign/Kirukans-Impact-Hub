@@ -1,9 +1,13 @@
-.approach-card { box-shadow: var(--shadow-brand); transition: box-shadow .3s ease, transform .3s ease; }
+.approach-card { min-width: 0; box-shadow: var(--shadow-brand); transition: box-shadow .3s ease, transform .3s ease; }
+.approach-art { min-width: 0; overflow: hidden; }
 .approach-art img { transition: transform .5s cubic-bezier(.2,.8,.2,1); transform-origin: 50% 90%; }
 .approach-arrow { transition: transform .25s ease; }
-.approach-card:hover, .approach-card:focus-within { box-shadow: var(--shadow-brand-hover); transform: translateY(-4px); }
-.approach-card:hover .approach-art img, .approach-card:focus-within .approach-art img { transform: scale(1.04) rotate(-1deg); }
-.approach-card:hover .approach-arrow, .approach-card:focus-within .approach-arrow { transform: translateX(4px); }
+.approach-card:focus-within { box-shadow: var(--shadow-brand-hover); }
+@media (hover: hover) and (pointer: fine) {
+  .approach-card:hover { box-shadow: var(--shadow-brand-hover); transform: translateY(-4px); }
+  .approach-card:hover .approach-art img { transform: scale(1.04) rotate(-1deg); }
+  .approach-card:hover .approach-arrow { transform: translateX(4px); }
+}
 @media (prefers-reduced-motion: reduce) {
   .approach-card, .approach-card:hover, .approach-card:focus-within { transform: none; transition: none; }
   .approach-art img, .approach-card:hover .approach-art img, .approach-card:focus-within .approach-art img, .approach-card:hover .approach-arrow, .approach-card:focus-within .approach-arrow { transform: none; transition: none; }

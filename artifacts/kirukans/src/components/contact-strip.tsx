@@ -1,17 +1,6 @@
 import { Mail, Phone } from 'lucide-react';
-import { FaFacebookF, FaXTwitter, FaYoutube, FaThreads, FaMedium, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
-import type { IconType } from 'react-icons';
-import { PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
-
-const socials: { name: string; icon: IconType; href?: string }[] = [
-  { name: 'Facebook', icon: FaFacebookF },
-  { name: 'X', icon: FaXTwitter },
-  { name: 'YouTube', icon: FaYoutube, href: YOUTUBE },
-  { name: 'Threads', icon: FaThreads },
-  { name: 'Medium', icon: FaMedium },
-  { name: 'Instagram', icon: FaInstagram },
-  { name: 'LinkedIn', icon: FaLinkedinIn },
-];
+import { PHONE_HREF, PHONE_TEXT } from '@/lib/site-data';
+import { socialChannels } from '@/lib/social-links';
 
 // Public contact details supplied in the user's header reference.
 const email = 'kirukansfoundation@gmail.com';
@@ -20,17 +9,11 @@ export function ContactStrip() {
     <div className="bg-teal text-plum" data-testid="contact-strip">
       <div className="mx-auto max-w-7xl px-3 sm:px-5 py-1 flex flex-nowrap items-center justify-center gap-2 sm:justify-between">
         <ul className="flex shrink-0 items-center gap-1" aria-label="Social media">
-          {socials.map(({ name, icon: Icon, href }) => (
+          {socialChannels.map(({ name, icon: Icon, href, ariaLabel }) => (
             <li key={name}>
-              {href ? (
-                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Kirukans on ${name}`} className="flex size-7 items-center justify-center rounded-full hover:bg-plum hover:text-sun transition-colors" data-testid={`link-social-${name.toLowerCase()}`}>
-                  <Icon className="size-3.5" aria-hidden="true" />
-                </a>
-              ) : (
-                <span role="img" aria-label={`${name} — official profile link not yet provided`} title={`${name} — official profile link not yet provided`} className="flex size-7 items-center justify-center cursor-help">
-                  <Icon className="size-3.5" aria-hidden="true" />
-                </span>
-              )}
+              <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={ariaLabel} className="flex size-7 items-center justify-center rounded-full hover:bg-plum hover:text-sun transition-colors" data-testid={`link-social-${name.toLowerCase()}`}>
+                <Icon className="size-3.5" aria-hidden="true" />
+              </a>
             </li>
           ))}
         </ul>

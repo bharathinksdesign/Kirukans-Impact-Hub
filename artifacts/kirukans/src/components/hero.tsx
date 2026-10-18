@@ -71,9 +71,11 @@ export function Hero() {
         >
           <div className="photo-hero-image-window">
           <img
-            src={img('page-1-image-7.webp')}
+            src={img('page-1-image-7-1200.webp')}
+            srcSet={`${img('page-1-image-7-720.webp')} 720w, ${img('page-1-image-7-1200.webp')} 1200w, ${img('page-1-image-7.webp')} 1800w`}
+            sizes="(max-width: 600px) 90vw, (max-width: 800px) 100vw, 56vw"
             alt="Children proudly sharing their artwork and certificates at a Kirukans community workshop"
-            fetchPriority="high"
+            fetchPriority={window.matchMedia('(max-width: 800px)').matches ? 'auto' : 'high'}
             className="photo-hero-image"
           />
           </div>

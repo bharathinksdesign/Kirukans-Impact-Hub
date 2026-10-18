@@ -14,3 +14,9 @@ Place “What we do” directly after the homepage's “Fresh off the wall” st
 **Why:** The user explicitly asked to move this section below “Fresh off the wall.”
 
 **How to apply:** Preserve this user-chosen order when updating the homepage unless they request another change.
+
+For mobile, keep the cards in an explicit single-column grid and constrain their minimum width; only enable image zoom/lift on devices with a fine pointer that supports hover.
+
+**Why:** The user reported the section expanding while scrolling on mobile, while desktop remained unaffected.
+
+**How to apply:** Use `grid-cols-1` and `min-w-0` on the grid items/cards, and keep hover transforms inside a `(hover: hover) and (pointer: fine)` media query. Keep keyboard focus visible without applying touch-scale effects.

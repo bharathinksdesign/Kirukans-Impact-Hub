@@ -1,7 +1,7 @@
-import { FaFacebook, FaYoutube, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { Reveal } from '@/components/reveal';
-import { gallery, img, PHONE_HREF, PHONE_TEXT, YOUTUBE } from '@/lib/site-data';
+import { gallery, img, PHONE_HREF, PHONE_TEXT } from '@/lib/site-data';
 import { homeHash } from '@/lib/stories';
+import { socialChannels } from '@/lib/social-links';
 export { Impact } from '@/components/impact-section';
 
 export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
@@ -39,15 +39,16 @@ export function Footer() {
         <div className="footer-columns">
           <div className="footer-brand">
             <a href={homeHash("#top")} aria-label="Kirukans home">
-              <img src={img('kirukans-logo.png')} alt="Kirukans" className="footer-logo" />
+              <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="footer-logo" />
             </a>
             <p className="footer-trust-name">KIRUKANS CHARITABLE TRUST</p>
             <p className="footer-motto font-hand">Madness In Doing Goodness</p>
             <div className="footer-socials" aria-label="Social channels">
-              <span title="Facebook — profile link not provided" role="img" aria-label="Facebook"><FaFacebook aria-hidden /></span>
-              <a href={YOUTUBE} target="_blank" rel="noopener noreferrer" aria-label="Kirukans on YouTube"><FaYoutube aria-hidden /></a>
-              <span title="LinkedIn — profile link not provided" role="img" aria-label="LinkedIn"><FaLinkedin aria-hidden /></span>
-              <span title="Medium — profile link not provided" role="img" aria-label="Medium"><FaMediumM aria-hidden /></span>
+              {socialChannels.map(({ name, icon: Icon, href, ariaLabel }) => (
+                <a key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={ariaLabel} data-testid={`link-footer-social-${name.toLowerCase()}`}>
+                  <Icon aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
           <nav aria-label="Footer navigation">

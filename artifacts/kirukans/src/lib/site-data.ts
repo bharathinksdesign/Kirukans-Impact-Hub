@@ -5,6 +5,15 @@ export const img = (name: string) => /^https?:\/\//i.test(name) ? name : `${impo
 export const PHONE_HREF = 'tel:+918939018125';
 export const PHONE_TEXT = '+91 89390 18125';
 export const YOUTUBE = 'https://www.youtube.com/@kirukans_trust';
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/share/p/1GxyQAFurS/',
+  x: 'https://x.com/kirukans_trust?s=11',
+  youtube: YOUTUBE,
+  threads: 'https://www.threads.com/@kirukans_trust?igshid=NTc4MTIwNjQ2YQ==',
+  medium: 'https://medium.com/@kirukansbharathi/love-of-thaiyama-feed-the-homeless-kirukans-729ea5edf41e',
+  instagram: 'https://www.instagram.com/kirukans_trust?mdxt=MWx0eDdjc2ozejczOA%3D%3D&utm_source=qr',
+  linkedin: 'https://www.linkedin.com/company/kirukans/',
+} as const;
 
 export type Project = {
   id: string;

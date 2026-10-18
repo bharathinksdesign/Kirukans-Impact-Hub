@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -324,7 +323,6 @@
 .footer-motto { color: hsl(var(--sun)); font-size: 24px; font-weight: 700; margin-top: 4px; white-space: nowrap; }
 .footer-socials { display: flex; align-items: center; gap: 24px; margin-top: 22px; }
 .footer-socials svg { width: 17px; height: 17px; }
-.footer-socials > :nth-child(3) { margin-left: 30px; }
 .footer-heading { color: hsl(var(--sun)); font-size: 10px; font-weight: 700; text-transform: uppercase; margin: 3px 0 18px; }
 .footer-links { display: grid; gap: 20px; font-size: 12px; list-style: none; }
 .footer-label { font-size: 11px; color: hsl(var(--cream)); }

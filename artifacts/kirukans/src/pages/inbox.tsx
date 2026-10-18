@@ -176,7 +176,7 @@ export default function InboxPage() {
           <a href={BASE} className="inline-flex items-center gap-2 font-bold hover:underline" data-testid="link-inbox-home">
             <ArrowLeft className="size-4" aria-hidden /> Back home
           </a>
-          <img src={img('kirukans-logo.png')} alt="Kirukans" className="h-12 w-auto" />
+          <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="h-12 w-auto" />
         </div>
         <p className="mt-6 font-hand text-3xl">Staff only</p>
         <div className="flex flex-wrap items-center justify-between gap-3">

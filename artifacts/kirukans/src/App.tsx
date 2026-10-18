@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { ErrorBoundary } from '@/components/error-boundary';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
@@ -7,16 +7,18 @@ import { Hero } from '@/components/hero';
 import { About, Approach, Stories } from '@/components/story-sections';
 import { Impact, Footer } from '@/components/closing-sections';
 import { Join } from '@/components/join-section';
-import StoriesPage from '@/pages/stories';
-import StoryPage from '@/pages/story';
-import GalleryPage from '@/pages/gallery';
 import { AppProviders } from '@/components/app-providers';
-import InboxPage from '@/pages/inbox';
-import { SignInPage, SignUpPage } from '@/pages/auth';
-import TeamPage from '@/pages/team';
 import { TeamSection } from '@/components/team-section';
-import AboutPage from '@/pages/about';
-import VolunteerPage from '@/pages/volunteer';
+
+const StoriesPage = lazy(() => import('@/pages/stories'));
+const StoryPage = lazy(() => import('@/pages/story'));
+const GalleryPage = lazy(() => import('@/pages/gallery'));
+const InboxPage = lazy(() => import('@/pages/inbox'));
+const SignInPage = lazy(() => import('@/pages/auth').then((page) => ({ default: page.SignInPage })));
+const SignUpPage = lazy(() => import('@/pages/auth').then((page) => ({ default: page.SignUpPage })));
+const TeamPage = lazy(() => import('@/pages/team'));
+const AboutPage = lazy(() => import('@/pages/about'));
+const VolunteerPage = lazy(() => import('@/pages/volunteer'));
 
 function Home() {
   useEffect(() => {
@@ -51,19 +53,21 @@ function App() {
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <ErrorBoundary>
         <AppProviders>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/stories" component={StoriesPage} />
-          <Route path="/stories/:id" component={StoryPage} />
-          <Route path="/gallery" component={GalleryPage} />
-          <Route path="/team" component={TeamPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/volunteer" component={VolunteerPage} />
-          <Route path="/admin/inbox" component={InboxPage} />
-          <Route path="/sign-in/*?" component={SignInPage} />
-          <Route path="/sign-up/*?" component={SignUpPage} />
-          <Route component={NotFound} />
-        </Switch>
+        <Suspense fallback={<div className="grid min-h-[60vh] place-items-center bg-cream px-5 text-plum" role="status" aria-live="polite">Loading page…</div>}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/stories" component={StoriesPage} />
+            <Route path="/stories/:id" component={StoryPage} />
+            <Route path="/gallery" component={GalleryPage} />
+            <Route path="/team" component={TeamPage} />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/volunteer" component={VolunteerPage} />
+            <Route path="/admin/inbox" component={InboxPage} />
+            <Route path="/sign-in/*?" component={SignInPage} />
+            <Route path="/sign-up/*?" component={SignUpPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
         </AppProviders>
       </ErrorBoundary>
     </WouterRouter>
