@@ -186,6 +186,52 @@ export const storyContent: Record<string, StoryContent> = {
       'diwali-bridge-clothing-gift-bright.webp': 'A family receives clothing as part of the Diwali gifts.',
     },
   },
+  'feed-the-homeless-thaiyamma': {
+    intro: [
+      'In March 2022, the Kirukans team held “Feed the Homeless” beneath a bridge in Trichy, sharing grocery essentials intended to last a month with people facing difficult economic circumstances.',
+      'The first family we visited was Thaiyamma and Muthu. They had recently moved into a small rented hut. Thaiyamma sought alms at a temple, while Muthu earned a living through rag-picking. They welcomed the team with great warmth.',
+    ],
+    sections: [
+      {
+        title: 'Groceries for the month',
+        body: [
+          'Through the outreach, Kirukans distributed grocery items intended to support families for a month.',
+          'The visit was part of the team’s effort to support people facing economic hardship and other challenges in their daily lives.',
+        ],
+      },
+      {
+        title: 'Meeting Thaiyamma and Muthu',
+        body: [
+          'Thaiyamma and Muthu had met at a temple, fallen in love and begun a life together. Their affection for one another and the hope they held onto through hardship stayed with the team.',
+          'As the volunteers spent time with them, Thaiyamma welcomed them with the warmth she would show her own children.',
+        ],
+      },
+      {
+        title: 'A story that stayed with us',
+        body: [
+          'Meeting Thaiyamma and Muthu deepened the Kirukans team’s commitment to keep helping people in need.',
+          'The experience also brought the challenges faced by women living with physical disabilities into sharper focus, inspiring the team to do more for the community.',
+        ],
+      },
+    ],
+    facts: [
+      { label: 'Where', value: 'Under a bridge · Trichy' },
+      { label: 'When', value: 'March 2022' },
+      { label: 'Shared', value: 'Grocery essentials intended to last a month' },
+      { label: 'First family visited', value: 'Thaiyamma and Muthu' },
+      { label: 'Organized by', value: 'Kirukans Charitable Trust' },
+    ],
+    video: {
+      id: 'ahAYApT2b4U',
+      title: 'Love of THAIYAMA || Feed The Homeless || Kirukans',
+      caption: 'The official Kirukans film from the Feed the Homeless visit.',
+      kind: 'event',
+    },
+    photoCaptions: {
+      'feed-the-homeless-trichy-team.webp': 'Kirukans volunteers with families during the Feed the Homeless visit in Trichy.',
+      'thaiyamma-muthu-feed-the-homeless.webp': 'Thaiyamma and Muthu together.',
+    },
+  },
   'trans-pongal': {
     intro: [
       'On 13 January 2024, Kirukans Charitable Trust brought together more than 30 transgender people at St Joseph’s Church in Trichy for Trans Pongal.',

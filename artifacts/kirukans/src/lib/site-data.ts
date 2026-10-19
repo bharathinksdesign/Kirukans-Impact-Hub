@@ -245,6 +245,30 @@ export const projects: Project[] = [
     tone: 'bg-teal text-plum',
   },
   {
+    id: 'feed-the-homeless-thaiyamma',
+    n: '11',
+    title: 'Feed the Homeless',
+    place: 'Under a bridge, Trichy',
+    date: 'March 2022',
+    idea: 'A month of grocery support and a meeting with Thaiyamma and Muthu that stayed with the Kirukans team.',
+    contribution: [
+      'Distributed grocery essentials intended to last a month.',
+      'Spent time with families living beneath a bridge in Trichy.',
+      'Met Thaiyamma and Muthu, whose story strengthened the team’s commitment to serve people facing hardship.',
+    ],
+    photos: [
+      {
+        src: 'feed-the-homeless-trichy-team.webp',
+        alt: 'Kirukans volunteers with families during the Feed the Homeless visit in Trichy.',
+      },
+      {
+        src: 'thaiyamma-muthu-feed-the-homeless.webp',
+        alt: 'Thaiyamma and Muthu together.',
+      },
+    ],
+    tone: 'bg-sun text-plum',
+  },
+  {
     id: 'diwali-trichy-junction-bridge',
     n: '08',
     title: 'Diwali with Families at Trichy Junction Bridge',
