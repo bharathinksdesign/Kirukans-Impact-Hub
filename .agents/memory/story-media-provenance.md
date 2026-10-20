@@ -62,3 +62,9 @@ For ImageMagick shadow lifts, verify the transform on a side-by-side sample rath
 **Why:** On a submitted mural screenshot, a lower gamma setting darkened the RGB image; a `1.3` gamma with a small brightness lift produced the intended visible shadow recovery.
 
 **How to apply:** Check both the rendered comparison and RGB channel values on one representative frame before processing the rest.
+
+For user-provided Google Drive photos, use public preview thumbnails only as an acquisition path; store optimized copies in the site instead of hotlinking Drive.
+
+**Why:** In this project, download URLs redirected to sign-in while public thumbnail URLs returned the images. External hotlinks would also make site photos depend on Drive permissions and availability.
+
+**How to apply:** Verify each response is an image and visually matches its intended person or project, convert it to an optimized local asset, and reference that local file. If the preview is not public, ask the user to adjust sharing or upload the image.

@@ -9,8 +9,8 @@ export const teamMembers: TeamMember[] = [
   { id: 'bharathi-raja', name: 'Bharathi Raja', role: 'Secretary & Co-founder', photo: 'team-bharathi-raja-extended.webp', linkedin: 'https://www.linkedin.com/in/bharathi-raja-productdesigner' },
   { id: 's-monica', name: 'S Monica', role: 'Core member', photo: 'team-s-monica-update.webp', linkedin: 'https://www.linkedin.com/in/monicas20/' },
   { id: 'ramesh-kumar-m-k', name: 'Ramesh Kumar M K', role: 'Core member', photo: 'team-ramesh-kumar-extended.webp', linkedin: 'https://www.linkedin.com/in/rameshkumarmk/' },
-  { id: 'durga-sri', name: 'Durga Sri', role: 'Core member', photo: 'team-durga-sri.webp', linkedin: 'https://www.linkedin.com/in/durgasri-r-0318b7199/' },
-  { id: 'sibi-bharathy', name: 'Sibi Bharathy', role: 'Core member', photo: 'team-sibi-bharathy.webp', linkedin: 'https://www.linkedin.com/in/sibi-bharathy-s/' },
+  { id: 'durga-sri', name: 'Durga Sri', role: 'Core member', photo: 'team-durga-sri-update.webp', linkedin: 'https://www.linkedin.com/in/durgasri-r-0318b7199/' },
+  { id: 'sibi-bharathy', name: 'Sibi Bharathy', role: 'Core member', photo: 'team-sibi-bharathy-update.webp', linkedin: 'https://www.linkedin.com/in/sibi-bharathy-s/' },
   { id: 'bhavadharani-r', name: 'Bhavadharani R', role: 'Core member', photo: 'team-bhavadharani-professional.webp', linkedin: 'https://www.linkedin.com/in/bhavadharani-ravi-0321121b4/' },
   { id: 'aparna-g', name: 'Aparna G', role: 'Core member', photo: 'team-aparna-g.webp' },
   { id: 'shailesh', name: 'Shailesh', role: 'Core member', photo: 'team-shailesh.webp', linkedin: 'https://www.linkedin.com/in/shailesh-k-88122a371/' },
@@ -23,4 +23,6 @@ export const teamMembers: TeamMember[] = [
   { id: 'kkrish', name: 'Kkrish', role: 'Core member', photo: 'team-kkrish.webp', linkedin: 'https://www.linkedin.com/in/kkrish-na/' },
   { id: 'aditya-srinivas-b', name: 'Aditya Srinivas B', role: 'Core member', photo: 'team-aditya-srinivas-b.webp', linkedin: 'https://www.linkedin.com/in/adityasrinivasb-/' },
   { id: 'sathiyavel-b', name: 'Sathiyavel B', role: 'Core member', photo: 'team-sathiyavel-b.webp' },
+  { id: 'dharanika-m', name: 'Dharanika M', role: 'Team member', photo: 'team-dharanika-m.webp' },
+  { id: 'vikram-v', name: 'Vikram V', role: 'Team member', photo: 'team-vikram-v.webp', linkedin: 'https://www.linkedin.com/in/vikram-v-a237b2270/' },
 ];
