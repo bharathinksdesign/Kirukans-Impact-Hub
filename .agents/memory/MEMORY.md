@@ -8,3 +8,4 @@
 - [Impact motion integrity](impact-motion.md) — animation is presentation, not synthetic live impact; preserve approved totals and accessible final values.
 - [Navigation language](navigation-language.md) — use direct volunteer and story labels; avoid donation calls to action.
 - [Public-route performance](public-route-performance.md) — keep Clerk off public pages; load auth only for sign-in, sign-up and private inbox routes.
+- [Hosting data reset](hosting-data-reset.md) — user chose a fresh start instead of migrating old enquiries or team accounts.
