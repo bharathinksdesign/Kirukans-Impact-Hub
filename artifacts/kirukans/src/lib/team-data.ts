@@ -25,4 +25,9 @@ export const teamMembers: TeamMember[] = [
   { id: 'sathiyavel-b', name: 'Sathiyavel B', role: 'Core member', photo: 'team-sathiyavel-b.webp' },
   { id: 'dharanika-m', name: 'Dharanika M', role: 'Team member', photo: 'team-dharanika-m.webp' },
   { id: 'vikram-v', name: 'Vikram V', role: 'Team member', photo: 'team-vikram-v.webp', linkedin: 'https://www.linkedin.com/in/vikram-v-a237b2270/' },
+  { id: 'sharu-ruba-s', name: 'Sharu Ruba S', role: 'Team member', photo: 'team-sharu-ruba-s.webp', linkedin: 'https://www.linkedin.com/in/sharu-ruba-s-5699a4257?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+  { id: 'thilak-s', name: 'Thilak S', role: 'Team member', photo: 'team-thilak-s.webp', linkedin: 'https://www.linkedin.com/in/thilak-sakthivel-5132ab1a2?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+  { id: 'rishi-ganesh-s', name: 'Rishi Ganesh S', role: 'Team member', photo: 'team-rishi-ganesh-s.webp', linkedin: 'https://www.linkedin.com/in/rishi-ganesh-s-709943207?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+  { id: 'vidhya-bhavani-a', name: 'Vidhya Bhavani A', role: 'Team member', photo: 'team-vidhya-bhavani-a.webp', linkedin: 'https://www.linkedin.com/in/vidhyabhavani2903' },
+  { id: 'jenifer-christinal', name: 'Jenifer Christinal', role: 'Team member', photo: 'team-jenifer-christinal.webp', linkedin: 'https://www.linkedin.com/in/dr-a-jenifer-c-8712a3174?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
 ];
