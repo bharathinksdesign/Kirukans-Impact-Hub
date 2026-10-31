@@ -9,3 +9,4 @@
 - [Navigation language](navigation-language.md) — use direct volunteer and story labels; avoid donation calls to action.
 - [Public-route performance](public-route-performance.md) — keep Clerk off public pages; load auth only for sign-in, sign-up and private inbox routes.
 - [Hosting data reset](hosting-data-reset.md) — user chose a fresh start instead of migrating old enquiries or team accounts.
+- [pnpm store alignment](pnpm-store-alignment.md) — relink workspace dependencies with the pinned pnpm version if the store major differs.
