@@ -1,10 +1,6 @@
 import { Router, type IRouter, type RequestHandler } from 'express';
 import { rateLimit } from 'express-rate-limit';
-import {
-  createVolunteerEnquiry,
-  getVolunteerInboxPage,
-  updateVolunteerEnquiryRead,
-} from '@workspace/db';
+import { count, db, desc, eq, isNull, volunteerEnquiriesTable } from '@workspace/db';
 import {
   CreateVolunteerEnquiryBody, GetVolunteerInboxQueryParams, GetVolunteerInboxResponse,
   UpdateEnquiryReadBody, UpdateEnquiryReadParams, UpdateEnquiryReadResponse,
@@ -20,11 +16,6 @@ function normalizePhone(input: string): string | undefined {
   if (/^[6-9]\d{9}$/.test(compact)) return `+91${compact}`;
   if (/^91[6-9]\d{9}$/.test(compact)) return `+${compact}`;
   return compact;
-}
-
-function databaseErrorCode(error: unknown): string | undefined {
-  if (!error || typeof error !== 'object' || !('code' in error)) return undefined;
-  return typeof error.code === 'string' ? error.code : undefined;
 }
 
 const sameOrigin: RequestHandler = (req, res, next) => {
@@ -64,15 +55,12 @@ router.post('/volunteer-enquiries', sameOrigin, publicLimit, async (req, res) =>
   try {
     // Enquiries are submissions, not accounts. Never overwrite an earlier
     // person's details based on an unverified public email or phone number.
-    await createVolunteerEnquiry({
+    await db.insert(volunteerEnquiriesTable).values({
       name: parsed.data.name, email: parsed.data.email ?? null, phone: parsed.data.phone ?? null,
     });
     res.status(201).json(receipt);
-  } catch (error) {
-    req.log.error(
-      { errorCode: databaseErrorCode(error) },
-      'Could not save volunteer enquiry',
-    );
+  } catch {
+    req.log.error('Could not save volunteer enquiry');
     res.status(500).json({ error: 'Your interest could not be saved. Please try again or call the trust.' });
   }
 });
@@ -84,10 +72,11 @@ router.get('/admin/volunteer-enquiries', async (req, res) => {
   if (!params.success) { res.status(400).json({ error: 'Invalid inbox page.' }); return; }
   try {
     const pageSize = 25;
-    const { items, total, unreadCount } = await getVolunteerInboxPage(
-      params.data.page,
-      pageSize,
-    );
+    const [{ total }] = await db.select({ total: count() }).from(volunteerEnquiriesTable);
+    const [{ unreadCount }] = await db.select({ unreadCount: count() }).from(volunteerEnquiriesTable).where(isNull(volunteerEnquiriesTable.readAt));
+    const items = await db.select().from(volunteerEnquiriesTable)
+      .orderBy(desc(volunteerEnquiriesTable.createdAt), desc(volunteerEnquiriesTable.id))
+      .limit(pageSize).offset((params.data.page - 1) * pageSize);
     res.json(GetVolunteerInboxResponse.parse({ items, total, unreadCount, page: params.data.page, pageSize }));
   } catch {
     req.log.error('Could not load volunteer inbox');
@@ -100,10 +89,9 @@ router.patch('/admin/volunteer-enquiries/:id', sameOrigin, async (req, res) => {
   const body = UpdateEnquiryReadBody.safeParse(req.body);
   if (!params.success || !body.success) { res.status(400).json({ error: 'Invalid enquiry update.' }); return; }
   try {
-    const item = await updateVolunteerEnquiryRead(
-      params.data.id,
-      body.data.read,
-    );
+    const [item] = await db.update(volunteerEnquiriesTable)
+      .set({ readAt: body.data.read ? new Date() : null })
+      .where(eq(volunteerEnquiriesTable.id, params.data.id)).returning();
     if (!item) { res.status(404).json({ error: 'Enquiry not found.' }); return; }
     res.json(UpdateEnquiryReadResponse.parse(item));
   } catch {
