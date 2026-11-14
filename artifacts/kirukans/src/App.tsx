@@ -9,6 +9,7 @@ import { Impact, Footer } from '@/components/closing-sections';
 import { Join } from '@/components/join-section';
 import { AppProviders } from '@/components/app-providers';
 import { TeamSection } from '@/components/team-section';
+import { MuralComparison } from '@/components/mural-comparison';
 
 const StoriesPage = lazy(() => import('@/pages/stories'));
 const StoryPage = lazy(() => import('@/pages/story'));
@@ -36,6 +37,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
+        <MuralComparison />
         <About />
         <Stories />
         <Approach />
