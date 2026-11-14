@@ -10,10 +10,10 @@ export function About({ detailed = false }: { detailed?: boolean } = {}) {
   return (
     <section id="about" className="bg-[#ffffff]">
       <div className={`mx-auto grid max-w-7xl items-center ${detailed ? 'grid-cols-1 gap-12 px-5 py-20 md:grid-cols-2 md:py-28' : 'gap-10 px-5 py-20 md:grid-cols-2 md:gap-9 md:px-14 md:py-28'}`}>
-        <Reveal className="min-w-0">
+        <Reveal className={`min-w-0 ${detailed ? '' : 'md:order-2'}`}>
           <AboutPhotoGallery />
         </Reveal>
-        <Reveal delay={120} className="min-w-0">
+        <Reveal delay={120} className={`min-w-0 ${detailed ? '' : 'md:order-1'}`}>
           {detailed ? (
             <>
               <p className="font-hand text-3xl text-tangerine">Who we are</p>
