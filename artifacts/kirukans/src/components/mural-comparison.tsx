@@ -101,9 +101,6 @@ export function MuralComparison() {
           <p id="mural-comparison-instructions" className="mt-2 text-center text-sm font-medium text-plum/70" data-testid="text-mural-comparison-instructions">
             Drag, tap, or use the arrow keys to compare
           </p>
-          <p className="mt-1 text-center text-xs text-plum/60 md:hidden">
-            Top and bottom edges extended with AI.
-          </p>
         </div>
       </div>
     </section>
