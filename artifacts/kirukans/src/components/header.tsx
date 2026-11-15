@@ -31,6 +31,11 @@ export function Header() {
     const update = () => {
       frame = 0;
       const y = scrollPosition();
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        setHidden(false);
+        lastY = y;
+        return;
+      }
       if (open || y <= Math.max(96, headerRef.current?.offsetHeight ?? 96)) {
         setHidden(false);
         lastY = y;
@@ -56,14 +61,14 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 bg-[#ffffff] text-plum border-b border-plum/10 shadow-none transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`relative md:sticky top-0 z-40 bg-[#ffffff] text-plum border-b border-plum/10 shadow-none transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !open ? 'md:-translate-y-full' : 'translate-y-0'}`}
       onFocusCapture={() => setHidden(false)}
       data-scroll-hidden={hidden && !open}
     >
-      <ContactStrip />
-      <div className="mx-auto max-w-7xl px-5 h-20 lg:h-24 flex items-center justify-between">
+      <div className="hidden md:block"><ContactStrip /></div>
+      <div className="mx-auto max-w-7xl px-5 h-16 md:h-20 lg:h-24 flex items-center justify-between">
         <a href={homeHash("#top")} className="shrink-0" aria-label="Kirukans home" data-testid="link-home">
-          <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="h-14 lg:h-16 w-auto" />
+          <img src={img('kirukans-logo-400.webp')} alt="Kirukans" className="h-11 md:h-14 lg:h-16 w-auto" />
         </a>
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm xl:text-base font-semibold">
           {links.map(([l, h]) => (
@@ -90,6 +95,10 @@ export function Header() {
               {l}
             </a>
           ))}
+          <div className="mt-4 md:hidden">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wider">Connect with Kirukans</p>
+            <ContactStrip />
+          </div>
         </nav>
       )}
     </header>
