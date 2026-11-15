@@ -4,6 +4,7 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
+import { StoryCircles } from '@/components/story-circles';
 import { About, Approach, Stories } from '@/components/story-sections';
 import { Impact, Footer } from '@/components/closing-sections';
 import { Join } from '@/components/join-section';
@@ -36,6 +37,7 @@ function Home() {
       <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:z-[70] focus:bg-sun focus:text-plum focus:p-3">Skip to content</a>
       <Header />
       <main>
+        <StoryCircles />
         <Hero />
         <MuralComparison />
         <About />
